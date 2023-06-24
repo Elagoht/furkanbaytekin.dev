@@ -5,7 +5,8 @@ import img_terminal_portfolio from "../../assets/projects/terminal_portfolio.png
 import img_album_advertisement_site from "../../assets/projects/album_advertisement_site.png"
 import img_pug_cv from "../../assets/projects/pug_cv.png"
 import img_black_blog from "../../assets/projects/black_blog.png"
-import { Github, Presentation, Store } from "lucide-react";
+import img_sudo_mice from "../../assets/projects/sudo_mice.png"
+import { Gamepad, Github, Presentation, Store } from "lucide-react";
 
 export default function Portfolio() {
   return <section id="portfolio">
@@ -78,10 +79,10 @@ export default function Portfolio() {
           <p>Portfolio website that can be perfectly optimized for printing. Can easily obtain a PDF file from this page.</p>
           <p>Just fill the inline JSON data in pug files and build the site easily. Fully customisable.</p>
           <div className="flex gap-4 max-md:justify-center">
-            <a target="_blank" rel="noreferrer" href="https://github.com/Elagoht/PugCV">
+            <a target="_blank" rel="noreferrer" href="https://elagoht.github.io/pugCV">
               <Presentation className="inline" /> See Demo
             </a>
-            <a target="_blank" rel="noreferrer" href="https://github.com/Elagoht/PugCV">
+            <a target="_blank" rel="noreferrer" href="https://github.com/Elagoht/pugCV">
               <Github className="inline" /> Source Code
             </a>
           </div>
@@ -91,11 +92,25 @@ export default function Portfolio() {
           <h1>Black Blog</h1>
           <p>Blog website with dark/light theme, font face/size settings. Created with PHP but then converted to vanilla HTML, CSS & JS.</p>
           <div className="flex gap-4 max-md:justify-center">
-            <a target="_blank" rel="noreferrer" href="https://github.com/Elagoht/PugCV">
+            <a target="_blank" rel="noreferrer" href="https://elagoht.github.io/BlackBlog">
               <Presentation className="inline" /> See Demo
             </a>
-            <a target="_blank" rel="noreferrer" href="https://github.com/Elagoht/PugCV">
+            <a target="_blank" rel="noreferrer" href="https://github.com/Elagoht/BlackBlog">
               <Github className="inline" /> Source Code
+            </a>
+          </div>
+        </Project>
+
+        <Project img={img_sudo_mice}>
+          <h1>Sudo Mice</h1>
+          <p>Two player war battle game we control mice to write codes by jumping on keyboards to summon units to attack to against castle.</p>
+          <p>Linux terminal and sudo command inspired game. Note that: sudo does not make your commands "stronger".</p>
+          <div className="flex gap-4 max-md:justify-center">
+            <a target="_blank" rel="noreferrer" href="https://elagoht.itch.io/sudo-mice">
+              <Gamepad className="inline" /> Play Game
+            </a>
+            <a target="_blank" rel="noreferrer" href="https://github.com/Elagoht/SudoMice">
+              <Github className="inline" /> Main Page
             </a>
           </div>
         </Project>
