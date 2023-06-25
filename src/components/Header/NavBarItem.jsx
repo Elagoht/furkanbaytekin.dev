@@ -1,11 +1,11 @@
-import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default function NavBarItem({ children, url, external }) {
-  return <a
+  return <NavLink
     target={external ? "_blank" : undefined}
     rel={external ? "noreferrer" : undefined}
-    href={(external ? "" : "#") + url}
+    to={url}
   >
     {children}
-  </a>
+  </NavLink>
 }

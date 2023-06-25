@@ -4,6 +4,7 @@ import App from './App';
 import "./index.css"
 import { AnimatePresence } from 'framer-motion';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <AnimatePresence mode="wait">

@@ -1,5 +1,5 @@
-import { ArrowDown } from 'lucide-react'
-import React from 'react'
+import { ArrowRight } from 'lucide-react'
+import { Link } from "react-router-dom"
 
 export default function Texts() {
   return <div className="flex flex-col gap-4 max-lg:text-center">
@@ -16,7 +16,7 @@ export default function Texts() {
       Udemy.
     </p>
     <p className="text-lg flex gap-2 items-center max-lg:justify-center max-lg:mt-auto">
-      <a href="#about">See more <ArrowDown className="inline" strokeWidth={1.5} /></a>
+      <Link to="about">See more <ArrowRight className="inline" strokeWidth={1.5} /></Link>
     </p>
   </div >
 }

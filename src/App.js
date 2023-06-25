@@ -1,19 +1,6 @@
-import Header from "./components/Header";
-import Portfolio from "./components/Portfolio";
-import Welcome from "./components/Welcome";
-import About from "./components/About";
-import Contacts from "./components/Contacts";
-import Lessons from "./components/Lessons";
+import RouterManager from "./routes";
 
 function App() {
-  return <>
-    <Header />
-    <Welcome />
-    <About />
-    <Portfolio />
-    <Lessons />
-    <Contacts />
-  </>
+  return <RouterManager />
 }
-
 export default App;
