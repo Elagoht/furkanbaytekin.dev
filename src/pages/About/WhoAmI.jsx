@@ -8,8 +8,8 @@ export default function WhoAmI() {
       experinces better. Also I have some pretty <b>terminal tools</b> 🛠️.
     </p>
     <p>
-      Graduated from Web Design and Coding & Turkish Education. I use
-      Linux as my main operatings system. So, as a teacher 🧑‍🏫 who code, I
+      Graduated from Web Design and Coding 📐 & Turkish Education 🎓️. I use
+      Linux 🐧 as my main operatings system. So, as a teacher 🧑‍🏫 who code, I
       record <i>educational Linux videos</i> and publish them on <a
         href="https://youtube.com/@herkesicinlinux"
         target="_blank" rel="noreferrer"

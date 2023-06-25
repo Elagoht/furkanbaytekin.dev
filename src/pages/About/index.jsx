@@ -13,8 +13,8 @@ export default function About() {
         <div className="project-container !gap-16">
           <WhoAmI />
           <div className="flex flex-col gap-8">
-            <TechStack />
             <Languages />
+            <TechStack />
           </div>
         </div>
       </div>
