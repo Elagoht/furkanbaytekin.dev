@@ -5,12 +5,16 @@
 @tailwind components;
 
 @layer components {
+  ::-webkit-scrollbar { 
+    display: none;
+  }
   html {
     font-family: 'Quicksand', sans-serif;
     @apply scroll-smooth leading-relaxed;
+    
   }
   body {
-    @apply bg-neutral-100 bg-geometric-shapes bg-top bg-no-repeat bg-cover bg-fixed
+    @apply bg-geometric-shapes bg-top bg-no-repeat bg-cover bg-fixed bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-200;
   }
   p, h1,h2,h3,h4,h5,h6 {
     @apply my-1
@@ -40,22 +44,22 @@
     font-family: 'Hind Siliguri', sans-serif;
     @apply font-semibold
   }
-  .project-container {
+  .content-container {
     @apply flex gap-8 max-md:flex-col
   }
-  .project-container h1 {
+  .content-container h1 {
     @apply text-3xl font-bold
   }
-  .project-container p {
+  .content-container p {
     @apply text-lg
   }
-  .project-container a {
+  .content-container a {
     @apply underline underline-offset-2
   }
-  .project-container a.button {
-    @apply border-2 font-medium no-underline border-neutral-800 rounded-md p-2 flex gap-2 items-center hover:bg-neutral-800 hover:text-neutral-200 transition-colors text-center;
+  .content-container a.button {
+    @apply border-2 font-medium no-underline border-neutral-800 dark:border-neutral-200 rounded-md p-2 flex gap-2 items-center hover:bg-neutral-800 dark:hover:bg-neutral-200 hover:text-neutral-200 dark:hover:text-neutral-800 transition-colors text-center;
   }
   .skill-box {
-    @apply font-medium bg-neutral-300 text-neutral-800 rounded-md py-2 px-4 flex gap-2 items-center transition-colors text-center;
+    @apply font-medium bg-neutral-300 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200 rounded-md py-2 px-4 flex gap-2 items-center transition-colors text-center;
   }
 }
