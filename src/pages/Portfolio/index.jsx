@@ -19,9 +19,9 @@ export default function Portfolio() {
 
         <Project img={img_endeavour_os_tweaker}>
           <h1>Make Endeavour OS Great</h1>
-          <p>Endeavour OS is already a great OS but It's a bit hard to start with. A new Linux user cannot use it properly...</p>
+          <p>Endeavour OS is already a great OS, but it can be a bit challenging for beginners. New Linux users may struggle to use it effectively...</p>
           <p>...without this program.</p>
-          <p>The main purpose of this app is installing necessary apps and tweaking lots of configuration. Written in Python and ready to use on fresh installs.</p>
+          <p>The main purpose of this app is to install necessary applications and tweak various configurations. It is written in Python and is ready to use on fresh installations.</p>
           <div className="flex gap-4 max-md:justify-center">
             <a className="button" target="_blank" rel="noreferrer" href="https://aur.archlinux.org/make-endeavouros-great.git">
               <Store className="inline" /> Use App
@@ -34,9 +34,9 @@ export default function Portfolio() {
 
         <Project img={img_new_tab}>
           <h1>New Tab Page</h1>
-          <p>Elegance, simple and effective new tab page. Written in React.js.</p>
+          <p>Elegance, simplicity, and effectiveness in a new tab page. Written in React.js.</p>
           <p>A new image and a new splash text on every refresh!</p>
-          <p>Can add new sites or delete existing ones and move their places. Site favicons get fetched automatically. All data stores in local storage.</p>
+          <p>You can add new sites, delete existing ones, and rearrange their positions. Site favicons are fetched automatically. All data is stored in local storage.</p>
           <div className="flex gap-4 max-md:justify-center">
             <a className="button" target="_blank" rel="noreferrer" href="https://elagoht.github.io/react-new-tab">
               <Presentation className="inline" /> See Demo
@@ -49,8 +49,8 @@ export default function Portfolio() {
 
         <Project img={img_terminal_portfolio}>
           <h1>Retro Terminal Portfolio</h1>
-          <p>Linux terminal shell, recreated, with web interface, to introduce me.</p>
-          <p>Clean and comprehensible code background with pure vanilla javascript has used. Open source, so anyone can use to create its own.</p>
+          <p>A recreated Linux terminal shell with a web interface to introduce myself.</p>
+          <p>Clean and comprehensible code background with pure vanilla JavaScript has been used. It is open source, so anyone can use it to create their own.</p>
           <div className="flex gap-4 max-md:justify-center">
             <a className="button" target="_blank" rel="noreferrer" href="https://elagoht.github.io/TerminalPortfolio">
               <Presentation className="inline" /> See Demo
@@ -63,8 +63,8 @@ export default function Portfolio() {
 
         <Project img={img_album_advertisement_site}>
           <h1>Album Advertisement</h1>
-          <p>Introduce your art to word. Link your platforms to the page. Make others reachable to your masterpiece. Create a showcase for your other albums.</p>
-          <p>Open source project created with React.js, so anyone can produce its own showcase.</p>
+          <p>Introduce your art to the world. Link your platforms to the page. Make your masterpieces reachable to others. Create a showcase for your other albums.</p>
+          <p>An open-source project created with React.js, so anyone can create their own showcase.</p>
           <div className="flex gap-4 max-md:justify-center">
             <a className="button" target="_blank" rel="noreferrer" href="https://elagoht.github.io/AlbumAdvertisementSite">
               <Presentation className="inline" /> See Demo
@@ -77,8 +77,8 @@ export default function Portfolio() {
 
         <Project img={img_pug_cv}>
           <h1>Pug CV</h1>
-          <p>Portfolio website that can be perfectly optimized for printing. Can easily obtain a PDF file from this page.</p>
-          <p>Just fill the inline JSON data in pug files and build the site easily. Fully customisable.</p>
+          <p>A portfolio website that can be perfectly optimized for printing. You can easily obtain a PDF file from this page.</p>
+          <p>Just fill in the inline JSON data in the Pug files and easily build the site. It is fully customizable.</p>
           <div className="flex gap-4 max-md:justify-center">
             <a className="button" target="_blank" rel="noreferrer" href="https://elagoht.github.io/pugCV">
               <Presentation className="inline" /> See Demo
@@ -91,7 +91,7 @@ export default function Portfolio() {
 
         <Project img={img_black_blog}>
           <h1>Black Blog</h1>
-          <p>Blog website with dark/light theme, font face/size settings. Created with PHP but then converted to vanilla HTML, CSS & JS.</p>
+          <p>A blog website with dark/light theme and font face/size settings. It was initially created with PHP but later converted to vanilla HTML, CSS, and JS.</p>
           <div className="flex gap-4 max-md:justify-center">
             <a className="button" target="_blank" rel="noreferrer" href="https://elagoht.github.io/BlackBlog">
               <Presentation className="inline" /> See Demo
@@ -104,8 +104,8 @@ export default function Portfolio() {
 
         <Project img={img_sudo_mice}>
           <h1>Sudo Mice</h1>
-          <p>Two player war battle game we control mice to write codes by jumping on keyboards to summon units to attack to against castle.</p>
-          <p>Linux terminal and sudo command inspired game. Note that: sudo does not make your commands "stronger".</p>
+          <p>A two-player war battle game where we control mice to write codes by jumping on keyboards to summon units and attack the enemy castle.</p>
+          <p>A game inspired by Linux terminal and the sudo command. Note that: sudo does not make your commands "stronger".</p>
           <div className="flex gap-4 max-md:justify-center">
             <a className="button" target="_blank" rel="noreferrer" href="https://elagoht.itch.io/sudo-mice">
               <Gamepad className="inline" /> Play Game

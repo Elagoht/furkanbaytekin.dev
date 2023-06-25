@@ -10,7 +10,7 @@ export default function About() {
         About.
       </div>
       <div className="flex flex-col gap-16">
-        <div className="project-container !gap-16">
+        <div className="content-container !gap-16">
           <WhoAmI />
           <div className="flex flex-col gap-8">
             <Languages />

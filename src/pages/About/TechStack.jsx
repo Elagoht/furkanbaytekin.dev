@@ -1,10 +1,8 @@
-import React from 'react'
-
-
 export default function TechStack() {
 
   const skills = [
     "React.js", "Tailwind CSS", "Bootstrap", "Pug", "SASS",
+    "Git", "Github",
     "Django", "PyQt5", "MongoDB", "SQLite", "MySQL",
     "Numpy", "Pandas", "Matplotlib", "Seaborn",
     "Gimp", "Kdenlive", "Audacity"
