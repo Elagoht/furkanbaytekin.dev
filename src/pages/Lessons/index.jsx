@@ -1,6 +1,6 @@
 import { BookMarked, File, MonitorPlay } from "lucide-react";
 import Section from "../../components/Section";
-import Lesson from "./Lesson"
+import Showcase from "../../components/ShowCase"
 import img_vim_terminal_editor from "../../assets/lessons/vim_terminal_editor.png"
 import img_linux_terminal from "../../assets/lessons/linux_terminal.jpg"
 import img_markdown from "../../assets/lessons/markdown.jpg"
@@ -8,7 +8,7 @@ import img_markdown from "../../assets/lessons/markdown.jpg"
 export default function Lessons() {
   return <Section id="lessons">
     <div className="container">
-      <div className="text-6xl font-title">
+      <div className="text-6xl font-title mb-8">
         Lessons.
       </div>
       <p className="text-xl my-4">
@@ -16,7 +16,7 @@ export default function Lessons() {
       </p>
       <div className="flex flex-col gap-16">
 
-        <Lesson img={img_vim_terminal_editor}>
+        <Showcase img={img_vim_terminal_editor}>
           <h1>Vim Terminal Text Editor Course</h1>
           <p>
             Vim is a powerful terminal text editor (and better than nano) that offers various modes and numerous shortcuts.
@@ -46,9 +46,9 @@ export default function Lessons() {
               <File /> Resources
             </a>
           </div>
-        </Lesson>
+        </Showcase>
 
-        <Lesson img={img_linux_terminal}>
+        <Showcase img={img_linux_terminal}>
           <h1>Linux Terminal Course</h1>
           <p>
             Terminal tools are the key to power on Linux. The course includes 76 different commands.
@@ -72,9 +72,9 @@ export default function Lessons() {
               <MonitorPlay /> Resources
             </a>
           </div>
-        </Lesson>
+        </Showcase>
 
-        <Lesson img={img_markdown}>
+        <Showcase img={img_markdown}>
           <h1>Markdown Course</h1>
           <p>
             Markdown is a simple, powerful, and easily understandable markup language. As developers, we often use it to write our README.md files.
@@ -98,7 +98,7 @@ export default function Lessons() {
               <MonitorPlay /> Resources
             </a>
           </div>
-        </Lesson>
+        </Showcase>
 
       </div>
     </div>

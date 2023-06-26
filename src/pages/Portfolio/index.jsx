@@ -1,4 +1,4 @@
-import Project from "./Project";
+import Showcase from "../../components/ShowCase"
 import img_new_tab from "../../assets/projects/react_new_tab.png"
 import img_endeavour_os_tweaker from "../../assets/projects/endeavour_os_tweaker.png"
 import img_terminal_portfolio from "../../assets/projects/terminal_portfolio.png"
@@ -17,7 +17,7 @@ export default function Portfolio() {
       </div>
       <div className="flex flex-col gap-16">
 
-        <Project img={img_endeavour_os_tweaker}>
+        <Showcase img={img_endeavour_os_tweaker}>
           <h1>Make Endeavour OS Great</h1>
           <p>Endeavour OS is already a great OS, but it can be a bit challenging for beginners. New Linux users may struggle to use it effectively...</p>
           <p>...without this program.</p>
@@ -30,9 +30,9 @@ export default function Portfolio() {
               <Github className="inline" /> Source Code
             </a>
           </div>
-        </Project>
+        </Showcase>
 
-        <Project img={img_new_tab}>
+        <Showcase img={img_new_tab}>
           <h1>New Tab Page</h1>
           <p>Elegance, simplicity, and effectiveness in a new tab page. Written in React.js.</p>
           <p>A new image and a new splash text on every refresh!</p>
@@ -45,9 +45,9 @@ export default function Portfolio() {
               <Github className="inline" /> Source Code
             </a>
           </div>
-        </Project>
+        </Showcase>
 
-        <Project img={img_terminal_portfolio}>
+        <Showcase img={img_terminal_portfolio}>
           <h1>Retro Terminal Portfolio</h1>
           <p>A recreated Linux terminal shell with a web interface to introduce myself.</p>
           <p>Clean and comprehensible code background with pure vanilla JavaScript has been used. It is open source, so anyone can use it to create their own.</p>
@@ -59,9 +59,9 @@ export default function Portfolio() {
               <Github className="inline" /> Source Code
             </a>
           </div>
-        </Project>
+        </Showcase>
 
-        <Project img={img_album_advertisement_site}>
+        <Showcase img={img_album_advertisement_site}>
           <h1>Album Advertisement</h1>
           <p>Introduce your art to the world. Link your platforms to the page. Make your masterpieces reachable to others. Create a showcase for your other albums.</p>
           <p>An open-source project created with React.js, so anyone can create their own showcase.</p>
@@ -73,9 +73,9 @@ export default function Portfolio() {
               <Github className="inline" /> Source Code
             </a>
           </div>
-        </Project>
+        </Showcase>
 
-        <Project img={img_pug_cv}>
+        <Showcase img={img_pug_cv}>
           <h1>Pug CV</h1>
           <p>A portfolio website that can be perfectly optimized for printing. You can easily obtain a PDF file from this page.</p>
           <p>Just fill in the inline JSON data in the Pug files and easily build the site. It is fully customizable.</p>
@@ -87,9 +87,9 @@ export default function Portfolio() {
               <Github className="inline" /> Source Code
             </a>
           </div>
-        </Project>
+        </Showcase>
 
-        <Project img={img_black_blog}>
+        <Showcase img={img_black_blog}>
           <h1>Black Blog</h1>
           <p>A blog website with dark/light theme and font face/size settings. It was initially created with PHP but later converted to vanilla HTML, CSS, and JS.</p>
           <div className="flex gap-4 max-md:justify-center">
@@ -100,9 +100,9 @@ export default function Portfolio() {
               <Github className="inline" /> Source Code
             </a>
           </div>
-        </Project>
+        </Showcase>
 
-        <Project img={img_sudo_mice}>
+        <Showcase img={img_sudo_mice}>
           <h1>Sudo Mice</h1>
           <p>A two-player war battle game where we control mice to write codes by jumping on keyboards to summon units and attack the enemy castle.</p>
           <p>A game inspired by Linux terminal and the sudo command. Note that: sudo does not make your commands "stronger".</p>
@@ -114,7 +114,7 @@ export default function Portfolio() {
               <Github className="inline" /> Main Page
             </a>
           </div>
-        </Project>
+        </Showcase>
       </div>
     </div>
   </Section>
