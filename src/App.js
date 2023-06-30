@@ -5,8 +5,10 @@ const App = () => {
 
   useEffect(() => {
     document.body.addEventListener("mousemove", (event) => {
-      document.body.style.backgroundPositionX = event.clientX / 20 + "px"
-      document.body.style.backgroundPositionY = event.clientY / 20 + "px"
+      if (!window.matchMedia("(prefers-reduced-motion)").matches) {
+        document.body.style.backgroundPositionX = event.clientX / 20 + "px"
+        document.body.style.backgroundPositionY = event.clientY / 20 + "px"
+      }
     })
   }, [])
 

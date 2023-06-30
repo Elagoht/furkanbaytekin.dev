@@ -2,6 +2,7 @@ import Section from "../../components/Section";
 import TechStack from "./TechStack";
 import WhoAmI from "./WhoAmI";
 import WhatIDo from "./WhatIDo";
+import GetCV from "./GetCV";
 
 export default function About() {
   return <Section id="about">
@@ -16,6 +17,7 @@ export default function About() {
               <WhoAmI />
               <WhatIDo />
             </div>
+            <GetCV />
             <TechStack />
           </div>
         </div>

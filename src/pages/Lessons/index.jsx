@@ -4,16 +4,24 @@ import Showcase from "../../components/ShowCase"
 import img_vim_terminal_editor from "../../assets/lessons/vim_terminal_editor.png"
 import img_linux_terminal from "../../assets/lessons/linux_terminal.jpg"
 import img_markdown from "../../assets/lessons/markdown.jpg"
+import Teacher from "./Teacher";
 
 export default function Lessons() {
   return <Section id="lessons">
-    <div className="container">
-      <div className="text-6xl font-title mb-8">
+    <div className="container grid gap-16">
+
+      <div className="text-6xl font-title">
         Lessons.
       </div>
-      <p className="text-xl my-4">
-        My courses are open to everyone. Knowledge grows as it is shared.
-      </p>
+
+      <div className="flex flex-col items-center gap-8 max-w-2xl mx-auto">
+        <Teacher />
+        <article className="flex-1 text-center">
+          <h2>Wait, wait, wait. I have something to teach you!</h2>
+          <p>Do you know that my courses are free and open to everyone at all? Knowledge grows as it is shared.</p>
+        </article>
+      </div>
+
       <div className="flex flex-col gap-16">
 
         <Showcase img={img_vim_terminal_editor}>

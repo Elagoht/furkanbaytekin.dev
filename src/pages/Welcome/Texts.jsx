@@ -3,11 +3,11 @@ import { Link } from "react-router-dom"
 
 export default function Texts() {
   return <div className="flex flex-col gap-4 max-lg:text-center">
-    <h1 className="text-6xl font-title">
+    <div className="text-6xl font-title">
       Hi! I am
       <br />
       Furkan Baytekin.
-    </h1>
+    </div>
     <h2 className="text-orange-500 text-3xl">Software Developer, Instructor.</h2>
     <p className="max-w-lg text-lg text-neutral-600 dark:text-neutral-400">
       Since 2012, I design, code, and develop websites,
