@@ -8,7 +8,7 @@ export default function Texts() {
       <br />
       Furkan Baytekin.
     </div>
-    <h2 className="text-orange-500 text-3xl">Software Developer, Instructor.</h2>
+    <h2>Software Developer, Instructor.</h2>
     <p className="max-w-lg text-lg text-neutral-600 dark:text-neutral-400">
       Since 2012, I design, code, and develop websites,
       web, desktop, and terminal applications. I also
