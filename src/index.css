@@ -5,16 +5,15 @@
 @tailwind components;
 
 @layer components {
-  ::-webkit-scrollbar { 
-    display: none;
-  }
   html {
     font-family: 'Quicksand', sans-serif;
     @apply scroll-smooth leading-relaxed;
     
   }
   body {
-    @apply bg-geometric-shapes bg-top bg-no-repeat bg-cover bg-fixed bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-200;
+    background-image: radial-gradient(#1111 0%, #1111 15%, #0000 15%, #0000 100%);
+    background-size: 2rem 2rem;
+    @apply bg-fixed bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200;
   }
   p, h1,h2,h3,h4,h5,h6 {
     @apply my-1
@@ -26,7 +25,7 @@
     @apply max-w-screen-xl w-full mx-auto;
   }
   header {
-    @apply bg-neutral-900 fixed top-0 left-0 right-0 z-50;
+    @apply bg-neutral-900 fixed top-0 left-0 right-0 z-50 text-neutral-200 bg-opacity-90 backdrop-blur;
   }
   header nav {
     @apply flex;
@@ -57,6 +56,11 @@
     @apply border-2 font-medium no-underline border-neutral-800 dark:border-neutral-200 rounded-md p-2 flex gap-2 items-center hover:bg-neutral-800 dark:hover:bg-neutral-200 hover:text-neutral-200 dark:hover:text-neutral-800 transition-colors text-center;
   }
   .skill-box {
-    @apply font-medium bg-neutral-300 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200 rounded-md p-2 flex gap-2 font-medium items-center transition-colors text-center;
+    @apply bg-neutral-300 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200 rounded-md p-2 flex gap-2 font-medium items-center transition-colors text-center;
+  }
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-image: radial-gradient(#eee1 0%, #eee1 15%, #0000 15%, #0000 100%);
+    }
   }
 }

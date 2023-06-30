@@ -4,8 +4,8 @@ export default function Section({ children, className = "" }) {
   return <motion.section
     id="welcome"
     className={"px-8 " + className}
-    initial={{ opacity: 0, scale: 1.1, translateY: Math.random() * 100 }}
-    animate={{ opacity: 1, scale: 1, translateY: 0 }}
+    initial={{ opacity: 0, transform: "translateY(-100px) scale(1.1)" }}
+    animate={{ opacity: 1, transform: "translateY(0)  scale(1)" }}
     transition={{ duration: .5 }}
   >
     {children}
