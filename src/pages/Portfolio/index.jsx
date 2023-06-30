@@ -1,11 +1,12 @@
 import Showcase from "../../components/ShowCase"
-import img_new_tab from "../../assets/projects/react_new_tab.png"
-import img_endeavour_os_tweaker from "../../assets/projects/endeavour_os_tweaker.png"
-import img_terminal_portfolio from "../../assets/projects/terminal_portfolio.png"
-import img_album_advertisement_site from "../../assets/projects/album_advertisement_site.png"
-import img_pug_cv from "../../assets/projects/pug_cv.png"
-import img_black_blog from "../../assets/projects/black_blog.png"
-import img_sudo_mice from "../../assets/projects/sudo_mice.png"
+import img_new_tab from "../../assets/projects/react_new_tab.webp"
+import img_endeavour_os_tweaker from "../../assets/projects/endeavour_os_tweaker.webp"
+import img_parallax_portfolio from "../../assets/projects/parallax_portfolio.webp"
+import img_terminal_portfolio from "../../assets/projects/terminal_portfolio.webp"
+import img_album_advertisement_site from "../../assets/projects/album_advertisement_site.webp"
+import img_pug_cv from "../../assets/projects/pug_cv.webp"
+import img_black_blog from "../../assets/projects/black_blog.webp"
+import img_sudo_mice from "../../assets/projects/sudo_mice.webp"
 import { Gamepad, Github, Presentation, Store } from "lucide-react";
 import Section from "../../components/Section";
 
@@ -16,21 +17,6 @@ export default function Portfolio() {
         Portfolio.
       </div>
       <div className="flex flex-col gap-16">
-
-        <Showcase img={img_endeavour_os_tweaker}>
-          <h1>Make Endeavour OS Great</h1>
-          <p>Endeavour OS is already a great OS, but it can be a bit challenging for beginners. New Linux users may struggle to use it effectively...</p>
-          <p>...without this program.</p>
-          <p>The main purpose of this app is to install necessary applications and tweak various configurations. It is written in Python and is ready to use on fresh installations.</p>
-          <div className="flex gap-4 max-md:justify-center">
-            <a className="button" target="_blank" rel="noreferrer" href="https://aur.archlinux.org/make-endeavouros-great.git">
-              <Store className="inline" /> Use App
-            </a>
-            <a className="button" target="_blank" rel="noreferrer" href="https://github.com/Elagoht/MakeEndeavourOSGreat">
-              <Github className="inline" /> Source Code
-            </a>
-          </div>
-        </Showcase>
 
         <Showcase img={img_new_tab}>
           <h1>New Tab Page</h1>
@@ -61,20 +47,6 @@ export default function Portfolio() {
           </div>
         </Showcase>
 
-        <Showcase img={img_album_advertisement_site}>
-          <h1>Album Advertisement</h1>
-          <p>Introduce your art to the world. Link your platforms to the page. Make your masterpieces reachable to others. Create a showcase for your other albums.</p>
-          <p>An open-source project created with React.js, so anyone can create their own showcase.</p>
-          <div className="flex gap-4 max-md:justify-center">
-            <a className="button" target="_blank" rel="noreferrer" href="https://elagoht.github.io/AlbumAdvertisementSite">
-              <Presentation className="inline" /> See Demo
-            </a>
-            <a className="button" target="_blank" rel="noreferrer" href="https://github.com/Elagoht/AlbumAdvertisementSite">
-              <Github className="inline" /> Source Code
-            </a>
-          </div>
-        </Showcase>
-
         <Showcase img={img_pug_cv}>
           <h1>Pug CV</h1>
           <p>A portfolio website that can be perfectly optimized for printing. You can easily obtain a PDF file from this page.</p>
@@ -89,6 +61,34 @@ export default function Portfolio() {
           </div>
         </Showcase>
 
+        <Showcase img={img_parallax_portfolio}>
+          <h1>Parallax Portolio</h1>
+          <p>Elements are floting in different speeds to show info about me, ore something else.</p>
+          <p>You can produce your own with the source code I have provided.</p>
+          <div className="flex gap-4 max-md:justify-center">
+            <a className="button" target="_blank" rel="noreferrer" href="https://elagoht.github.io/parallax-portfolio">
+              <Presentation className="inline" /> See Demo
+            </a>
+            <a className="button" target="_blank" rel="noreferrer" href="https://github.com/Elagoht/parallax-portfolio">
+              <Github className="inline" /> Source Code
+            </a>
+          </div>
+        </Showcase>
+
+        <Showcase img={img_album_advertisement_site}>
+          <h1>Album Advertisement</h1>
+          <p>Introduce your art to the world. Link your platforms to the page. Make your masterpieces reachable to others. Create a showcase for your other albums.</p>
+          <p>An open-source project created with React.js, so anyone can create their own showcase.</p>
+          <div className="flex gap-4 max-md:justify-center">
+            <a className="button" target="_blank" rel="noreferrer" href="https://elagoht.github.io/AlbumAdvertisementSite">
+              <Presentation className="inline" /> See Demo
+            </a>
+            <a className="button" target="_blank" rel="noreferrer" href="https://github.com/Elagoht/AlbumAdvertisementSite">
+              <Github className="inline" /> Source Code
+            </a>
+          </div>
+        </Showcase>
+
         <Showcase img={img_black_blog}>
           <h1>Black Blog</h1>
           <p>A blog website with dark/light theme and font face/size settings. It was initially created with PHP but later converted to vanilla HTML, CSS, and JS.</p>
@@ -97,6 +97,21 @@ export default function Portfolio() {
               <Presentation className="inline" /> See Demo
             </a>
             <a className="button" target="_blank" rel="noreferrer" href="https://github.com/Elagoht/BlackBlog">
+              <Github className="inline" /> Source Code
+            </a>
+          </div>
+        </Showcase>
+
+        <Showcase img={img_endeavour_os_tweaker}>
+          <h1>Make Endeavour OS Great</h1>
+          <p>Endeavour OS is already a great OS, but it can be a bit challenging for beginners. New Linux users may struggle to use it effectively...</p>
+          <p>...without this program.</p>
+          <p>The main purpose of this app is to install necessary applications and tweak various configurations. It is written in Python and is ready to use on fresh installations.</p>
+          <div className="flex gap-4 max-md:justify-center">
+            <a className="button" target="_blank" rel="noreferrer" href="https://aur.archlinux.org/make-endeavouros-great.git">
+              <Store className="inline" /> Use App
+            </a>
+            <a className="button" target="_blank" rel="noreferrer" href="https://github.com/Elagoht/MakeEndeavourOSGreat">
               <Github className="inline" /> Source Code
             </a>
           </div>
