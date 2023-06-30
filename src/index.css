@@ -44,7 +44,8 @@
     @apply flex gap-8 max-md:flex-col
   }
   .content-container h1 {
-    @apply text-3xl font-bold
+    text-shadow: 0 0 .1rem currentColor;
+    @apply text-3xl font-bold text-orange-400;
   }
   .content-container p {
     @apply text-lg
@@ -52,11 +53,20 @@
   .content-container a {
     @apply underline underline-offset-2
   }
-  .content-container a.button {
-    @apply border-2 font-medium no-underline border-neutral-800 dark:border-neutral-200 rounded-md p-2 flex gap-2 items-center hover:bg-neutral-800 dark:hover:bg-neutral-200 hover:text-neutral-200 dark:hover:text-neutral-800 transition-colors text-center;
+  a.button {
+    @apply border-2 font-medium no-underline border-neutral-800 dark:border-neutral-200 rounded-md p-2 flex gap-2 items-center hover:bg-orange-500 hover:text-orange-200 hover:border-orange-200 transition-colors text-center;
+  }
+  article h2 {
+    @apply text-3xl font-medium text-orange-500;
   }
   .skill-box {
     @apply bg-neutral-300 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200 rounded-md p-2 flex gap-2 font-medium items-center transition-colors text-center;
+  }
+  .tech-tool {
+    @apply w-16 max-md:w-8 text-center flex flex-col justify-end items-center gap-1 hover:scale-125 transition-transform duration-200;
+  }
+  .tech-tool img {
+    @apply w-full
   }
   @media (prefers-color-scheme: dark) {
     body {

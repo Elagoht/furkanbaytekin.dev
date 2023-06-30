@@ -8,8 +8,8 @@ export default function Texts() {
       <br />
       Furkan Baytekin.
     </h1>
-    <h2 className="text-3xl">Software Developer, Instructor.</h2>
-    <p className="max-w-lg text-lg">
+    <h2 className="text-orange-500 text-3xl">Software Developer, Instructor.</h2>
+    <p className="max-w-lg text-lg text-neutral-600 dark:text-neutral-400">
       Since 2012, I design, code, and develop websites,
       web, desktop, and terminal applications. I also
       record educational Linux videos and share them on YouTube
@@ -17,7 +17,7 @@ export default function Texts() {
     </p>
 
     <p className="text-lg flex gap-2 items-center max-lg:justify-center max-lg:mt-auto">
-      <Link to="about">See more <ArrowRight className="inline" strokeWidth={1.5} /></Link>
+      <Link className='button' to="about">See more <ArrowRight className="inline" strokeWidth={1.5} /></Link>
     </p>
   </div >
 }
