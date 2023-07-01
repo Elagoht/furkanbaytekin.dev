@@ -20,9 +20,9 @@ export default function Portfolio() {
 
         <Showcase img={img_new_tab}>
           <h1>New Tab Page</h1>
-          <p>Elegance, simplicity, and effectiveness in a new tab page. Written in React.js.</p>
-          <p>A new image and a new splash text on every refresh!</p>
-          <p>You can add new sites, delete existing ones, and rearrange their positions. Site favicons are fetched automatically. All data is stored in local storage.</p>
+          <p>Experience elegance, simplicity, and effectiveness all in one place. Built with React.js, this new tab page offers a refreshing browsing experience.</p>
+          <p>Enjoy a new image and captivating splash text with every refresh!</p>
+          <p>Customize your browsing by adding new sites, deleting existing ones, and rearranging their positions. The site favicons are automatically fetched for your convenience. Rest assured, all your data is securely stored in local storage.</p>
           <div className="flex gap-4 max-md:justify-center">
             <a className="button" target="_blank" rel="noreferrer" href="https://elagoht.github.io/react-new-tab">
               <Presentation className="inline" /> See Demo
@@ -36,6 +36,7 @@ export default function Portfolio() {
         <Showcase img={img_terminal_portfolio}>
           <h1>Retro Terminal Portfolio</h1>
           <p>A recreated Linux terminal shell with a web interface to introduce myself.</p>
+          <p>If it looks easy to get inform about me by reading graphical interfaces, try this one. Write commands to know me.</p>
           <p>Clean and comprehensible code background with pure vanilla JavaScript has been used. It is open source, so anyone can use it to create their own.</p>
           <div className="flex gap-4 max-md:justify-center">
             <a className="button" target="_blank" rel="noreferrer" href="https://elagoht.github.io/TerminalPortfolio">
@@ -49,8 +50,8 @@ export default function Portfolio() {
 
         <Showcase img={img_pug_cv}>
           <h1>Pug CV</h1>
-          <p>A portfolio website that can be perfectly optimized for printing. You can easily obtain a PDF file from this page.</p>
-          <p>Just fill in the inline JSON data in the Pug files and easily build the site. It is fully customizable.</p>
+          <p>A portfolio website that can be perfectly optimized for printing. With this website, you can effortlessly generate a PDF file of your portfolio directly from the page.</p>
+          <p>Simply fill in the inline JSON data in the Pug files, and voila!</p>
           <div className="flex gap-4 max-md:justify-center">
             <a className="button" target="_blank" rel="noreferrer" href="https://elagoht.github.io/pugCV">
               <Presentation className="inline" /> See Demo
@@ -63,8 +64,8 @@ export default function Portfolio() {
 
         <Showcase img={img_parallax_portfolio}>
           <h1>Parallax Portolio</h1>
-          <p>Elements are floting in different speeds to show info about me, ore something else.</p>
-          <p>You can produce your own with the source code I have provided.</p>
+          <p>Immerse yourself in the captivating world of parallax design with this stunning portfolio website. Watch as elements float at different speeds, creating a visually engaging and dynamic display of information about me or anything you desire.</p>
+          <p>With the provided source code, you have the power to create your very own parallax portfolio.</p>
           <div className="flex gap-4 max-md:justify-center">
             <a className="button" target="_blank" rel="noreferrer" href="https://elagoht.github.io/parallax-portfolio">
               <Presentation className="inline" /> See Demo
@@ -77,8 +78,8 @@ export default function Portfolio() {
 
         <Showcase img={img_album_advertisement_site}>
           <h1>Album Advertisement</h1>
-          <p>Introduce your art to the world. Link your platforms to the page. Make your masterpieces reachable to others. Create a showcase for your other albums.</p>
-          <p>An open-source project created with React.js, so anyone can create their own showcase.</p>
+          <p>Are you an artist looking to share your mesmerizing art with the world? Look no further! Our Album Advertisement is here to help you showcase your masterpieces and connect with your audience.</p>
+          <p>This open-source project, built with React.js, provides a platform for artists like you to link your various platforms and make your art easily accessible to others. </p>
           <div className="flex gap-4 max-md:justify-center">
             <a className="button" target="_blank" rel="noreferrer" href="https://elagoht.github.io/AlbumAdvertisementSite">
               <Presentation className="inline" /> See Demo
@@ -91,7 +92,7 @@ export default function Portfolio() {
 
         <Showcase img={img_black_blog}>
           <h1>Black Blog</h1>
-          <p>A blog website with dark/light theme and font face/size settings. It was initially created with PHP but later converted to vanilla HTML, CSS, and JS.</p>
+          <p>Welcome to our blog website, a platform that caters to your reading preferences with its customizable features. This website offers both a dark and light theme, allowing you to immerse yourself in a visually pleasing environment that suits your mood and reading comfort.</p>
           <div className="flex gap-4 max-md:justify-center">
             <a className="button" target="_blank" rel="noreferrer" href="https://elagoht.github.io/BlackBlog">
               <Presentation className="inline" /> See Demo
@@ -119,8 +120,8 @@ export default function Portfolio() {
 
         <Showcase img={img_sudo_mice}>
           <h1>Sudo Mice</h1>
-          <p>A two-player war battle game where we control mice to write codes by jumping on keyboards to summon units and attack the enemy castle.</p>
-          <p>A game inspired by Linux terminal and the sudo command. Note that: sudo does not make your commands "stronger".</p>
+          <p>Get ready for an epic two-player war battle game where you take control of fearless mice, using your coding skills to summon units and lead them into battle against your opponent's castle.</p>
+          <p>In this unique and thrilling game, you'll navigate a battlefield resembling a Linux terminal, with keyboards scattered across the terrain. By jumping on these keyboards, you can unleash powerful commands to summon units and launch attacks on the enemy castle.</p>
           <div className="flex gap-4 max-md:justify-center">
             <a className="button" target="_blank" rel="noreferrer" href="https://elagoht.itch.io/sudo-mice">
               <Gamepad className="inline" /> Play Game

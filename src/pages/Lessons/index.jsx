@@ -37,7 +37,7 @@ export default function Lessons() {
           text: "Resources"
         }]}>
           <h1>Vim Terminal Text Editor Course</h1>
-          <p>Vim is a powerful terminal text editor (and better than nano) that offers various modes and numerous shortcuts. It is the best way to edit source code on remote servers and code on Android.</p>
+          <p>Vim is a powerful terminal text editor (and better than nano) that offers various modes and numerous shortcuts. It is considered the best way to edit source code on remote servers and code on Android.</p>
           <p>I have created a worksheet and supported it with video narration, covering advanced usage, macros, window management, and terminal emulators.</p>
         </Course>
 

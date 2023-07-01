@@ -10,10 +10,10 @@ export default function Texts() {
     </div>
     <h2>Software Developer, Instructor.</h2>
     <p className="max-w-lg text-lg text-neutral-600 dark:text-neutral-400">
-      Since 2012, I design, code, and develop websites,
-      web, desktop, and terminal applications. I also
-      record educational Linux videos and share them on YouTube
-      and Udemy.
+      Since 2012, I have designed, coded, and developed
+      websites; web, desktop, and terminal applications.
+      I also record educational Linux videos and share
+      them on YouTube and Udemy.
     </p>
 
     <p className="text-lg flex gap-2 items-center max-lg:justify-center max-lg:mt-auto">

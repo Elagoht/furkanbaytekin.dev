@@ -11,10 +11,11 @@ const WhoAmI = () => {
       <span className="text-blue-800 dark:text-blue-300"><Lightbulb className="inline" /> Creative </span>
       <span className="text-red-800 dark:text-red-300"><CreativeCommons className="inline" /> Collaborative</span>
     </p>
-    <p className="mb-4">Whenever I interested in a subject, I had created
-      something about it. Web & terminal apps, educative
-      videos, designs, games etc.
-      The biggest examples are in my <a className="text-red-800 dark:text-red-500"
+    <p className="mb-4">
+      Whenever I am interested in a subject, I create something about it,
+      such as web and terminal apps, educational videos, designs, games,
+      and more. The biggest examples of my work can be found on my <a
+        className="text-red-800 dark:text-red-500"
         target="_blank" rel="noreferrer"
         href="https://youtube.com/@herkesicinlinux"
       >Youtube

@@ -21,10 +21,9 @@ const WhatIDo = () => {
       </a>.
     </p>
     <p className="mb-4">
-      My journey has began in 2012. Have designed
-      web sites, produced educational videos and
-      courses, written blogs and resources,
-      developed games.
+      My journey began in 2012. I have designed websites,
+      produced educational videos and courses,
+      written blogs and resources, and developed games.
     </p>
     <Link className="button w-fit mt-auto" to="/portfolio"><FileCode2 />Notable Projects</Link>
   </Paper>
