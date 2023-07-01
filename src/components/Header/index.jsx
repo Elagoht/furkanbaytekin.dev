@@ -23,10 +23,14 @@ export default function Header() {
         setMenu(true)
       }
     })
+    window.addEventListener("orientationchange", () => {
+      setMenu(false)
+    })
+
     // Initialize menu visibility
     setMenu(window.innerWidth > 768)
-  }, [])
 
+  }, [])
 
   return <header>
     <div className="container px-2 flex justify-between items-center">
