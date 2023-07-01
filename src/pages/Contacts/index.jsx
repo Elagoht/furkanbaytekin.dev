@@ -5,7 +5,7 @@ import Contact from "./Contact";
 export default function Contacts() {
   return <Section id="contacts" className="!py-0">
     <div className="container !max-w-screen-lg min-h-screen flex items-center justify-between max-lg:justify-center max-lg:gap-8 max-lg:flex-col-reverse pt-40 pb-20">
-      <div className="content-container">
+      <div className="content-container flex-col max-w-2xl mx-auto">
         <div className="flex-1">
           <div className="text-6xl font-title mb-8">
             Contacts.
@@ -17,7 +17,7 @@ export default function Contacts() {
             contributions.
           </p>
         </div>
-        <div className="flex flex-wrap flex-1 justify-center-center">
+        <div className="flex flex-wrap flex-1 justify-center">
           <Contact color="#2484ca" icon={<Linkedin />} url={"https://linkedin.com/in/furkanbaytekin"}>
             LinkedIn
           </Contact>
