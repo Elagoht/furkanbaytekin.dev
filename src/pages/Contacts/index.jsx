@@ -18,13 +18,13 @@ export default function Contacts() {
           </p>
         </div>
         <div className="flex flex-wrap flex-1 gap-4 justify-around">
-          <Contact color="#2484ca" icon={<Linkedin />} url={"https://linkedin.com/in/furkanbaytekin"}>
+          <Contact color="#2484ca" icon={<Linkedin />} url={"https://linkedin.com/in/furkan-baytekin"}>
             LinkedIn
           </Contact>
-          <Contact color="#24292f" icon={<Github />} url={"https://linkedin.com/in/furkanbaytekin"}>
+          <Contact color="#24292f" icon={<Github />} url={"https://github.com/Elagoht"}>
             Github
           </Contact>
-          <Contact color="#ff4d3d" icon={<Mail />} url={"https://linkedin.com/in/furkanbaytekin"}>
+          <Contact color="#ff4d3d" icon={<Mail />} url={"mailto:furkanbaytekin@gmail.com"}>
             E-mail
           </Contact>
           <Contact color="#1b9cdc" icon={<MessageSquare />} url={"https://t.me/Elagoht"}>
