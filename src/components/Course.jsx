@@ -1,11 +1,11 @@
 import React from 'react'
 
 export default function Course({ children, img, alternate = false, buttons = [] }) {
-  return <div
-    className={"flex gap-12  justify-center items-center max-w-5xl mx-auto py-12 max-lg:text-center max-lg:" + (
+  return <article
+    className={"flex gap-12 justify-center items-center max-w-5xl mx-auto py-12 max-lg:text-center " + (
       alternate
-        ? "flex-col-reverse text-right"
-        : "flex-col"
+        ? "max-lg:flex-col-reverse text-right"
+        : "max-lg:flex-col"
     )}
   >
     {!alternate && <img className="object-cover rounded-full border-4 border-neutral-800 dark:border-neutral-200 bg-neutral-800 dark:bg-neutral-200 aspect-square max-w-sm w-full" src={img} alt="Course Cover" />}
@@ -32,5 +32,5 @@ export default function Course({ children, img, alternate = false, buttons = [] 
     </div>
 
     {alternate && <img className="object-cover rounded-full border-4 border-neutral-800 dark:border-neutral-200 bg-neutral-800 dark:bg-neutral-200 aspect-square max-w-sm w-full" src={img} alt="Course Cover" />}
-  </div >
+  </article >
 }
