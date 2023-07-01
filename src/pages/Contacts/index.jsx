@@ -17,7 +17,7 @@ export default function Contacts() {
             contributions.
           </p>
         </div>
-        <div className="flex flex-wrap flex-1 justify-center">
+        <div className="flex flex-wrap flex-1 gap-4 justify-around">
           <Contact color="#2484ca" icon={<Linkedin />} url={"https://linkedin.com/in/furkanbaytekin"}>
             LinkedIn
           </Contact>

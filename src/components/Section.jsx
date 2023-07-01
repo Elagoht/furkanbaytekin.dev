@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 export default function Section({ children, className = "" }) {
 
   const animation_reduced = window.matchMedia("(prefers-reduced-motion)").matches
+
   return <motion.section
     id="welcome"
     className={"px-8 " + className}

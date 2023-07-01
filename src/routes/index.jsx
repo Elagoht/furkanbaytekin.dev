@@ -6,18 +6,22 @@ import Contacts from "../pages/Contacts";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from "../components/Header"
 import { AnimatePresence } from 'framer-motion';
+import ScrollToTop from "./ScrollToTop"
 
 export default function RouterManager() {
+
   return <BrowserRouter>
     <Header />
     <AnimatePresence mode="wait">
-      <Routes>
-        <Route path="/" element={<Welcome />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/lessons" element={<Lessons />} />
-        <Route path="/contacts" element={<Contacts />} />
-      </Routes>
+      <ScrollToTop>
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/lessons" element={<Lessons />} />
+          <Route path="/contacts" element={<Contacts />} />
+        </Routes>
+      </ScrollToTop>
     </AnimatePresence>
   </BrowserRouter >
 }
