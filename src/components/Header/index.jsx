@@ -36,7 +36,7 @@ export default function Header() {
           <div className={classNames({ "opacity-0": menu })}></div>
           <div className={classNames("origin-bottom-left", { "-rotate-45 translate-y-[3px] translate-x-2": menu })}></div>
         </button>
-        <Link onClick={() => setMenu(false)} to="/" className="font-title font-bold text-3xl h-20 flex items-center px-4">
+        <Link onClick={() => setMenu(false)} to="/" className="font-title font-bold text-3xl max-[360px]:text-2xl h-20 flex items-center px-4">
           Furkan Baytekin
         </Link>
       </div>
