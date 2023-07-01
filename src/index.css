@@ -27,14 +27,24 @@
   header {
     @apply bg-neutral-900 fixed top-0 left-0 right-0 z-50 text-neutral-200 bg-opacity-90 backdrop-blur;
   }
+  header button {
+    @apply flex flex-col gap-[.375rem] w-20 h-20 flex-shrink-0 justify-center items-center -mx-2;
+  }
+  header button div {
+    transition-timing-function: cubic-bezier(.5,-.5,.5,1.5) !important;
+    @apply bg-neutral-200 w-10 h-1 rounded-full transition-all;
+  }
   header nav {
     @apply flex;
   }
-  header nav a {
-    @apply text-neutral-200 font-semibold flex items-center justify-center h-20 px-4 hover:text-neutral-400 transition-colors;
+  header #navbar-con {
+    @apply flex max-md:fixed max-md:top-20 max-md:left-0 max-md:w-full max-md:flex-col max-md:bg-neutral-800 max-md:bg-opacity-80 max-md:backdrop-blur max-md:h-screen max-md:items-center transition-all z-10
   }
-  #nav-social-header a{ 
-    @apply px-2
+  header nav a {
+    @apply text-neutral-200 font-semibold flex items-center justify-center h-20 px-4 hover:text-neutral-400 transition-colors max-md:hover:bg-neutral-200 max-md:hover:bg-opacity-5;
+  }
+  #nav-social-header a { 
+    @apply px-2 max-md:hidden
   }
   .font-title {
     font-family: 'Hind Siliguri', sans-serif;

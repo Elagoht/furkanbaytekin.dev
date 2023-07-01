@@ -2,8 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import "./index.css"
+import MenuContext from "./contexts/MenuContext"
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <App />
+  <MenuContext>
+    <App />
+  </MenuContext>
 )
