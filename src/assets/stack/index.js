@@ -16,6 +16,7 @@ import ico_matplotlib from "./matplotlib.svg"
 import ico_mongo from "./mongo.svg"
 import ico_musescore from "./musescore.svg"
 import ico_mysql from "./mysql.svg"
+import ico_nextjs from "./nextjs.svg"
 import ico_npm from "./npm.svg"
 import ico_numpy from "./numpy.svg"
 import ico_pandas from "./pandas.svg"
@@ -32,6 +33,7 @@ import ico_vim from "./vim.svg"
 
 const tech_icons = [
     { name: "React", icon: ico_react },
+    { name: "Next.js", icon: ico_nextjs },
     { name: "Redux", icon: ico_redux },
     { name: "Spring", icon: ico_spring },
     { name: "Framer", icon: ico_framer },
