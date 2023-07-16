@@ -10,7 +10,7 @@ const ScrollToTop: FC<IChildrenComponent> = ({ children }) => {
         document.documentElement.scrollTo(0, 0)
     }, [location.pathname])
 
-    return children
+    return <>{children}</>
 }
 
 export default ScrollToTop

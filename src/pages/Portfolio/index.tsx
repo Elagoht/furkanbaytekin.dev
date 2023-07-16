@@ -26,7 +26,7 @@ const Portfolio: FC = () => {
         className="flex flex-col gap-16"
         initial="hidden"
         animate="visible"
-        variants={animContainer}
+        variants={animContainer()}
       >
 
         <Showcase img={img_herkesicinlinux}>

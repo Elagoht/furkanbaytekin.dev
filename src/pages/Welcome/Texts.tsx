@@ -10,10 +10,10 @@ const Texts: FC = () => {
     className="flex flex-col gap-4 max-lg:text-center"
     initial="hidden"
     animate="visible"
-    variants={animContainer}
+    variants={animContainer()}
   >
     <motion.div
-      variants={animPosition}
+      variants={animPosition()}
       className="text-6xl font-title"
     >
       Hi! I am
@@ -21,12 +21,12 @@ const Texts: FC = () => {
       Furkan Baytekin.
     </motion.div>
     <motion.h2
-      variants={animPosition}
+      variants={animPosition()}
     >
       Software Developer, Instructor.
     </motion.h2>
     <motion.p
-      variants={animPosition}
+      variants={animPosition()}
       className="max-w-lg text-lg text-neutral-600 dark:text-neutral-400"
     >
       Since 2012, I have designed, coded, and developed
@@ -36,7 +36,7 @@ const Texts: FC = () => {
     </motion.p>
 
     <motion.p
-      variants={animPosition}
+      variants={animPosition()}
       className="text-lg flex gap-2 items-center max-lg:justify-center max-lg:mt-auto"
     >
       <Link className='button' to="about">See more <ArrowRight className="inline" strokeWidth={1.5} /></Link>

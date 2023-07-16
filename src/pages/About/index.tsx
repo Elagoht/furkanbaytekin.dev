@@ -20,7 +20,7 @@ const About: FC = () => {
             className="flex gap-16 flex-col"
             initial="hidden"
             animate="visible"
-            variants={animContainer}
+            variants={animContainer()}
           >
             <div className="flex max-md:flex-col gap-16">
               <WhoAmI />

@@ -14,13 +14,13 @@ const Contacts: FC = () => {
           className="flex-1"
           initial="hidden"
           animate="visible"
-          variants={animContainer}
+          variants={animContainer()}
         >
-          <motion.div variants={animPosition} className="text-6xl font-title mb-8">
+          <motion.div variants={animPosition()} className="text-6xl font-title mb-8">
             Contacts.
           </motion.div>
-          <motion.h1 variants={animPosition}>Keep in touch with me!</motion.h1>
-          <motion.p variants={animPosition}>
+          <motion.h1 variants={animPosition()}>Keep in touch with me!</motion.h1>
+          <motion.p variants={animPosition()}>
             Feel free to message me. I would be appreciate
             especially for messages about open source
             contributions.
@@ -30,7 +30,7 @@ const Contacts: FC = () => {
           className="flex flex-wrap flex-1 gap-4 justify-around"
           initial="hidden"
           animate="visible"
-          variants={animPosition}
+          variants={animPosition()}
         >
           <Contact color="#2484ca" icon={<Linkedin />} url={"https://linkedin.com/in/furkan-baytekin"}>
             LinkedIn

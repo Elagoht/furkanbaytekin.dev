@@ -26,10 +26,10 @@ const Lessons: FC = () => {
           className="flex-1 text-center"
           initial="hidden"
           animate="visible"
-          variants={animContainer}
+          variants={animContainer()}
         >
-          <motion.h2 variants={animPosition}>Wait, wait, wait. I have something to teach you!</motion.h2>
-          <motion.p variants={animPosition}>Do you know that my courses are free and open to everyone at all? Knowledge grows as it is shared.</motion.p>
+          <motion.h2 variants={animPosition()}>Wait, wait, wait. I have something to teach you!</motion.h2>
+          <motion.p variants={animPosition()}>Do you know that my courses are free and open to everyone at all? Knowledge grows as it is shared.</motion.p>
         </motion.article>
       </div>
 

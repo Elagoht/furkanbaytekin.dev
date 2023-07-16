@@ -7,7 +7,7 @@ const Paper: FC<IClassNameProps> = ({ children, className = "" }) => {
 
   return <motion.article
     className={"flex-1 flex flex-col gap-1 " + className}
-    variants={animPosition}
+    variants={animPosition()}
   >
     {children}
   </motion.article>
