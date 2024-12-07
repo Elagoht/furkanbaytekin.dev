@@ -3,6 +3,8 @@ import dictionary from "@/lang"
 import { getProjects } from "@/services/projects"
 import { FC } from "react"
 
+export const revalidate = 3600 // Invalidate cache every hour
+
 const Projects: FC = async () => {
   const projects = await getProjects()
 
@@ -18,8 +20,8 @@ const Projects: FC = async () => {
     <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {projects.sort((a, b) =>
         Number(b.archived) - Number(a.archived)
-        || a.forks - b.forks
         || a.stargazers_count - b.stargazers_count
+        || a.forks - b.forks
         || new Date(a.pushed_at).getTime() - new Date(b.pushed_at).getTime()
       ).reverse(
       ).map(project =>
