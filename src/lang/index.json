@@ -19,5 +19,12 @@
     "title": "Projects",
     "description": "I'm a software developer and I love to create open-source projects. Here are all the projects that I've created or contributed to.",
     "visit": "Visit Project"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Do not hesitate to contact me if you have any questions or just want to say hi. I'll try to get back to you ASAP!",
+    "directMessage": "Direct Message",
+    "email": "Email",
+    "socialMedia": "Social Media"
   }
 }

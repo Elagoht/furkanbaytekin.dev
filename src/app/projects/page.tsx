@@ -1,3 +1,4 @@
+import Content from "@/components/layout/Content"
 import GithubProject from "@/components/pages/projects/GithubProject"
 import dictionary from "@/lang"
 import { getProjects } from "@/services/projects"
@@ -8,15 +9,10 @@ export const revalidate = 3600 // Invalidate cache every hour
 const Projects: FC = async () => {
   const projects = await getProjects()
 
-  return <div>
-    <h1 className="text-4xl font-bold">
-      {dictionary.projects.title}
-    </h1>
-
-    <p className="text-neutral-600 dark:text-neutral-400 mt-4 mb-8 text-xl">
-      {dictionary.projects.description}
-    </p>
-
+  return <Content
+    title={dictionary.projects.title}
+    description={dictionary.projects.description}
+  >
     <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {projects.sort((a, b) =>
         Number(b.archived) - Number(a.archived)
@@ -31,7 +27,7 @@ const Projects: FC = async () => {
         />
       )}
     </ul>
-  </div>
+  </Content>
 }
 
 export default Projects
