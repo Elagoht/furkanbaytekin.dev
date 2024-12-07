@@ -1,0 +1,18 @@
+{
+  "header": {
+    "me": {
+      "name": "Furkan Baytekin",
+      "title": "The Open Sourcerer 🧙‍♂️"
+    },
+    "navbar": {
+      "home": "Home",
+      "blogs": "Blogs",
+      "myBook": "My Book",
+      "whatIListen": "What I Listen",
+      "whatIRead": "What I Read",
+      "about": "About",
+      "projects": "Projects",
+      "contact": "Contact"
+    }
+  }
+}
