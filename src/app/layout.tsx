@@ -16,7 +16,7 @@ const RootLayout: FC<LayoutComponent> = ({
       <div role="presentation">
         <Aside />
 
-        <main className="bg-neutral-50 dark:bg-neutral-900 p-8">
+        <main className="bg-neutral-50 dark:bg-neutral-900 p-8 overflow-y-auto">
           {children}
         </main>
       </div>
