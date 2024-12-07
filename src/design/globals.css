@@ -5,7 +5,7 @@
 @layer components {
   body>div {
     grid-template-columns: 16rem 1fr;
-    @apply grid h-full rounded-3xl overflow-clip shadow-2xl dark:shadow-neutral-900 dark:shadow-lg;
+    @apply grid h-full rounded-3xl overflow-clip shadow-md dark:shadow-neutral-900 dark:shadow-lg;
   }
 
   #me-avatar {
