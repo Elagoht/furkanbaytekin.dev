@@ -15,6 +15,10 @@
       "contact": "Contact"
     }
   },
+  "blogs": {
+    "title": "Blogs",
+    "description": "I love to write about software development, open-source, and my personal experiences. Here are some of the blogs that I've written."
+  },
   "projects": {
     "title": "Projects",
     "description": "I'm a software developer and I love to create open-source projects. Here are all the projects that I've created or contributed to.",
