@@ -7,3 +7,10 @@ type BlogCardData = {
   updatedAt: string
   category: string
 }
+
+type BlogsResponse = {
+  data: BlogCardData[]
+  page: number
+  take: number
+  total: number
+}
