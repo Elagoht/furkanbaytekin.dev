@@ -26,7 +26,6 @@ const BlogCard: FC<BlogCardProps> = ({
   >
     <div className="relative">
       <Image
-        unoptimized
         src={`${process.env.BLOG_API_URL}${blog.cover}`}
         alt={blog.title}
         width={512}
