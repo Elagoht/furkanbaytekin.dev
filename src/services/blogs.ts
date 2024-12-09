@@ -12,3 +12,7 @@ export const getBlogs = (
     skipNulls: true
   })}`
 ).then(response => response.json())
+
+export const getBlog = (slug: string) => ApiCall.get<BlogDocumentData>(
+  `${process.env.BLOG_API_URL}/api/blogs/${slug}`
+).then(response => response.json())

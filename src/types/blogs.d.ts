@@ -8,6 +8,23 @@ type BlogCardData = {
   category: string
 }
 
+type BlogDocumentData = {
+  id: string
+  title: string
+  slug: string
+  content: string
+  keywords: string
+  description: string
+  spot: string
+  cover: string
+  published: boolean
+  createdAt: Date
+  updatedAt: Date
+  readTime: number
+  readCount: number
+  category: string
+}
+
 type BlogsResponse = {
   data: BlogCardData[]
   page: number

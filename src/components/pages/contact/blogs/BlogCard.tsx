@@ -14,14 +14,14 @@ const BlogCard: FC<BlogCardProps> = ({
   blog, layout = "grid"
 }) =>
   <Link
-    href={`/blogs/edit/${blog.slug}`}
+    href={`/blogs/${blog.slug}`}
     className={classNames(
-      "p-2 bg-neutral-50 dark:bg-neutral-800",
+      "bg-neutral-50 dark:bg-neutral-800",
       "flex rounded-lg shadow transition-all overflow-clip",
       "hover:ring-2 hover:ring-offset-2 ring-secondary-500",
       "ring-offset-neutral-50 dark:ring-offset-neutral-900", {
       "flex-col gap-1": layout === "grid",
-      "gap-2 max-lg:flex-col": layout === "list"
+      "gap-1 max-lg:flex-col": layout === "list"
     })}
   >
     <div className="relative">
@@ -31,9 +31,11 @@ const BlogCard: FC<BlogCardProps> = ({
         width={512}
         height={288}
         className={classNames(
-          "rounded-lg bg-neutral-200 dark:bg-neutral-700 aspect-video", {
+          "aspect-video rounded-t-lg rounded-b-none h-full object-cover",
+          "bg-neutral-200 dark:bg-neutral-700", {
           "w-full": layout === "grid",
-          "max-lg:w-full lg:max-w-64": layout === "list"
+          "max-lg:w-full lg:max-w-64": layout === "list",
+          "lg:rounded-l-lg lg:rounded-r-none": layout === "list"
         })}
       />
 
@@ -46,7 +48,7 @@ const BlogCard: FC<BlogCardProps> = ({
     </div>
 
     <div className={classNames(
-      "grow flex flex-col", {
+      "grow flex flex-col p-2", {
       "gap-1": layout === "grid"
     })}>
       <h2 className={classNames(
