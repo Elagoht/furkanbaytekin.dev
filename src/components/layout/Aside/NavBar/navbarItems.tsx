@@ -37,10 +37,6 @@ export const navbarItems: Array<{
   icon: <IconBrandGit size={24} />,
   href: "/projects"
 }, {
-  key: "about",
-  icon: <IconInfoCircle size={24} />,
-  href: "/about"
-}, {
   key: "contact",
   icon: <IconAt size={24} />,
   href: "/contact"
