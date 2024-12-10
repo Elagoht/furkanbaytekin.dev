@@ -17,10 +17,10 @@ const BlogsPage: FC<PageComponent> = async ({
 
   if (page < 1) redirect("/blog")
 
-  const { data: blogs, total, take } = await getBlogs(
-    page < 1 ? 1 : page,
-    magnifier.string("search")
-  )
+  const { data: blogs, total, take } = await getBlogs({
+    page: page < 1 ? 1 : page,
+    search: magnifier.string("search")
+  })
 
   if (
     page * take > total! + take

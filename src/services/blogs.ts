@@ -1,16 +1,13 @@
 import ApiCall from "@/utility/ApiCall"
 import QueryString from "qs"
 
-export const getBlogs = (
-  page: number = 1,
-  search: string | undefined = undefined,
-  type: "card" | "list" = "card",
-) => ApiCall.get<BlogsResponse>(
+export const getBlogs = ({
+  page = 1,
+  take = 6,
+  search = ""
+}) => ApiCall.get<BlogsResponse>(
   `${process.env.BLOG_API_URL}/api/blogs?${QueryString.stringify({
-    search,
-    type,
-    page,
-    take: 6
+    search, page, take
   }, {
     skipNulls: true
   })}`
