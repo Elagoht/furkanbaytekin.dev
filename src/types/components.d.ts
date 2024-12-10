@@ -4,9 +4,5 @@ type PageComponent<Context = object> = {
 }
 
 type ParentComponent<T = object> = {
-  children: ReactNode
+  children: React.ReactNode
 } & T
-
-type RootLayoutComponent = ParentComponent
-
-type LayoutComponent = PageComponent & RootLayoutComponent

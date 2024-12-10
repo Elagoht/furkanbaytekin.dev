@@ -4,7 +4,7 @@ import classNames from "classnames"
 import { DM_Sans as DMSans } from "next/font/google"
 import { FC } from "react"
 
-const RootLayout: FC<LayoutComponent> = ({
+const RootLayout: FC<ParentComponent> = ({
   children
 }) =>
   <html lang="en">
