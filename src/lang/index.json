@@ -17,7 +17,15 @@
   },
   "blogs": {
     "title": "Blogs",
-    "description": "I love to write about software development, open-source, and my personal experiences. Here are some of the blogs that I've written."
+    "description": "I love to write about software development, open-source, and my personal experiences. Here are some of the blogs that I've written.",
+    "empty": {
+      "title": "No Blogs Found",
+      "description": "I'm sorry but there are no blogs found. Please check back later."
+    },
+    "search": {
+      "placeholder": "Search Blogs",
+      "submit": "Search"
+    }
   },
   "projects": {
     "title": "Projects",
