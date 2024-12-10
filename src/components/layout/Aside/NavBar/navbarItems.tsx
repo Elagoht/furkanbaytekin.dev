@@ -1,8 +1,7 @@
 import dictionary from "@/lang"
 import {
   IconAt, IconBook, IconBook2, IconBrandGit,
-  IconContract, IconHome, IconInfoCircle,
-  IconMusic
+  IconContract, IconHome, IconMusic
 } from "@tabler/icons-react"
 import { ReactElement } from "react"
 
