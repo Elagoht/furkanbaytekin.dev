@@ -21,10 +21,6 @@ const MainPage: FC = () => {
       course on Udemy to share my knowledge.
     </p>
 
-    <h2>
-      My Tech Stack Over the Years
-    </h2>
-
     <TechStack />
   </Content>
 }

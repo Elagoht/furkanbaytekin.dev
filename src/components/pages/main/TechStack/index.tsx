@@ -1,7 +1,15 @@
 import Image from "next/image"
 import { FC } from "react"
 
-const TechStack: FC = () =>
+const TechStack: FC = () => <>
+  <h2 className="mb-2">
+    My Tech Stack Over the Years
+  </h2>
+
+  <blockquote>
+    I usually ask recruiters which one is a Pokemon.
+  </blockquote>
+
   <ul className="flex flex-col p-0">
     {Object.entries(techStack).map(([year, techs]) =>
       <li
@@ -41,6 +49,8 @@ const TechStack: FC = () =>
       </li>
     )}
   </ul>
+</>
+
 
 const techStack: Record<number, Array<[string, string]>> = {
   2012: [
@@ -80,6 +90,7 @@ const techStack: Record<number, Array<[string, string]>> = {
     ["Seaborn", "Statistical data visualization"],
     ["R", "Used on an Erasmus+ project for data analysis"],
     ["Django", "Second try for my own blog, this time with Django"],
+    ["Jinja2", "Favorite templating engine after React Server Components"],
     ["Kdenlive", "Video editing for my YouTube channel"],
     ["Inkscape", "Logo design and vector graphics for my channel"],
     ["Audacity", "Audio editing for my channel, also used for a theater show"],
@@ -94,6 +105,7 @@ const techStack: Record<number, Array<[string, string]>> = {
     ["Express.js", "First backend project with Express"],
     ["Sass", "Used for a project, but I prefer vanilla CSS"],
     ["Pug", "Simple Pythonlike syntax for HTML"],
+    ["Piplup", "First steps in pixel art"],
     ["Styled Components", "Hated it, but had to use it in a legacy project"],
     ["MongoDB", "Still prefer SQL, but used for a project"],
     ["Bootstrap 5", "I hate it, every site using it looks the same"],
