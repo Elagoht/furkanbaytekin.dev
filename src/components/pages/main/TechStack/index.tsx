@@ -10,7 +10,7 @@ const TechStack: FC = () => <>
     I usually ask recruiters which one is a Pokemon.
   </blockquote>
 
-  <ul className="flex flex-col p-0">
+  <ul className="flex flex-col p-0 prose-base">
     {Object.entries(techStack).map(([year, techs]) =>
       <li
         key={year}
@@ -18,13 +18,18 @@ const TechStack: FC = () => <>
       >
         <h3 className="m-0">{year}</h3>
 
-        <ul className="flex flex-col gap-2 m-0 p-0">
+        <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3
+          gap-4 p-0"
+        >
           {techs.map(([tech, description]) =>
             <li
               key={tech}
-              className="flex items-center gap-2 m-0 p-0"
+              className="flex m-0 p-0 rounded-lg
+              bg-neutral-200 dark:bg-neutral-800 shadow"
             >
-              <figure className="bg-white rounded-full p-2 m-0 shrink-0">
+              <figure className="bg-white rounded-l-lg p-2 m-0 shrink-0
+                aspect-square grid place-items-center w-20 h-20"
+              >
                 <Image
                   alt={tech}
                   src={`/assets/icons/stack/${tech
@@ -32,16 +37,18 @@ const TechStack: FC = () => <>
                     .replace(/[^a-z1-9]/g, "")
                     }.svg`
                   }
-                  width={32}
-                  height={32}
-                  className="m-0 aspect-square object-contain "
+                  width={64}
+                  height={64}
+                  className="m-0 aspect-square object-contain rounded"
                 />
               </figure>
 
-              <div className="flex flex-col leading-tight">
+              <div className="flex flex-col justify-start h-full
+                leading-tight gap-1 p-2 w-full"
+              >
                 <strong>{tech}</strong>
 
-                <em>{description}</em>
+                <em className="line-clamp-2">{description}</em>
               </div>
             </li>
           )}
@@ -88,7 +95,6 @@ const techStack: Record<number, Array<[string, string]>> = {
     ["Pandas", "Data manipulation and analysis"],
     ["Matplotlib", "Data visualization used over students' data"],
     ["Seaborn", "Statistical data visualization"],
-    ["R", "Used on an Erasmus+ project for data analysis"],
     ["Django", "Second try for my own blog, this time with Django"],
     ["Jinja2", "Favorite templating engine after React Server Components"],
     ["Kdenlive", "Video editing for my YouTube channel"],
@@ -97,6 +103,7 @@ const techStack: Record<number, Array<[string, string]>> = {
     ["Node.js", "First steps in backend development"]
   ],
   2022: [
+    ["R", "Used on an Erasmus+ project for data analysis"],
     ["React.js", "Made a teacher a frontend developer"],
     ["Vite.js", "Ditched Create React App for Vite"],
     ["Tailwind CSS", "Winner of my hate but my everyday tool"],
