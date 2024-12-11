@@ -10,7 +10,9 @@ class Rainbow {
     this.image = image
   }
 
-  getDominantColor = async (): Promise<CSSProperties["backgroundColor"]> => {
+  getDominantColor = async (): Promise<NonNullable<
+    CSSProperties["backgroundColor"]>
+  > => {
     const imagePath = path.join(process.cwd(), "public", this.image)
     const buffer = await sharp(fs.readFileSync(
       imagePath
@@ -29,7 +31,7 @@ class Rainbow {
 
   getColorPalette = async (
     paletteSize: number = 5
-  ): Promise<CSSProperties["backgroundColor"][]> => {
+  ): Promise<NonNullable<CSSProperties["backgroundColor"]>[]> => {
     const imagePath = path.join(process.cwd(), "public", this.image)
 
     const buffer = await sharp(fs.readFileSync(
@@ -61,7 +63,9 @@ class Rainbow {
     return colors
   }
 
-  getComplementaryColor = async (): Promise<CSSProperties["backgroundColor"]> => {
+  getComplementaryColor = async (): Promise<NonNullable<
+    CSSProperties["backgroundColor"]>
+  > => {
     const imagePath = path.join(process.cwd(), "public", this.image)
     const buffer = await sharp(fs.readFileSync(
       imagePath
@@ -82,7 +86,9 @@ class Rainbow {
     return `rgb(${complementaryR}, ${complementaryG}, ${complementaryB})`
   }
 
-  getContrastColor = async (): Promise<CSSProperties["backgroundColor"]> => {
+  getContrastColor = async (): Promise<NonNullable<
+    CSSProperties["backgroundColor"]>
+  > => {
     const dominantColor = await this.getDominantColor()
     if (!dominantColor) throw new Error("Dominant color is undefined")
 

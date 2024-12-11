@@ -1,6 +1,5 @@
-import Rainbow from "@/utility/Rainbow"
-import Image from "next/image"
 import { FC } from "react"
+import StackItem from "./StackItem"
 
 const TechStack: FC = () => <>
   <h2 className="mb-2">
@@ -20,61 +19,15 @@ const TechStack: FC = () => <>
         <h3 className="m-0">{year}</h3>
 
         <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3
-          gap-4 p-0"
+          gap-4 gap-y-8 p-0"
         >
-          {techs.map(async ([tech, description]) => {
-            const filePath = `/assets/icons/stack/${tech
-              .toLowerCase()
-              .replace(/[^a-z1-9]/g, "")
-              }.svg`
-
-            const rainbow = new Rainbow(filePath)
-
-            return <li
+          {techs.map(([tech, description]) =>
+            <StackItem
               key={tech}
-              className="flex m-0 p-0 rounded-lg shadow"
-              style={{
-                backgroundColor: await rainbow.getDominantColor()
-              }}
-            >
-              <figure className="bg-white p-2 m-0 shrink-0 rounded-l-lg
-                aspect-square grid place-items-center w-20 h-20"
-              >
-                <Image
-                  alt={tech}
-                  src={filePath}
-                  width={64}
-                  height={64}
-                  className="m-0 aspect-square object-contain rounded"
-                />
-              </figure>
-
-              <div
-                className="flex flex-col justify-start h-full
-                leading-tight gap-1 p-2 w-full relative"
-              >
-                <div className="bg-gradient-to-t from-black to-transparent
-                  absolute inset-0 opacity-20 rounded-r-lg"
-                />
-
-                <strong
-                  className="relative"
-                  style={{
-                    color: (await rainbow.getContrastColor())
-                  }}
-                >
-                  {tech}
-                </strong>
-
-                <em
-                  className="line-clamp-2 relative"
-                  style={{
-                    color: (await rainbow.getContrastColor())
-                  }}
-                >{description}</em>
-              </div>
-            </li>
-          })}
+              tech={tech}
+              description={description}
+            />
+          )}
         </ul>
       </li>
     )}
