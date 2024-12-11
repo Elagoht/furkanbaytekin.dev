@@ -1,3 +1,4 @@
+import Rainbow from "@/utility/Rainbow"
 import Image from "next/image"
 import { FC } from "react"
 
@@ -21,43 +22,64 @@ const TechStack: FC = () => <>
         <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3
           gap-4 p-0"
         >
-          {techs.map(([tech, description]) =>
-            <li
+          {techs.map(async ([tech, description]) => {
+            const filePath = `/assets/icons/stack/${tech
+              .toLowerCase()
+              .replace(/[^a-z1-9]/g, "")
+              }.svg`
+
+            const rainbow = new Rainbow(filePath)
+
+            return <li
               key={tech}
-              className="flex m-0 p-0 rounded-lg
-              bg-neutral-200 dark:bg-neutral-800 shadow"
+              className="flex m-0 p-0 rounded-lg shadow"
+              style={{
+                backgroundColor: await rainbow.getDominantColor()
+              }}
             >
-              <figure className="bg-white rounded-l-lg p-2 m-0 shrink-0
+              <figure className="bg-white p-2 m-0 shrink-0 rounded-l-lg
                 aspect-square grid place-items-center w-20 h-20"
               >
                 <Image
                   alt={tech}
-                  src={`/assets/icons/stack/${tech
-                    .toLowerCase()
-                    .replace(/[^a-z1-9]/g, "")
-                    }.svg`
-                  }
+                  src={filePath}
                   width={64}
                   height={64}
                   className="m-0 aspect-square object-contain rounded"
                 />
               </figure>
 
-              <div className="flex flex-col justify-start h-full
-                leading-tight gap-1 p-2 w-full"
+              <div
+                className="flex flex-col justify-start h-full
+                leading-tight gap-1 p-2 w-full relative"
               >
-                <strong>{tech}</strong>
+                <div className="bg-gradient-to-t from-black to-transparent
+                  absolute inset-0 opacity-20 rounded-r-lg"
+                />
 
-                <em className="line-clamp-2">{description}</em>
+                <strong
+                  className="relative"
+                  style={{
+                    color: (await rainbow.getContrastColor())
+                  }}
+                >
+                  {tech}
+                </strong>
+
+                <em
+                  className="line-clamp-2 relative"
+                  style={{
+                    color: (await rainbow.getContrastColor())
+                  }}
+                >{description}</em>
               </div>
             </li>
-          )}
+          })}
         </ul>
       </li>
     )}
   </ul>
 </>
-
 
 const techStack: Record<number, Array<[string, string]>> = {
   2012: [
