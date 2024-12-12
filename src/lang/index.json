@@ -8,8 +8,6 @@
       "home": "Home",
       "blogs": "Blogs",
       "myBook": "My Book",
-      "whatIListen": "What I Listen",
-      "whatIRead": "What I Read",
       "projects": "Projects",
       "contact": "Contact"
     }
@@ -26,6 +24,10 @@
       "submit": "Search"
     }
   },
+  "myBook": {
+    "title": "My Book Will Be Here Soon! 📚",
+    "description": "I'm currently working on my book. It will be a guide for beginners who want to learn Linux. I'm planning to publish it in the first quarter of 2025. Stay tuned!"
+  },
   "projects": {
     "title": "Projects",
     "description": "I'm a software developer and I love to create open-source projects. Here are all the projects that I've created or contributed to.",
@@ -37,5 +39,9 @@
     "directMessage": "Direct Message",
     "email": "Email",
     "socialMedia": "Social Media"
+  },
+  "404": {
+    "title": "404 - Page Not Found",
+    "description": "Oops! The page you are looking for does not exist. Please check the URL and try again."
   }
 }
