@@ -18,8 +18,8 @@ type BlogDocumentData = {
   spot: string
   cover: string
   published: boolean
-  createdAt: Date
-  updatedAt: Date
+  createdAt: string
+  updatedAt: string
   readTime: number
   readCount: number
   category: string
