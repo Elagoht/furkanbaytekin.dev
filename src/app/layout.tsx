@@ -1,5 +1,7 @@
+import Schema from "@/components/analytics/Schema"
 import Aside from "@/components/layout/Aside"
 import "@/design/globals.css"
+import Blueprint from "@/utility/Blueprint"
 import classNames from "classnames"
 import { Metadata } from "next"
 import { DM_Sans as DMSans } from "next/font/google"
@@ -22,6 +24,8 @@ const RootLayout: FC<ParentComponent> = ({
         </main>
       </div>
     </body>
+
+    <Schema schema={Blueprint.ofMe()} />
   </html>
 
 const font = DMSans({
@@ -35,15 +39,15 @@ export const metadata: Metadata = {
   abstract: "Furkan Baytekin's web book",
   keywords: ["furkan", "baytekin", "web", "book", "blog", "portfolio", "developer", "programmer", "programming", "musician", "music", "bass guitarist", "music recommendation", "frontend", "backend", "fullstack", "software", "web development"],
   alternates: {
-    canonical: "https://furkanbaytekin.dev",
+    canonical: process.env.HOST_URL,
     languages: {
-      "en": "https://furkanbaytekin.dev",
+      en: process.env.HOST_URL,
     }
   },
   applicationName: "Furkan Baytekin",
   authors: [{
     name: "Furkan Baytekin",
-    url: "https://furkanbaytekin.dev"
+    url: process.env.HOST_URL
   }],
   category: "personal blog",
   creator: "Furkan Baytekin",
@@ -75,7 +79,7 @@ export const metadata: Metadata = {
     type: "image/png"
   }],
   manifest: "/site.webmanifest",
-  metadataBase: new URL("https://furkanbaytekin.dev"),
+  metadataBase: new URL(process.env.HOST_URL!),
   publisher: "Furkan Baytekin",
   referrer: "origin",
   robots: {
@@ -93,16 +97,22 @@ export const metadata: Metadata = {
     title: "Furkan Baytekin",
     creatorId: "furkanbytekin",
     siteId: "furkanbytekin",
-    description: "Furkan Baytekin's corner on the web. A place to share my thoughts and experiences, If you care."
+    description: "Furkan Baytekin's corner on the web. A place to share my thoughts and experiences, If you care.",
+    images: [{
+      url: `${process.env.HOST_URL}/opengraph-image`,
+      width: 1200,
+      height: 630,
+      alt: "Furkan Baytekin's corner on the web. A place to share my thoughts and experiences, If you care."
+    }]
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://furkanbaytekin.dev",
+    url: process.env.HOST_URL,
     title: "Furkan Baytekin",
     description: "Furkan Baytekin's corner on the web. A place to share my thoughts and experiences, If you care.",
     images: [{
-      url: "https://furkanbaytekin.dev/og-image.png",
+      url: `${process.env.HOST_URL}/opengraph-image`,
       width: 1200,
       height: 630,
       alt: "Furkan Baytekin's corner on the web. A place to share my thoughts and experiences, If you care."
