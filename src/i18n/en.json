@@ -12,7 +12,8 @@
     "twitter": "@furkanbaytekin",
     "job": "Software Developer",
     "birthday": "2000-19-03",
-    "gender": "Male"
+    "gender": "Male",
+    "github": "Elagoht"
   },
   "pages": {
     "common": {
@@ -68,7 +69,9 @@
         "description": "Furkan Baytekin's personal projects that he developed and published on GitHub publicly."
       },
       "title": "Projects",
-      "description": "The projects I've developed for you. Some of them may be useful."
+      "description": "The projects I've developed for you. Some of them may be useful.",
+      "visit": "Visit Website",
+      "sourceCode": "Source Code"
     },
     "contact": {
       "metadata": {
