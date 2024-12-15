@@ -19,7 +19,7 @@ const BlogSuggestionCard: FC<BlogListData> = (blog) => {
       shrink-0 w-16"
     />
 
-    <h3 className="line-clamp-2 m-0 text-base">
+    <h3 className="line-clamp-2 font-medium">
       {blog.title}
     </h3>
   </Link>

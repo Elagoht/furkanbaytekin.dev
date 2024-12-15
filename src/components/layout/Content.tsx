@@ -9,8 +9,7 @@ const Content: FC<ContentProps> = ({
   children, blueprint
 }) => {
   return <>
-    <main className="mx-auto max-w-screen-lg p-4 prose
-    dark:prose-invert prose-neutral"
+    <main className="mx-auto max-w-screen-lg p-4"
     >
       {children}
     </main>

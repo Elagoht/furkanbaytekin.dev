@@ -1,5 +1,6 @@
 import Content from "@/components/layout/Content"
-import BlogSuggestionCard from "@/components/pages/main/BlogSuggestionCard"
+import Hero from "@/components/layout/Hero"
+import BlogSuggestions from "@/components/pages/main/BlogSuggestions"
 import BluePrint from "@/utilities/BluePrint"
 import Dictate from "@/utilities/Dictionary"
 import Drawer from "@/utilities/Drawer"
@@ -12,28 +13,21 @@ const MainPage: FC = async () => {
 
   const blueprint = new BluePrint(dictionary).owner()
 
-  return <Content blueprint={blueprint}>
-    <h1>
-      {dictionary.pages.main.title}
-    </h1>
+  return <>
+    <Hero>
+      <h1>
+        {dictionary.pages.main.title}
+      </h1>
 
-    <p>
-      {dictionary.pages.main.description}
-    </p>
+      <p>
+        {dictionary.pages.main.description}
+      </p>
+    </Hero>
 
-    <section>
-      <h2 className="mb-4">
-        {dictionary.pages.main.suggestedBlogPosts}
-      </h2>
-
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {blogs.map(blog => <BlogSuggestionCard
-          key={blog.slug}
-          {...blog}
-        />)}
-      </div>
-    </section>
-  </Content>
+    <Content blueprint={blueprint}>
+      <BlogSuggestions blogs={blogs} />
+    </Content>
+  </>
 }
 
 export default MainPage
