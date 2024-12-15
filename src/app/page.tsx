@@ -1,3 +1,5 @@
+import Schema from "@/components/layout/Schema"
+import BluePrint from "@/utilities/BluePrint"
 import Dictate from "@/utilities/Dictionary"
 import Drawer from "@/utilities/Drawer"
 import { FC } from "react"
@@ -7,19 +9,25 @@ const MainPage: FC = async () => {
 
   const blogs = await Drawer.getBlogPosts()
 
-  return <main className="mx-auto max-w-screen-lg p-4 prose dark:prose-invert prose-neutral">
-    <h1>
-      {dictionary.pages.main.title}
-    </h1>
+  const blueprint = new BluePrint(dictionary).owner()
 
-    <p>
-      {dictionary.pages.main.description}
-    </p>
+  return <>
+    <main className="mx-auto max-w-screen-lg p-4 prose dark:prose-invert prose-neutral">
+      <h1>
+        {dictionary.pages.main.title}
+      </h1>
 
-    <pre>
-      {JSON.stringify(blogs, null, 2)}
-    </pre>
-  </main>
+      <p>
+        {dictionary.pages.main.description}
+      </p>
+
+      <pre>
+        {JSON.stringify(blogs, null, 2)}
+      </pre>
+    </main>
+
+    <Schema blueprint={blueprint} />
+  </>
 }
 
 export default MainPage

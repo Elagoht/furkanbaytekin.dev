@@ -1,4 +1,5 @@
 import { BlogPosting, Person, WithContext } from "schema-dts"
+import Environment from "../Environment"
 
 class BluePrint {
   private dictionary: Dictionary
@@ -14,13 +15,13 @@ class BluePrint {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       headline: blogPost.title,
-      url: new URL(`/blogs/${blogPost.slug}`, process.env.HOST_URL).toString(),
+      url: new URL(`/blogs/${blogPost.slug}`, Environment.HOST_URL).toString(),
       dateCreated: blogPost.createdAt,
       datePublished: blogPost.createdAt,
       dateModified: blogPost.updatedAt,
       abstract: blogPost.spot,
       description: blogPost.description,
-      image: new URL(blogPost.cover, process.env.BLOG_API_URL).toString(),
+      image: new URL(blogPost.cover, Environment.CMS_API_URL).toString(),
       inLanguage: this.dictionary.metadata.lang,
       about: blogPost.category,
       keywords: blogPost.keywords.split(","),
@@ -29,7 +30,7 @@ class BluePrint {
       articleBody: blogPost.content,
       associatedMedia: {
         "@type": "ImageObject",
-        url: `${process.env.BLOG_API_URL}${blogPost.cover}`
+        url: `${Environment.CMS_API_URL}${blogPost.cover}`
       },
       author: this.owner(),
       publisher: {
@@ -38,7 +39,7 @@ class BluePrint {
       },
       mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": `${process.env.HOST_URL}/blog/${blogPost.slug}`
+        "@id": `${Environment.HOST_URL}/blog/${blogPost.slug}`
       },
       contentRating: "7+",
       contributor: {
@@ -71,8 +72,8 @@ class BluePrint {
       "@context": "https://schema.org",
       "@type": "Person",
       name: this.dictionary.metadata.author,
-      url: process.env.HOST_URL,
-      image: new URL("/assets/images/me.png", process.env.HOST_URL).toString(),
+      url: Environment.HOST_URL,
+      image: new URL("/assets/images/me.png", Environment.HOST_URL).toString(),
       sameAs: [
         "https://x.com/furkanbytekin",
         "http://github.com/Elagoht",

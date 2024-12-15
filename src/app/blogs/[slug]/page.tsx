@@ -1,3 +1,6 @@
+import Schema from "@/components/layout/Schema"
+import BluePrint from "@/utilities/BluePrint"
+import Dictate from "@/utilities/Dictionary"
 import Drawer from "@/utilities/Drawer"
 import { FC } from "react"
 
@@ -12,11 +15,17 @@ const BlogDocumentPage: FC<BlogDocumentPageProps> = async ({
 
   const blog = await Drawer.getBlogPost(slug)
 
-  return <main className="mx-auto max-w-screen-lg p-4 prose dark:prose-invert prose-neutral">
-    <pre>
-      {JSON.stringify(blog, null, 2)}
-    </pre>
-  </main>
+  const blueprint = new BluePrint(Dictate.en).ofBlogPost(blog)
+
+  return <>
+    <main className="mx-auto max-w-screen-lg p-4 prose dark:prose-invert prose-neutral">
+      <pre>
+        {JSON.stringify(blog, null, 2)}
+      </pre>
+    </main>
+
+    <Schema blueprint={blueprint} />
+  </>
 }
 
 export default BlogDocumentPage
