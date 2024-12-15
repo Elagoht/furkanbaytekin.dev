@@ -1,4 +1,5 @@
 import BlogPosts from "@/components/common/BlogPosts"
+import SearchBox from "@/components/common/SearchBox"
 import Content from "@/components/layout/Content"
 import Hero from "@/components/layout/Hero"
 import Collection from "@/utilities/Collection"
@@ -51,6 +52,11 @@ const BlogCategoryPage: FC<BlogCategoryPageProps> = async ({
           category: categoryData.name
         })} {Collection.getBlogCountOfCategoryDescription(category)}
       </p>
+
+      <SearchBox
+        pathname={`/blogs/${category}`}
+        searchParams={magnifier.toObject()}
+      />
     </Hero>
 
     <Content blueprint={{
