@@ -1,0 +1,45 @@
+#article {
+  @apply prose dark:prose-invert prose-h1:text-4xl prose-h1:mt-0 prose-h1:mb-4 prose-h2:text-3xl prose-h2:mt-0 prose-h2:mb-4 prose-h3:text-2xl prose-h3:mt-0 prose-h3:mb-4 prose-h4:text-xl prose-h4:mt-0 prose-h4:mb-4 prose-h5:text-lg prose-h5:mt-0 prose-h5:mb-4 prose-h6:text-lg prose-h6:mt-0 prose-h6:mb-4 prose-h6:italic prose-p:my-2 prose-img:my-4 prose-ul:my-4 prose-ol:my-4 prose-pre:my-4 prose-p:mb-4 w-full max-w-none prose-hr:border-fedora-800 prose-hr:dark:border-fedora-200 text-fedora-700 dark:text-fedora-300;
+}
+
+img {
+  @apply rounded-lg;
+}
+
+pre:has(code) {
+  @apply !p-0 !rounded-xl !bg-transparent shadow;
+}
+
+
+mark {
+  @apply bg-pinky-500 bg-opacity-75 text-pinky-50 p-1 rounded;
+}
+
+.code-container {
+  @apply mx-auto;
+}
+
+.code-lang {
+  @apply leading-none font-mono;
+}
+
+.prose h1 a,
+.prose h2 a,
+.prose h3 a,
+.prose h4 a,
+.prose h5 a,
+.prose h6 {
+  @apply !no-underline;
+}
+
+.code-header {
+  @apply bg-fedora-200 dark:bg-fedora-800 text-fedora-900 dark:text-fedora-100 select-none items-center justify-between flex pl-4 p-2 rounded-t shadow-inner;
+}
+
+.code-copy {
+  @apply p-2 bg-fedora-300 hover:bg-fedora-400 dark:bg-fedora-800 dark:hover:bg-fedora-700 transition-colors rounded leading-none;
+}
+
+hr {
+  @apply border-none w-full h-px bg-gradient-to-r from-transparent via-fedora-300 dark:via-fedora-500 to-transparent !m-0 !my-8;
+}
