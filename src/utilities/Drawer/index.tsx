@@ -20,6 +20,18 @@ class Drawer {
     })
   }
 
+  public static getBlogPostsByCategory = async (
+    category: string,
+    page: number = 1,
+    take: number = 12
+  ) => {
+    return Drawer.getBlogsResponse({
+      category,
+      page: page.toString(),
+      take: take.toString()
+    })
+  }
+
   public static getBlogSuggestions = async () => {
     return Drawer.getBlogsResponse<BlogListData>({
       page: "1",

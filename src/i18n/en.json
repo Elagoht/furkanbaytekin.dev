@@ -32,6 +32,17 @@
         "description": "The blog post you are looking for hasn't been written yet."
       }
     },
+    "blogCategories": {
+      "metadata": {
+        "title": "{{ category }} - Category of Blog Posts",
+        "description": "Furkan Baytekin's blog posts in the {{ category }} category. You can find all the blog posts in this category."
+      },
+      "title": "{{ category }} Category",
+      "description": "The blog posts I've written for you in the {{ category }} category.",
+      "countZero": "There are no blog posts in the {{ category }} category.",
+      "countSingular": "Here are total of 1 blog posts.",
+      "countPlural": "Here are total of {{ count }} blog posts."
+    },
     "projects": {
       "metadata": {
         "title": "My Projects Published on GitHub",
