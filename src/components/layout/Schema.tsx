@@ -2,7 +2,7 @@ import Script from 'next/script'
 import { FC } from 'react'
 import { BlogPosting, Person, WithContext } from 'schema-dts'
 
-type SchemaProps = {
+export type SchemaProps = {
   blueprint: WithContext<Person | BlogPosting>
 }
 
