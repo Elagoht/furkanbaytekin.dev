@@ -3,6 +3,7 @@ import Content from "@/components/layout/Content"
 import Hero from "@/components/layout/Hero"
 import Dictate from "@/utilities/Dictionary"
 import Drawer from "@/utilities/Drawer"
+import Environment from "@/utilities/Environment"
 import Magnifier from "@/utilities/Magnifier"
 import { FC } from "react"
 
@@ -16,7 +17,7 @@ const BlogPostsPage: FC<PageComponent> = async ({
   const search = magnifier.string("search", "")
 
   const { data: blogs, total, take } = await Drawer.getBlogPosts(
-    page, 6, search
+    page, Environment.PAGINATE_BY, search
   )
 
   return <>

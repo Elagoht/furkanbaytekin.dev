@@ -1,5 +1,6 @@
 import QueryString from "qs"
 import ApiCall from "../ApiCall"
+import Environment from "../Environment"
 
 class Drawer {
   public static getBlogPost = async (slug: BlogCardData["slug"]) => {
@@ -10,7 +11,7 @@ class Drawer {
 
   public static getBlogPosts = async (
     page: number = 1,
-    take: number = 6,
+    take: number = Environment.PAGINATE_BY,
     search: string = ""
   ) => {
     return Drawer.getBlogsResponse({
@@ -23,7 +24,7 @@ class Drawer {
   public static getBlogPostsByCategory = async (
     category: string,
     page: number = 1,
-    take: number = 6
+    take: number = Environment.PAGINATE_BY,
   ) => {
     return Drawer.getBlogsResponse({
       category,
