@@ -1,4 +1,5 @@
 import BlogPosts from "@/components/common/BlogPosts"
+import SearchBox from "@/components/common/SearchBox"
 import Content from "@/components/layout/Content"
 import Hero from "@/components/layout/Hero"
 import Dictate from "@/utilities/Dictionary"
@@ -35,6 +36,11 @@ const BlogPostsPage: FC<PageComponent> = async ({
       <p>
         {dictionary.pages.blogs.description}
       </p>
+
+      <SearchBox
+        pathname="/blogs"
+        searchParams={magnifier.toObject()}
+      />
     </Hero>
 
     <Content blueprint={{
