@@ -25,8 +25,16 @@ type BlogDocumentData = {
   category: string
 }
 
-type BlogsResponse = {
-  data: BlogCardData[]
+type BlogListData = {
+  id: string
+  slug: string
+  title: string
+  cover: string
+  category: string
+}
+
+type BlogsResponse<Type = BlogCardData> = {
+  data: Type[]
   page: number
   take: number
   total: number

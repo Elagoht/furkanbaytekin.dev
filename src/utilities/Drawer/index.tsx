@@ -13,14 +13,20 @@ class Drawer {
     take: number = 12,
     search: string = ""
   ) => {
-    return ApiCall.get<BlogsResponse>(
-      `/api/blogs${QueryString.stringify({
-        page, take, search
-      }, {
-        addQueryPrefix: true,
-        skipNulls: true
-      })}`
-    ).then((res) => res.json())
+    return Drawer.getBlogsResponse({
+      page: page.toString(),
+      take: take.toString(),
+      search
+    })
+  }
+
+  public static getBlogSuggestions = async () => {
+    return Drawer.getBlogsResponse<BlogListData>({
+      page: "1",
+      take: "3",
+      sort: "newest",
+      type: "list"
+    })
   }
 
   /**
@@ -28,11 +34,26 @@ class Drawer {
    * the blog pages during build time
    */
   public static getBlogSlugs = async () => {
-    const { data } = await Drawer.getBlogPosts(1, -1)
+    const { data } = await Drawer.getBlogsResponse<BlogListData>({
+      page: "1",
+      take: "-1",
+      type: "list"
+    })
 
     return data.map(blog => ({
       slug: blog.slug
     }))
+  }
+
+  private static getBlogsResponse = async <Type = BlogCardData>(
+    query: Record<string, string>
+  ) => {
+    return ApiCall.get<BlogsResponse<Type>>(
+      `/api/blogs${QueryString.stringify(query, {
+        addQueryPrefix: true,
+        skipNulls: true
+      })}`
+    ).then((res) => res.json())
   }
 }
 
