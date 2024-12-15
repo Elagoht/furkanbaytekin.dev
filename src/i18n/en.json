@@ -50,7 +50,7 @@
       "description": "The blog posts I've written for you in the {{ category }} category.",
       "count": {
         "zero": "There are no blog posts in the {{ category }} category.",
-        "singular": "Here are total of 1 blog posts.",
+        "singular": "Here is total of 1 blog posts.",
         "plural": "Here are total of {{ count }} blog posts."
       }
     },
