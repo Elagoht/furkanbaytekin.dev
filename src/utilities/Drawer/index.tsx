@@ -10,7 +10,7 @@ class Drawer {
 
   public static getBlogPosts = async (
     page: number = 1,
-    take: number = 12,
+    take: number = 6,
     search: string = ""
   ) => {
     return Drawer.getBlogsResponse({
@@ -23,7 +23,7 @@ class Drawer {
   public static getBlogPostsByCategory = async (
     category: string,
     page: number = 1,
-    take: number = 12
+    take: number = 6
   ) => {
     return Drawer.getBlogsResponse({
       category,

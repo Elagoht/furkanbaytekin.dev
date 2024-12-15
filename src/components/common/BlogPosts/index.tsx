@@ -1,13 +1,16 @@
 import Dictate from "@/utilities/Dictionary"
 import { FC } from "react"
 import BlogPostCard from "./BlogPostCard"
+import Pagination from "../Pagination"
 
 type BlogPostsProps = {
   blogs: BlogCardData[]
+  searchParams: Record<string, string | undefined>
+  totalPages: number
 }
 
 const BlogPosts: FC<BlogPostsProps> = ({
-  blogs
+  blogs, searchParams, totalPages
 }) => {
   const dictionary = Dictate.en
 
@@ -24,6 +27,12 @@ const BlogPosts: FC<BlogPostsProps> = ({
         />
       )}
     </div>
+
+    <Pagination
+      pathname="/blogs"
+      totalPages={totalPages}
+      searchParams={searchParams}
+    />
   </section>
 }
 

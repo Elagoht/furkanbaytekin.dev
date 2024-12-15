@@ -3,12 +3,21 @@ import Content from "@/components/layout/Content"
 import Hero from "@/components/layout/Hero"
 import Dictate from "@/utilities/Dictionary"
 import Drawer from "@/utilities/Drawer"
+import Magnifier from "@/utilities/Magnifier"
 import { FC } from "react"
 
-const BlogPostsPage: FC<PageComponent> = async () => {
-  const { data: blogs } = await Drawer.getBlogPosts()
-
+const BlogPostsPage: FC<PageComponent> = async ({
+  searchParams
+}) => {
   const dictionary = Dictate.en
+  const magnifier = new Magnifier(await searchParams)
+
+  const page = magnifier.number("page", 1)
+  const search = magnifier.string("search", "")
+
+  const { data: blogs, total, take } = await Drawer.getBlogPosts(
+    page, 6, search
+  )
 
   return <>
     <Hero>
@@ -27,7 +36,11 @@ const BlogPostsPage: FC<PageComponent> = async () => {
       "headline": dictionary.pages.blogCategories.title,
       "description": dictionary.pages.blogCategories.description
     }}>
-      <BlogPosts blogs={blogs} />
+      <BlogPosts
+        blogs={blogs}
+        searchParams={magnifier.toObject()}
+        totalPages={Math.ceil(total / take)}
+      />
     </Content>
   </>
 }
