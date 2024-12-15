@@ -14,8 +14,8 @@ const RootLayout: FC<ParentComponent> = ({
     className="text-lg"
   >
     <body className={classNames(
-      "antialiased bg-neutral-100 text-neutral-900",
-      "dark:bg-neutral-900 dark:text-neutral-100",
+      "antialiased bg-fedora-100 text-fedora-900",
+      "dark:bg-fedora-900 dark:text-fedora-100",
       font.className
     )}>
       {children}
