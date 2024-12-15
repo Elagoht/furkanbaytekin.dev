@@ -12,7 +12,7 @@ const BlogSuggestions: FC<BlogSuggestionsProps> = ({
   const dictionary = Dictate.en
 
   return <section>
-    <h2 className="mb-4">
+    <h2 className="mb-4 text-xl font-bold">
       {dictionary.pages.main.suggestedBlogPosts}
     </h2>
 
