@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "Furkan Baytekin",
+    "identity": "The Open Sourcerer 🧙🏻‍♂️",
+    "description": "Furkan Baytekin's corner on the web. A place to share my thoughts and experiences, If you care.",
+    "author": "Furkan Baytekin",
+    "email": "furkanbaytekin@gmail.com",
+    "keywords": "furkan, baytekin, web, book, blog, portfolio, developer, programmer, programming, musician, music, bass guitarist, music recommendation, frontend, backend, fullstack, software, web development",
+    "lang": "en",
+    "abstract": "Furkan Baytekin's web book",
+    "category": "personal blog",
+    "twitter": "@furkanbaytekin"
+  },
+  "pages": {
+    "main": {
+      "title": "I'm Furkan Baytekin",
+      "description": "I'm a Software Developer who has an educational background, so I can teach you how to code. I also describe myself as an open sourcerer. I play the bass guitar and keen on reading books. I obsessed with vinyl records and retro stuff (to get away from the software for a bit)."
+    },
+    "blogs": {
+      "metadata": {
+        "title": "Blog Posts - Written with love",
+        "description": "Furkan Baytekin's personal blog posts."
+      },
+      "title": "Blog Posts",
+      "description": "The blog posts I've written for you.",
+      "404": {
+        "title": "404",
+        "description": "The blog post you are looking for hasn't been written yet."
+      }
+    },
+    "projects": {
+      "metadata": {
+        "title": "My Projects Published on GitHub",
+        "description": "Furkan Baytekin's personal projects that he developed and published on GitHub publicly."
+      },
+      "title": "Projects",
+      "description": "The projects I've developed for you. Some of them may be useful."
+    },
+    "contact": {
+      "metadata": {
+        "title": "Contact Me - I'm Always Open",
+        "description": "Furkan Baytekin's contact information. You can contact him via the following methods."
+      },
+      "title": "Contact Me",
+      "description": "Feel free to contact me. I'm always open to new people and ideas, or just a chat."
+    },
+    "myBook": {
+      "metadata": {
+        "title": "Linux For Everyone - My Book",
+        "description": "Furkan Baytekin's book that he wrote and published, which is about Linux and a project related to his previous project named Linux For Everyone."
+      },
+      "title": "My Book",
+      "description": "I've written a book for you. You can read it online or download it as a PDF."
+    }
+  }
+}
