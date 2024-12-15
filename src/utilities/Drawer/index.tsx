@@ -1,6 +1,7 @@
 import QueryString from "qs"
 import ApiCall from "../ApiCall"
 import Environment from "../Environment"
+import Message from "../Message"
 
 class Drawer {
   public static getBlogPost = async (slug: BlogCardData["slug"]) => {
@@ -60,6 +61,24 @@ class Drawer {
     }))
   }
 
+  public static getReadTimeMessage = (
+    content: BlogDocumentData["content"],
+    dictionary: Dictionary
+  ) => {
+    const amount = Drawer.getBlogReadTime(content)
+
+    switch (true) {
+      case amount < 1:
+        return dictionary.pages.blog.readTime.lessThanOne
+      case amount === 1:
+        return dictionary.pages.blog.readTime.one
+      default:
+        return Message.format(dictionary.pages.blog.readTime.moreThanOne, {
+          amount
+        })
+    }
+  }
+
   private static getBlogsResponse = async <Type = BlogCardData>(
     query: Record<string, string>
   ) => {
@@ -69,6 +88,12 @@ class Drawer {
         skipNulls: true
       })}`
     ).then((res) => res.json())
+  }
+
+  private static getBlogReadTime = (content: BlogDocumentData["content"]) => {
+    const wordsPerMinute = 200
+    const words = content.split(/\s+/g).length
+    return Math.ceil(words / wordsPerMinute)
   }
 }
 

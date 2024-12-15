@@ -54,6 +54,13 @@
         "plural": "Here are total of {{ count }} blog posts."
       }
     },
+    "blog": {
+      "readTime": {
+        "lessThanOne": "Less than a minute",
+        "one": "1 minute",
+        "moreThanOne": "{{ amount }} minutes"
+      }
+    },
     "projects": {
       "metadata": {
         "title": "My Projects Published on GitHub",
