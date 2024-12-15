@@ -1,7 +1,9 @@
+import BlogCategories from "@/components/common/BlogCategories"
 import BlogPosts from "@/components/common/BlogPosts"
 import SearchBox from "@/components/common/SearchBox"
 import Content from "@/components/layout/Content"
 import Hero from "@/components/layout/Hero"
+import Collection from "@/utilities/Collection"
 import Dictate from "@/utilities/Dictionary"
 import Drawer from "@/utilities/Drawer"
 import Environment from "@/utilities/Environment"
@@ -26,6 +28,8 @@ const BlogPostsPage: FC<PageComponent> = async ({
 
   if (page < 1) redirect("/blogs")
   if (page > totalPages) redirect(`/blogs?page=${totalPages}`)
+
+  const categories = await Collection.getCategories()
 
   return <>
     <Hero>
@@ -54,6 +58,8 @@ const BlogPostsPage: FC<PageComponent> = async ({
         searchParams={magnifier.toObject()}
         totalPages={totalPages}
       />
+
+      <BlogCategories categories={categories} />
     </Content>
   </>
 }
