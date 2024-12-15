@@ -5,6 +5,7 @@ import "@/design/globals.css"
 import { Metadata, Viewport } from "next"
 import Environment from "@/utilities/Environment"
 import Dictate from "@/utilities/Dictionary"
+import Header from "@/components/layout/Header"
 
 const RootLayout: FC<ParentComponent> = ({
   children
@@ -15,9 +16,11 @@ const RootLayout: FC<ParentComponent> = ({
   >
     <body className={classNames(
       "antialiased bg-fedora-100 text-fedora-900",
-      "dark:bg-fedora-900 dark:text-fedora-100",
+      "dark:bg-fedora-900 dark:text-fedora-100 mt-20",
       font.className
     )}>
+      <Header />
+
       {children}
     </body>
   </html>
