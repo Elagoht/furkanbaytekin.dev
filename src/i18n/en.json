@@ -9,7 +9,10 @@
     "lang": "en",
     "abstract": "Furkan Baytekin's web book",
     "category": "personal blog",
-    "twitter": "@furkanbaytekin"
+    "twitter": "@furkanbaytekin",
+    "job": "Software Developer",
+    "birthday": "2000-19-03",
+    "gender": "Male"
   },
   "pages": {
     "main": {
