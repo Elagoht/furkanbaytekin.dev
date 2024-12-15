@@ -16,7 +16,7 @@ const HeaderLogo: FC = () => {
         className="rounded-full"
       />
 
-      <figcaption className="text-center text-2xl py-4 max-md:hidden">
+      <figcaption className="text-center text-xl lg:text-2xl py-4 max-md:hidden">
         {dictionary.metadata.title}
       </figcaption>
     </figure>

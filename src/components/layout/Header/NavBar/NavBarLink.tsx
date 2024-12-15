@@ -17,7 +17,7 @@ const NavBarLink: FC<NavBarLinkProps> = ({
   >
     {icon}
 
-    <span className="max-md:hidden">
+    <span className="max-sm:hidden">
       {title}
     </span>
   </Link>

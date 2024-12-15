@@ -12,7 +12,7 @@ const RootLayout: FC<ParentComponent> = ({
 }) => {
   return <html
     lang="en"
-    className="text-lg"
+    className="lg:text-lg"
   >
     <body className={classNames(
       "antialiased bg-fedora-100 text-fedora-900",
