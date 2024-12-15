@@ -5,6 +5,7 @@ import Dictate from "@/utilities/Dictionary"
 import Drawer from "@/utilities/Drawer"
 import Environment from "@/utilities/Environment"
 import Magnifier from "@/utilities/Magnifier"
+import { redirect } from "next/navigation"
 import { FC } from "react"
 
 const BlogPostsPage: FC<PageComponent> = async ({
@@ -16,9 +17,14 @@ const BlogPostsPage: FC<PageComponent> = async ({
   const page = magnifier.number("page", 1)
   const search = magnifier.string("search", "")
 
-  const { data: blogs, total, take } = await Drawer.getBlogPosts(
+  const { data: blogs, total } = await Drawer.getBlogPosts(
     page, Environment.PAGINATE_BY, search
   )
+
+  const totalPages = Math.ceil(total / Environment.PAGINATE_BY)
+
+  if (page < 1) redirect("/blogs")
+  if (page > totalPages) redirect("/blogs?page=" + totalPages)
 
   return <>
     <Hero>
@@ -40,7 +46,7 @@ const BlogPostsPage: FC<PageComponent> = async ({
       <BlogPosts
         blogs={blogs}
         searchParams={magnifier.toObject()}
-        totalPages={Math.ceil(total / take)}
+        totalPages={totalPages}
       />
     </Content>
   </>

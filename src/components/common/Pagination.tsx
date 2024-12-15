@@ -27,9 +27,10 @@ const Pagination: FC<PaginationProps> = ({
   const createPageUrl = (page: number) =>
     `${pathname}${QueryString.stringify({
       ...searchParams,
-      [pageParam]: page
+      [pageParam]: page > 1 ? page : null
     }, {
-      addQueryPrefix: true
+      addQueryPrefix: true,
+      skipNulls: true
     })}`
 
   const pageNumbers = (() => {
