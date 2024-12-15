@@ -25,11 +25,13 @@ class Drawer {
     category: string,
     page: number = 1,
     take: number = Environment.PAGINATE_BY,
+    search: string = ""
   ) => {
     return Drawer.getBlogsResponse({
       category,
       page: page.toString(),
-      take: take.toString()
+      take: take.toString(),
+      search
     })
   }
 

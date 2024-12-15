@@ -24,7 +24,7 @@ const BlogPostsPage: FC<PageComponent> = async ({
   const totalPages = Math.ceil(total / Environment.PAGINATE_BY)
 
   if (page < 1) redirect("/blogs")
-  if (page > totalPages) redirect("/blogs?page=" + totalPages)
+  if (page > totalPages) redirect(`/blogs?page=${totalPages}`)
 
   return <>
     <Hero>

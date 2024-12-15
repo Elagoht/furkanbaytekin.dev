@@ -5,12 +5,13 @@ import Pagination from "../Pagination"
 
 type BlogPostsProps = {
   blogs: BlogCardData[]
+  category?: string
   searchParams: Record<string, string | undefined>
   totalPages: number
 }
 
 const BlogPosts: FC<BlogPostsProps> = ({
-  blogs, searchParams, totalPages
+  blogs, category, searchParams, totalPages
 }) => {
   const dictionary = Dictate.en
 
@@ -29,7 +30,10 @@ const BlogPosts: FC<BlogPostsProps> = ({
     </div>
 
     <Pagination
-      pathname="/blogs"
+      pathname={category
+        ? `/blogs/${category}`
+        : "/blogs"
+      }
       totalPages={totalPages}
       searchParams={searchParams}
     />
