@@ -5,7 +5,7 @@ import { FC } from "react"
 
 const BlogSuggestionCard: FC<BlogListData> = (blog) => {
   return <Link
-    href={`/blogs/${blog.slug}`}
+    href={`/blogs/${blog.category}/${blog.slug}`}
     className="bg-fedora-50 dark:bg-fedora-950 rounded-lg p-2 gap-2
     no-underline text-fedora-950 dark:text-fedora-50 flex items-center
     transition-all hover:shadow-md"
