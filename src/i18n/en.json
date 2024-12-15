@@ -22,7 +22,8 @@
         "zero": "No posts",
         "singular": "1 post",
         "plural": "{{ count }} posts"
-      }
+      },
+      "search": "Search..."
     },
     "main": {
       "title": "It's Me, Furkan Baytekin",

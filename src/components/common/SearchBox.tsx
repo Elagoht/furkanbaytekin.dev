@@ -1,3 +1,4 @@
+import Dictate from "@/utilities/Dictionary"
 import { IconZoom } from "@tabler/icons-react"
 import QueryString from "qs"
 import { FC } from "react"
@@ -12,6 +13,7 @@ const SearchBox: FC<SearchBoxProps> = ({
   pathname, searchParams, queryParameterName = "search"
 }) => {
   const currentSearch = searchParams[queryParameterName] || ""
+  const dictionary = Dictate.en
 
   return <form
     method="GET"
@@ -25,6 +27,7 @@ const SearchBox: FC<SearchBoxProps> = ({
       type="search"
       name={queryParameterName}
       defaultValue={currentSearch}
+      placeholder={dictionary.pages.common.search}
       className="grow border bg-fedora-200 dark:bg-fedora-800
       text-fedora-800 dark:text-fedora-200 border-fedora-300
       dark:border-fedora-700 rounded-full px-4 py-2 focus:outline-none
