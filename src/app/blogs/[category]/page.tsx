@@ -1,3 +1,4 @@
+import BlogPosts from "@/components/common/BlogPosts"
 import Content from "@/components/layout/Content"
 import Hero from "@/components/layout/Hero"
 import Collection from "@/utilities/Collection"
@@ -33,7 +34,7 @@ const BlogCategoryPage: FC<BlogCategoryPageProps> = async ({
         {Message.format(
           dictionary.pages.blogCategories.description, {
           category: categoryData.name
-        })}
+        })} {Collection.getBlogCountOfCategoryDescription(category)}
       </p>
     </Hero>
 
@@ -42,16 +43,14 @@ const BlogCategoryPage: FC<BlogCategoryPageProps> = async ({
       "@type": "BlogPosting",
       "headline": Message.format(
         dictionary.pages.blogCategories.title, {
-        category: category
+        category
       }),
       "description": Message.format(
         dictionary.pages.blogCategories.description, {
         category: categoryData.name
       })
     }}>
-      <pre>
-        {JSON.stringify(blogs, null, 2)}
-      </pre>
+      <BlogPosts blogs={blogs} />
     </Content>
   </>
 }

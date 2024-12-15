@@ -15,6 +15,15 @@
     "gender": "Male"
   },
   "pages": {
+    "common": {
+      "blogCategories": "Blog Categories",
+      "blogs": "Blogs",
+      "count": {
+        "zero": "No posts",
+        "singular": "1 post",
+        "plural": "{{ count }} posts"
+      }
+    },
     "main": {
       "title": "It's Me, Furkan Baytekin",
       "description": "I'm a Software Developer who has an educational background, so I can teach you how to code. I also describe myself as an open sourcerer. I play the bass guitar and keen on reading books. I obsessed with vinyl records and retro stuff (to get away from the software for a bit).",
@@ -39,9 +48,11 @@
       },
       "title": "{{ category }} Category",
       "description": "The blog posts I've written for you in the {{ category }} category.",
-      "countZero": "There are no blog posts in the {{ category }} category.",
-      "countSingular": "Here are total of 1 blog posts.",
-      "countPlural": "Here are total of {{ count }} blog posts."
+      "count": {
+        "zero": "There are no blog posts in the {{ category }} category.",
+        "singular": "Here are total of 1 blog posts.",
+        "plural": "Here are total of {{ count }} blog posts."
+      }
     },
     "projects": {
       "metadata": {
