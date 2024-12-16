@@ -79,7 +79,10 @@
         "description": "Furkan Baytekin's contact information. You can contact him via the following methods."
       },
       "title": "Contact Me",
-      "description": "Feel free to contact me. I'm always open to new people and ideas, or just a chat."
+      "description": "Feel free to contact me. I'm always open to new people and ideas, or just a chat.",
+      "directMessage": "Direct Message",
+      "socialMedia": "Social Media",
+      "email": "Send Email"
     },
     "myBook": {
       "metadata": {
