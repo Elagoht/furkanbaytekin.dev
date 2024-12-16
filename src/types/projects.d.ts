@@ -16,3 +16,10 @@ type GithubProject = {
     name: string
   }
 }
+
+/**
+ * Used properties cherry-picked from the Github API response
+ */
+type GithubProfile = {
+  public_repos: number
+}

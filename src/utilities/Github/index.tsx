@@ -1,30 +1,29 @@
-import QueryString from "qs"
 import ApiCall from "../ApiCall"
-import Environment from "../Environment"
 import Dictate from "../Dictionary"
+import Environment from "../Environment"
 
 class Github {
-  private static readonly username = Dictate.en.metadata.github
+  public static readonly username = Dictate.en.metadata.github
 
   public static getTotalProjectCount = async (): Promise<number> => {
-    return ApiCall.get<{ public_repos: number }>(
-      `https://api.github.com/users/${Github.username}`
-    ).then(response => response.json()
-    ).then(data => Number(data.public_repos)
-    ).then(count => Math.ceil(count / Environment.PAGINATE_BY))
+    const profile = await ApiCall.get<GithubProfile>(
+      `${Environment.HOST_URL}/api/github/user`
+    ).then(response => response.json())
+
+    return profile.public_repos
   }
 
-  public static getAllProjects = async (
+  public static getProjects = async (
     page: number = 1
   ): Promise<GithubProject[]> => {
-    return await ApiCall.get<GithubProject[]>(
-      `https://api.github.com/users/${Github.username
-      }/repos?${QueryString.stringify({
-        page,
-        sort: "pushed",
-        per_page: Environment.PAGINATE_BY
-      })}`
+    const projects = await ApiCall.get<GithubProject[]>(
+      `${Environment.HOST_URL}/api/github/projects`
     ).then(response => response.json())
+
+    return projects?.slice?.(
+      (page - 1) * Environment.PAGINATE_BY,
+      page * Environment.PAGINATE_BY
+    ) ?? []
   }
 }
 

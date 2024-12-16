@@ -10,7 +10,7 @@ const ProjectsPage: FC<PageComponent> = async ({
   const magnifier = new Magnifier(await searchParams)
   const page = magnifier.number("page", 1)
 
-  const projects = await Github.getAllProjects(page)
+  const projects = await Github.getProjects(page)
   const total = await Github.getTotalProjectCount()
 
   return <Content blueprint={{
