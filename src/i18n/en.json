@@ -70,6 +70,11 @@
       },
       "title": "Blog Posts",
       "description": "The blog posts I've written for you.",
+      "search": {
+        "noResults": "No blog posts found with the keyword '{{ search }}'.",
+        "results": "Here are the blog posts found with the keyword '{{ search }}'.",
+        "back": "Go back"
+      },
       "404": {
         "title": "404",
         "description": "The blog post you are looking for hasn't been written yet.",

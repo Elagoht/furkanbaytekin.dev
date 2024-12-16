@@ -1,6 +1,7 @@
 import BlogCategories from "@/components/common/BlogCategories"
 import BlogPosts from "@/components/common/BlogPosts"
 import SearchBox from "@/components/common/SearchBox"
+import Container from "@/components/layout/Container"
 import Content from "@/components/layout/Content"
 import Hero from "@/components/layout/Hero"
 import BluePrint from "@/utilities/BluePrint"
@@ -9,7 +10,10 @@ import Dictate from "@/utilities/Dictionary"
 import Drawer from "@/utilities/Drawer"
 import Environment from "@/utilities/Environment"
 import Magnifier from "@/utilities/Magnifier"
+import Message from "@/utilities/Message"
 import Meta from "@/utilities/Meta"
+import { IconChevronLeft } from "@tabler/icons-react"
+import Link from "next/link"
 import { redirect } from "next/navigation"
 import { FC } from "react"
 
@@ -28,12 +32,10 @@ const BlogPostsPage: FC<PageComponent> = async ({
 
   const totalPages = Math.ceil(total / Environment.PAGINATE_BY)
 
-  if (page < 1) redirect("/blogs")
-  if (page > totalPages) redirect(`/blogs?page=${totalPages}`)
-
-  const categories = await Collection.getCategories()
-
-  const blueprint = new BluePrint(dictionary).blogPosts()
+  if (total > 0) {
+    if (page < 1) redirect("/blogs")
+    if (page > totalPages) redirect(`/blogs?page=${totalPages}`)
+  }
 
   return <>
     <Hero>
@@ -51,15 +53,36 @@ const BlogPostsPage: FC<PageComponent> = async ({
       />
     </Hero>
 
-    <Content blueprint={blueprint}>
-      <BlogPosts
-        blogs={blogs}
-        searchParams={magnifier.toObject()}
-        totalPages={totalPages}
-      />
+    {(total === 0 && search)
+      ? <Container className="grow flex flex-col  gap-4
+        justify-center items-center"
+      >
+        <h2>
+          {Message.format(dictionary.pages.blogs.search.noResults, {
+            search
+          })}
+        </h2>
 
-      <BlogCategories categories={categories} />
-    </Content>
+        <Link
+          href="/blogs"
+          className="flex items-center gap-2 text-pinky-500"
+        >
+          <IconChevronLeft />
+
+          {dictionary.pages.blogs.search.back}
+        </Link>
+      </Container>
+
+      : <Content blueprint={new BluePrint(dictionary).blogPosts()}>
+        <BlogPosts
+          blogs={blogs}
+          searchParams={magnifier.toObject()}
+          totalPages={totalPages}
+        />
+
+        <BlogCategories categories={await Collection.getCategories()} />
+      </Content>
+    }
   </>
 }
 
