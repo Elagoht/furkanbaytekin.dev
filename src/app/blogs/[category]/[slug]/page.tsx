@@ -6,6 +6,7 @@ import BluePrint from "@/utilities/BluePrint"
 import Dictate from "@/utilities/Dictionary"
 import Drawer from "@/utilities/Drawer"
 import Picture from "@/utilities/Picture"
+import Printer from "@/utilities/Printer"
 import TypeWriter from "@/utilities/Typewriter"
 import { IconCalendarFilled, IconClock } from "@tabler/icons-react"
 import Image from "next/image"
@@ -23,6 +24,8 @@ const BlogDocumentPage: FC<BlogDocumentPageProps> = async ({
   const blog = await Drawer.getBlogPost(slug)
 
   const blueprint = new BluePrint(Dictate.en).ofBlogPost(blog)
+
+  Printer.info(`Revalidating blog post: ${slug}`)
 
   return <>
     <Hero>
@@ -62,14 +65,6 @@ const BlogDocumentPage: FC<BlogDocumentPageProps> = async ({
           }
         </span>
       </div>
-
-      <div className="flex flex-wrap gap-2 mt-2">
-        {blog.keywords.split(",").map((keyword, index) =>
-          <span key={index} className="text-sm text-fedora-500">
-            #{keyword.trim()}
-          </span>
-        )}
-      </div>
     </Hero>
 
     <Content blueprint={blueprint}>
@@ -82,5 +77,7 @@ const BlogDocumentPage: FC<BlogDocumentPageProps> = async ({
     </Content>
   </>
 }
+
+export const generateStaticParams = Drawer.getBlogSlugs
 
 export default BlogDocumentPage

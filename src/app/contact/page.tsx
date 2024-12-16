@@ -1,6 +1,7 @@
 import Content from "@/components/layout/Content"
 import Hero from "@/components/layout/Hero"
 import ContactLinks from "@/components/pages/contact/ContactLinks"
+import Collection from "@/utilities/Collection"
 import Dictate from "@/utilities/Dictionary"
 import {
   IconBrandGithub, IconBrandLinkedin, IconBrandReddit,
@@ -21,7 +22,12 @@ const ContactPage = () => {
       </p>
     </Hero >
 
-    <Content>
+    <Content blueprint={{
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: dictionary.pages.contact.title,
+      description: dictionary.pages.contact.metadata.description
+    }}>
       <ContactLinks
         title={dictionary.pages.contact.directMessage}
         items={[{
@@ -64,5 +70,7 @@ const ContactPage = () => {
     </Content>
   </>
 }
+
+export const generateStaticParams = Collection.getCategorySlugs
 
 export default ContactPage

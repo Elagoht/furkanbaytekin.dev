@@ -7,15 +7,6 @@ class Message {
     (_, key) => String(values[key]) || `{{ ${key} }}`
   ) : message
 
-  public static shortenSurname = (
-    surname: string
-  ) => {
-    const [first, ...rest] = surname.split(" ")
-    return `${first} ${rest.map(
-      name => `${name[0].toUpperCase()}.`
-    ).join("")}`
-  }
-
   public static truncate(
     text: string,
     maxLength: number,

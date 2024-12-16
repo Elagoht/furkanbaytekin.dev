@@ -1,5 +1,5 @@
 import Guardian, { GuardianError } from "@/utilities/Guardian"
-import { revalidateTag } from "next/cache"
+import { revalidatePath, revalidateTag } from "next/cache"
 import { NextRequest } from "next/server"
 
 export const PATCH = (
@@ -9,6 +9,7 @@ export const PATCH = (
     const action = new Guardian(request.headers).askIntention()
 
     revalidateTag(action)
+    revalidatePath("/")
 
     return Response.json({
       message: `Webhook received, revalidation for ${action} tag fired`

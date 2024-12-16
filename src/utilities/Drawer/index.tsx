@@ -59,6 +59,7 @@ class Drawer {
     })
 
     return data.map(blog => ({
+      category: blog.category,
       slug: blog.slug
     }))
   }

@@ -1,1 +1,1 @@
-type WebhookActionType = "blog"
+type WebhookActionType = "blogs"

@@ -7,5 +7,3 @@ type CategoryData = {
   keywords: string
   spot: string
 }
-
-type CategorySlugs = string[]

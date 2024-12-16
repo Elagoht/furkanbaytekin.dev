@@ -34,7 +34,7 @@ class Guardian {
   }
 
   private static readonly ACTIONS: WebhookActionType[] = [
-    "blog"
+    "blogs"
   ]
 }
 

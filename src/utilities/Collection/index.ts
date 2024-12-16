@@ -13,9 +13,11 @@ class Collection {
       .then((res) => res.json())
   }
 
-  public static getCategorySlugs = async (): Promise<CategorySlugs> => {
+  public static getCategorySlugs = async () => {
     const categories = await Collection.getCategories()
-    return categories.map(category => (category.slug))
+    return categories.map(category => ({
+      category: category.slug
+    }))
   }
 
   public static getBlogCountOfCategoryDescription = async (
