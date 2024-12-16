@@ -40,7 +40,7 @@ class TrafficSign {
 
   private static canBeFoundOn: [string, string][] = [
     ["/home", "/"],
-    ["/blog/:path*", "/blogs:path*"],
+    ["/blog/:path*", "/blogs/:path*"],
   ]
 
   private static rewrites: [string, string][] = []
