@@ -122,9 +122,9 @@ class BluePrint {
       "@context": "https://schema.org",
       "@type": "Book",
       name: this.dictionary.pages.myBook.title,
-      url: new URL("/my-book", Environment.HOST_URL).toString(),
+      url: new URL("/book", Environment.HOST_URL).toString(),
       image: new URL(
-        "/my-book/opengraph-image",
+        "/book/opengraph-image",
         Environment.HOST_URL
       ).toString(),
       inLanguage: "Turkish"

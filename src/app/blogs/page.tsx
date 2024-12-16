@@ -9,6 +9,7 @@ import Dictate from "@/utilities/Dictionary"
 import Drawer from "@/utilities/Drawer"
 import Environment from "@/utilities/Environment"
 import Magnifier from "@/utilities/Magnifier"
+import Meta from "@/utilities/Meta"
 import { redirect } from "next/navigation"
 import { FC } from "react"
 
@@ -60,6 +61,10 @@ const BlogPostsPage: FC<PageComponent> = async ({
       <BlogCategories categories={categories} />
     </Content>
   </>
+}
+
+export const generateMetadata = () => {
+  return Meta.data("/blogs", Dictate.en)
 }
 
 export default BlogPostsPage

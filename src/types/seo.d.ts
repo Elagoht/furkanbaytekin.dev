@@ -1,1 +1,1 @@
-type SitePaths = "/" | "/blogs" | "/projects" | "/contact" | "/my-book"
+type SitePaths = "/" | "/blogs" | "/projects" | "/contact" | "/book"

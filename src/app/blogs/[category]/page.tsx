@@ -9,6 +9,7 @@ import Drawer from "@/utilities/Drawer"
 import Environment from "@/utilities/Environment"
 import Magnifier from "@/utilities/Magnifier"
 import Message from "@/utilities/Message"
+import Meta from "@/utilities/Meta"
 import { redirect } from "next/navigation"
 import { FC } from "react"
 
@@ -71,6 +72,10 @@ const BlogCategoryPage: FC<BlogCategoryPageProps> = async ({
       />
     </Content>
   </>
+}
+
+export const generateMetadata = () => {
+  return Meta.data("/blogs", Dictate.en)
 }
 
 export default BlogCategoryPage

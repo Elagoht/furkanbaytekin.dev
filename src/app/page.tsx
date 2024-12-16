@@ -6,6 +6,7 @@ import BluePrint from "@/utilities/BluePrint"
 import Collection from "@/utilities/Collection"
 import Dictate from "@/utilities/Dictionary"
 import Drawer from "@/utilities/Drawer"
+import Meta from "@/utilities/Meta"
 import { FC } from "react"
 
 const MainPage: FC = async () => {
@@ -33,6 +34,10 @@ const MainPage: FC = async () => {
       <BlogCategories categories={categories} />
     </Content>
   </>
+}
+
+export const generateMetadata = () => {
+  return Meta.data("/", Dictate.en)
 }
 
 export default MainPage

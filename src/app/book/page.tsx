@@ -2,6 +2,7 @@ import Content from "@/components/layout/Content"
 import Hero from "@/components/layout/Hero"
 import BluePrint from "@/utilities/BluePrint"
 import Dictate from "@/utilities/Dictionary"
+import Meta from "@/utilities/Meta"
 import { IconAlarm } from "@tabler/icons-react"
 import { FC } from "react"
 
@@ -42,6 +43,10 @@ const MyBookPage: FC = () => {
       </section>
     </Content>
   </>
+}
+
+export const generateMetadata = () => {
+  return Meta.data("/book", Dictate.en)
 }
 
 export default MyBookPage

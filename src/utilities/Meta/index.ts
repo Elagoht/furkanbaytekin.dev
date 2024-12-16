@@ -10,7 +10,7 @@ class Meta {
   public static readonly MIN_DESCRIPTION_LENGTH = 70
   public static readonly MAX_SPOT_LENGTH = 150
 
-  public blogData(
+  public static blogData(
     blog: BlogDocumentData
   ): Metadata {
     const title = Message.truncate(
@@ -108,29 +108,42 @@ class Meta {
       alternates: {
         // Self-referencing canonical URL is a good practice
         canonical: `${Environment.HOST_URL}/${path}`
-      }
+      },
+      openGraph: {
+        title: Meta.pathMetadataMaps(dictionary)[path].title!,
+        description: Meta.pathMetadataMaps(dictionary)[path].description!,
+        type: "website",
+        images: [{
+          url: `${Environment.HOST_URL}/${path}/opengraph-image`,
+          width: 1200,
+          height: 630
+        }]
+      },
     }
   }
 
   private static readonly pathMetadataMaps = (
     dictionary: Dictionary
   ): Record<SitePaths, Metadata> => ({
-    "/": {},
+    "/": {
+      title: dictionary.pages.main.metadata.title,
+      description: dictionary.pages.main.metadata.description,
+    },
     "/blogs": {
-      title: dictionary.pages.blogs.title,
-      description: dictionary.pages.blogs.description,
+      title: dictionary.pages.blogs.metadata.title,
+      description: dictionary.pages.blogs.metadata.description,
     },
     "/contact": {
-      title: dictionary.pages.contact.title,
-      description: dictionary.pages.contact.description,
+      title: dictionary.pages.contact.metadata.title,
+      description: dictionary.pages.contact.metadata.description,
     },
-    "/my-book": {
-      title: dictionary.pages.myBook.title,
-      description: dictionary.pages.myBook.description,
+    "/book": {
+      title: dictionary.pages.myBook.metadata.title,
+      description: dictionary.pages.myBook.metadata.description,
     },
     "/projects": {
-      title: dictionary.pages.projects.title,
-      description: dictionary.pages.projects.description,
+      title: dictionary.pages.projects.metadata.title,
+      description: dictionary.pages.projects.metadata.description,
     },
   })
 }

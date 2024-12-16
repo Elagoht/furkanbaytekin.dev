@@ -3,6 +3,7 @@ import GithubProjects from "@/components/pages/projects"
 import BluePrint from "@/utilities/BluePrint"
 import Dictate from "@/utilities/Dictionary"
 import Github from "@/utilities/Github"
+import Meta from "@/utilities/Meta"
 import { FC } from "react"
 
 export const revalidate = 3600
@@ -17,6 +18,10 @@ const ProjectsPage: FC<PageComponent> = async () => {
   return <Content blueprint={blueprint}>
     <GithubProjects projects={projects} />
   </Content>
+}
+
+export const generateMetadata = () => {
+  return Meta.data("/projects", Dictate.en)
 }
 
 export default ProjectsPage

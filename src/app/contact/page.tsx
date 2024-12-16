@@ -4,6 +4,7 @@ import ContactLinks from "@/components/pages/contact/ContactLinks"
 import BluePrint from "@/utilities/BluePrint"
 import Collection from "@/utilities/Collection"
 import Dictate from "@/utilities/Dictionary"
+import Meta from "@/utilities/Meta"
 import {
   IconBrandGithub, IconBrandLinkedin, IconBrandReddit,
   IconBrandTelegram, IconBrandX, IconMail
@@ -70,5 +71,9 @@ const ContactPage = () => {
 }
 
 export const generateStaticParams = Collection.getCategorySlugs
+
+export const generateMetadata = () => {
+  return Meta.data("/contact", Dictate.en)
+}
 
 export default ContactPage

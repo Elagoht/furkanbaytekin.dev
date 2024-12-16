@@ -5,6 +5,7 @@ import "@/design/highlight.css"
 import BluePrint from "@/utilities/BluePrint"
 import Dictate from "@/utilities/Dictionary"
 import Drawer from "@/utilities/Drawer"
+import Meta from "@/utilities/Meta"
 import Picture from "@/utilities/Picture"
 import Printer from "@/utilities/Printer"
 import TypeWriter from "@/utilities/Typewriter"
@@ -79,5 +80,15 @@ const BlogDocumentPage: FC<BlogDocumentPageProps> = async ({
 }
 
 export const generateStaticParams = Drawer.getBlogSlugs
+
+export const generateMetadata = async ({
+  params
+}: BlogDocumentPageProps) => {
+  const { slug } = await params
+
+  const blog = await Drawer.getBlogPost(slug)
+
+  return Meta.blogData(blog)
+}
 
 export default BlogDocumentPage
