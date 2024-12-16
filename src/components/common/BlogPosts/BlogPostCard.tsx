@@ -7,7 +7,7 @@ import { FC } from "react"
 const BlogPostCard: FC<BlogCardData> = (blog) => {
   return <Link
     key={blog.slug}
-    href={`/blogs/${blog.category}/${blog.slug}`}
+    href={`/blogs/${blog.category.toLocaleLowerCase()}/${blog.slug}`}
     className="text-sm bg-fedora-50 dark:bg-fedora-950 flex flex-col
     group text-fedora-900 dark:text-fedora-100 transition-all
     rounded-md hover:shadow-md overflow-hidden"

@@ -52,7 +52,7 @@
     },
     "blogCategories": {
       "metadata": {
-        "title": "{{ category }} - Category of Blog Posts",
+        "title": "{{ category }} Category of Blog Posts",
         "description": "Furkan Baytekin's blog posts in the {{ category }} category. You can find all the blog posts in this category."
       },
       "title": "{{ category }} Category",

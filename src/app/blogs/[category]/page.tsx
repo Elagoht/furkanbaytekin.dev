@@ -74,8 +74,17 @@ const BlogCategoryPage: FC<BlogCategoryPageProps> = async ({
   </>
 }
 
-export const generateMetadata = () => {
-  return Meta.data("/blogs", Dictate.en)
+export const generateMetadata = async ({
+  params
+}: BlogCategoryPageProps) => {
+  const { category } = await params
+  const dictionary = Dictate.en
+
+  const categoryData = await Collection.getCategory(category)
+
+  return Meta.data("/blogs/[category]", dictionary, {
+    category: categoryData.name
+  }, `/blogs/${category}`)
 }
 
 export default BlogCategoryPage

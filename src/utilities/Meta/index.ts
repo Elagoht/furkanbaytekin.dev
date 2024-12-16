@@ -99,22 +99,38 @@ class Meta {
 
   public static data = (
     path: SitePaths,
-    dictionary: Dictionary
+    dictionary: Dictionary,
+    messageModifier?: Record<string, string>,
+    customPath?: string
   ): Metadata => {
     if (!Meta.pathMetadataMaps(dictionary)[path])
       throw new MetadataError(`${path} is not valid`)
     return {
       ...Meta.pathMetadataMaps(dictionary)[path],
+      title: Message.format(
+        String(Meta.pathMetadataMaps(dictionary)[path].title),
+        messageModifier
+      ),
+      description: Message.format(
+        String(Meta.pathMetadataMaps(dictionary)[path].description),
+        messageModifier
+      ),
       alternates: {
         // Self-referencing canonical URL is a good practice
-        canonical: `${Environment.HOST_URL}${path}`
+        canonical: `${Environment.HOST_URL}${customPath ?? path}`
       },
       openGraph: {
-        title: Meta.pathMetadataMaps(dictionary)[path].title!,
-        description: Meta.pathMetadataMaps(dictionary)[path].description!,
+        title: Message.format(
+          String(Meta.pathMetadataMaps(dictionary)[path].title),
+          messageModifier
+        ),
+        description: Message.format(
+          String(Meta.pathMetadataMaps(dictionary)[path].description),
+          messageModifier
+        ),
         type: "website",
         images: [{
-          url: `${Environment.HOST_URL}${path}/opengraph-image`,
+          url: `${Environment.HOST_URL}${customPath ?? path}/opengraph-image`,
           width: 1200,
           height: 630
         }]
@@ -145,6 +161,10 @@ class Meta {
       title: dictionary.pages.projects.metadata.title,
       description: dictionary.pages.projects.metadata.description
     },
+    "/blogs/[category]": {
+      title: dictionary.pages.blogCategories.metadata.title,
+      description: dictionary.pages.blogCategories.metadata.description
+    }
   })
 }
 
