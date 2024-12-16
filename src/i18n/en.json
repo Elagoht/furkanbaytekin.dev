@@ -87,7 +87,12 @@
         "description": "Furkan Baytekin's book that he wrote and published, which is about Linux and a project related to his previous project named Linux For Everyone."
       },
       "title": "My Book",
-      "description": "I've written a book for you. You can read it online or download it as a PDF."
+      "description": "I've written a book for you. You can read it online or download it as a PDF.",
+      "comingSoon": {
+        "title": "Coming Soon!",
+        "description": "The book you are looking for has finished writing and is in the process of being published. Please be patient. Check back later.",
+        "spoiler": "This book is about Linux and guaranteed to be more than 600 pages long."
+      }
     }
   }
 }
