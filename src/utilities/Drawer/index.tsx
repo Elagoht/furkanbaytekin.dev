@@ -5,9 +5,11 @@ import Message from "../Message"
 
 class Drawer {
   public static getBlogPost = async (slug: BlogCardData["slug"]) => {
-    return await ApiCall
-      .get<BlogDocumentData>(`/api/blogs/${slug}`)
-      .then((res) => res.json())
+    return await ApiCall.get<
+      BlogDocumentData
+    >(`/api/blogs/${slug}`, undefined, {
+      tags: ["blogs"]
+    }).then((res) => res.json())
   }
 
   public static getBlogPosts = async (
@@ -86,8 +88,9 @@ class Drawer {
       `/api/blogs${QueryString.stringify(query, {
         addQueryPrefix: true,
         skipNulls: true
-      })}`
-    ).then((res) => res.json())
+      })}`, undefined, {
+      tags: ["blogs"]
+    }).then((res) => res.json())
   }
 
   private static getBlogReadTime = (content: BlogDocumentData["content"]) => {
