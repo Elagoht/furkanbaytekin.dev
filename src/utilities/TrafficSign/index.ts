@@ -39,8 +39,7 @@ class TrafficSign {
   private static permanentlyMoved: [string, string][] = []
 
   private static canBeFoundOn: [string, string][] = [
-    ["/home", "/"],
-    ["/blog/:path*", "/blogs/:path*"],
+    ["/home", "/"]
   ]
 
   private static rewrites: [string, string][] = []

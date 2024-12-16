@@ -29,7 +29,7 @@ class Spoon {
     blogs.forEach(blog => {
       this.data.addItem({
         title: blog.title,
-        link: new URL(`/blog/${blog.slug}`, Environment.HOST_URL).toString(),
+        link: new URL(`/blogs/${blog.slug}`, Environment.HOST_URL).toString(),
         date: new Date(blog.createdAt),
         published: new Date(blog.createdAt),
         description: blog.spot,

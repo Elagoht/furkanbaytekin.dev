@@ -39,7 +39,7 @@ class BluePrint {
       },
       mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": `${Environment.HOST_URL}/blog/${blogPost.slug}`
+        "@id": `${Environment.HOST_URL}/blogs/${blogPost.slug}`
       },
       contentRating: "7+",
       contributor: {
