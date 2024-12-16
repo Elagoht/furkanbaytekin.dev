@@ -96,6 +96,36 @@ class Meta {
     }
   }
 
+  public static categoryNotFound(
+    dictionary: Dictionary
+  ): Metadata {
+    return {
+      title: dictionary.pages.blogCategories["404"].title,
+      description: dictionary.pages.blogCategories["404"].description,
+      openGraph: {
+        title: dictionary.pages.blogCategories["404"].title,
+        description: dictionary.pages.blogCategories["404"].description,
+        type: "website",
+        images: [{
+          url: `${Environment.HOST_URL}/opengraph-image`,
+          width: 1200,
+          height: 630
+        }]
+      },
+      twitter: {
+        title: dictionary.pages.blogCategories["404"].title,
+        description: dictionary.pages.blogCategories["404"].description,
+        card: "summary_large_image",
+        site: "@abonesepeti",
+        creator: "@abonesepeti",
+        images: [{
+          url: `${Environment.HOST_URL}/opengraph-image`,
+          width: 1200,
+          height: 630
+        }]
+      }
+    }
+  }
 
   public static data = (
     path: SitePaths,

@@ -73,6 +73,14 @@ const BlogPostsPage: FC<PageComponent> = async ({
         </Link>
       </Container>
       : <Content blueprint={new BluePrint(dictionary).blogPosts()}>
+        {search &&
+          <h2>
+            {Message.format(dictionary.pages.blogs.search.results, {
+              search
+            })}
+          </h2>
+        }
+
         <BlogPosts
           blogs={blogs}
           searchParams={magnifier.toObject()}

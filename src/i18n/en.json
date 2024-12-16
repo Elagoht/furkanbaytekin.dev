@@ -71,8 +71,8 @@
       "title": "Blog Posts",
       "description": "The blog posts I've written for you.",
       "search": {
-        "noResults": "No blog posts found with the keyword '{{ search }}'.",
-        "results": "Here are the blog posts found with the keyword '{{ search }}'.",
+        "noResults": "No blog posts found with the search term \"{{ search }}\".",
+        "results": "Here are the blog posts found with the search term \"{{ search }}\".",
         "back": "Go back"
       },
       "404": {
@@ -92,6 +92,16 @@
         "zero": "There are no blog posts in the {{ category }} category.",
         "singular": "Here is total of 1 blog posts.",
         "plural": "Here are total of {{ count }} blog posts."
+      },
+      "404": {
+        "title": "404",
+        "description": "The category you are looking for hasn't been evaluated as a category yet.",
+        "redirect": "You are being redirected to the blog posts page in <b>{{ seconds }}.</b>"
+      },
+      "search": {
+        "noResults": "No blog posts found with the search term \"{{ search }}\".",
+        "results": "Here are the blog posts found with the search term \"{{ search }}\".",
+        "back": "Go back"
       }
     },
     "blog": {

@@ -5,30 +5,29 @@ import Dictate from "@/utilities/Dictionary"
 import Meta from "@/utilities/Meta"
 import { FC } from "react"
 
-const BlogNotFoundPage: FC = () => {
+const CategoryNotFoundPage: FC = () => {
   const dictionary = Dictate.en
 
   return <>
     <Hero>
       <h1>
-        🤷🏻 {dictionary.pages.blogs[404].title}
+        🤷🏻 {dictionary.pages.blogCategories[404].title}
       </h1>
 
       <p>
-        {dictionary.pages.blogs[404].description}
+        {dictionary.pages.blogCategories[404].description}
       </p>
     </Hero>
 
     <Container className="flex justify-center items-center grow">
       <Countdown
         to="/blogs"
-        message={dictionary.pages.blogs[404].redirect}
+        message={dictionary.pages.blogCategories[404].redirect}
       />
     </Container>
   </>
 }
 
-export const metadata = Meta.blogNotFound(Dictate.en)
+export const metadata = Meta.categoryNotFound(Dictate.en)
 
-
-export default BlogNotFoundPage
+export default CategoryNotFoundPage

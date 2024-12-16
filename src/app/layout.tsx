@@ -16,7 +16,7 @@ const RootLayout: FC<ParentComponent> = ({
     className="lg:text-lg"
   >
     <body className={classNames(
-      "flex flex-col min-h-screen",
+      "flex flex-col min-h-[calc(100vh-5rem)]", // 5rem = Header height
       "antialiased bg-fedora-100 text-fedora-900",
       "dark:bg-fedora-900 dark:text-fedora-100 mt-20",
       font.className
