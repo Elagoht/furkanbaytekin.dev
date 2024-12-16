@@ -2,6 +2,7 @@ import BlogCategories from "@/components/common/BlogCategories"
 import Content from "@/components/layout/Content"
 import Hero from "@/components/layout/Hero"
 import BlogSuggestions from "@/components/pages/main/BlogSuggestions"
+import Hobbies from "@/components/pages/main/Hobbies"
 import BluePrint from "@/utilities/BluePrint"
 import Collection from "@/utilities/Collection"
 import Dictate from "@/utilities/Dictionary"
@@ -29,6 +30,8 @@ const MainPage: FC = async () => {
     </Hero>
 
     <Content blueprint={blueprint}>
+      <Hobbies />
+
       <BlogSuggestions blogs={blogs} />
 
       <BlogCategories categories={categories} />

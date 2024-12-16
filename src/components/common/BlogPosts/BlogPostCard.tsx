@@ -10,21 +10,21 @@ const BlogPostCard: FC<BlogCardData> = (blog) => {
     href={`/blogs/${blog.category.toLocaleLowerCase()}/${blog.slug}`}
     className="text-sm bg-fedora-50 dark:bg-fedora-950 flex flex-col
     group text-fedora-900 dark:text-fedora-100 transition-all
-    rounded-md hover:shadow-md overflow-hidden"
+    rounded-md hover:shadow-md overflow-hidden p-2 gap-2"
   >
     <figure className="relative w-full overflow-clip aspect-video
-      rounded-t-md"
+      rounded"
     >
       <Image
         src={Picture.resolve(blog.cover)}
         alt={blog.title}
         width={487}
         height={274}
-        className="transition-all group-hover:scale-110 w-full rounded-none"
+        className="transition-all group-hover:scale-105 w-full rounded-none"
       />
     </figure>
 
-    <hgroup className="flex flex-col p-2 gap-2 grow">
+    <hgroup className="flex flex-col gap-2 grow">
       <h3 className="text-pinky-500 font-semibold text-lg">
         {blog.title}
       </h3>

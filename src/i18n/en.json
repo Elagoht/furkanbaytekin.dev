@@ -44,7 +44,24 @@
       },
       "title": "It's Me, Furkan Baytekin",
       "description": "I'm a Software Developer who has an educational background, so I can teach you how to code. I also describe myself as an open sourcerer. I play the bass guitar and keen on reading books. I obsessed with vinyl records and retro stuff (to get away from the software for a bit).",
-      "suggestedBlogPosts": "Suggested Blog Posts"
+      "suggestedBlogPosts": "Suggested Blog Posts",
+      "hobbies": {
+        "title": "Hobbies",
+        "items": [
+          {
+            "title": "Collecting Vinyl Records",
+            "description": "I'm obsessed with vinyl records. I have a collection of vinyl records and the oldest one is from 1969 original pressing."
+          },
+          {
+            "title": "Playing Bass Guitar",
+            "description": "I've been playing the bass guitar since 2017. I like to compose and play music on my own."
+          },
+          {
+            "title": "Reading Books",
+            "description": "I read books to get away from the software for a bit, but I always end up reading about software."
+          }
+        ]
+      }
     },
     "blogs": {
       "metadata": {
