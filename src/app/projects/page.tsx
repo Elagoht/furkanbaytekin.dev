@@ -1,4 +1,5 @@
 import Content from "@/components/layout/Content"
+import Hero from "@/components/layout/Hero"
 import GithubProjects from "@/components/pages/projects"
 import BluePrint from "@/utilities/BluePrint"
 import Dictate from "@/utilities/Dictionary"
@@ -15,9 +16,21 @@ const ProjectsPage: FC<PageComponent> = async () => {
 
   const blueprint = new BluePrint(dictionary).projects()
 
-  return <Content blueprint={blueprint}>
-    <GithubProjects projects={projects} />
-  </Content>
+  return <>
+    <Hero>
+      <h1 className="text-4xl font-bold">
+        {dictionary.pages.projects.title}
+      </h1>
+
+      <p className="text-lg">
+        {dictionary.pages.projects.description}
+      </p>
+    </Hero>
+
+    <Content blueprint={blueprint}>
+      <GithubProjects projects={projects} />
+    </Content>
+  </>
 }
 
 export const generateMetadata = () => {
