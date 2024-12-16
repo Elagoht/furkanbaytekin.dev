@@ -11,6 +11,7 @@ import Printer from "@/utilities/Printer"
 import TypeWriter from "@/utilities/Typewriter"
 import { IconCalendarFilled, IconClock } from "@tabler/icons-react"
 import Image from "next/image"
+import { notFound } from "next/navigation"
 import { FC } from "react"
 
 type BlogDocumentPageProps = PageComponent<{
@@ -23,6 +24,8 @@ const BlogDocumentPage: FC<BlogDocumentPageProps> = async ({
   const { slug } = await params
 
   const blog = await Drawer.getBlogPost(slug)
+
+  if (!blog.published) return notFound()
 
   const blueprint = new BluePrint(Dictate.en).ofBlogPost(blog)
 

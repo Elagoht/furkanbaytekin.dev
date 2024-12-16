@@ -47,7 +47,8 @@
       "description": "The blog posts I've written for you.",
       "404": {
         "title": "404",
-        "description": "The blog post you are looking for hasn't been written yet."
+        "description": "The blog post you are looking for hasn't been written yet.",
+        "redirect": "You are being redirected to the blog posts page in <b>{{ seconds }}.</b>"
       }
     },
     "blogCategories": {
