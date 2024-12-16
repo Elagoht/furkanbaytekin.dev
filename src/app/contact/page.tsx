@@ -20,7 +20,7 @@ const ContactPage = () => {
       <p className="text-lg mt-4">
         {dictionary.pages.contact.description}
       </p>
-    </Hero >
+    </Hero>
 
     <Content blueprint={{
       "@context": "https://schema.org",
