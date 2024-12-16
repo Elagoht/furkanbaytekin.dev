@@ -60,7 +60,7 @@ const Pagination: FC<PaginationProps> = ({
       className: classNames(
         "h-10 w-10 grid place-items-center text-sm bg-fedora-200",
         "rounded-full hover:bg-fedora-300 dark:bg-fedora-700",
-        "dark:hover:bg-fedora-600 shadow-inset drop-shadow", {
+        "dark:hover:bg-fedora-600", {
         "opacity-30 cursor-not-allowed": currentPage === 1
       })
     }, <IconChevronLeftPipe />)}
@@ -71,7 +71,7 @@ const Pagination: FC<PaginationProps> = ({
       className: classNames(
         "h-10 w-10 grid place-items-center text-sm bg-fedora-200",
         "rounded-full hover:bg-fedora-300 dark:bg-fedora-700",
-        "dark:hover:bg-fedora-600 shadow-inset drop-shadow", {
+        "dark:hover:bg-fedora-600", {
         "opacity-30 cursor-not-allowed": currentPage === 1
       })
     }, <IconChevronLeft />)}
@@ -84,7 +84,7 @@ const Pagination: FC<PaginationProps> = ({
         href: createPageUrl(page),
         className: classNames(
           "h-10 w-10 grid place-items-center text-sm",
-          "rounded-full select-none shadow-inset drop-shadow", {
+          "rounded-full select-none", {
           "text-primary-100 bg-primary-500": page === currentPage,
           "bg-fedora-200 hover:bg-fedora-300": page !== currentPage,
           "dark:bg-fedora-700 dark:hover:bg-fedora-600": page !== currentPage
@@ -98,7 +98,7 @@ const Pagination: FC<PaginationProps> = ({
       className: classNames(
         "h-10 w-10 grid place-items-center text-sm bg-fedora-200",
         "rounded-full hover:bg-fedora-300 dark:bg-fedora-700",
-        "dark:hover:bg-fedora-600 shadow-inset drop-shadow", {
+        "dark:hover:bg-fedora-600", {
         "opacity-30 cursor-not-allowed": currentPage === totalPages
       })
     }, <IconChevronRight />)}
@@ -109,7 +109,7 @@ const Pagination: FC<PaginationProps> = ({
       className: classNames(
         "h-10 w-10 grid place-items-center text-sm bg-fedora-200",
         "rounded-full hover:bg-fedora-300 dark:bg-fedora-700",
-        "dark:hover:bg-fedora-600 shadow-inset drop-shadow", {
+        "dark:hover:bg-fedora-600", {
         "opacity-30 cursor-not-allowed": currentPage === totalPages
       })
     }, <IconChevronRightPipe />)}

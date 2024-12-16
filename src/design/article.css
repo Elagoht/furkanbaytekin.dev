@@ -7,7 +7,7 @@ img {
 }
 
 pre:has(code) {
-  @apply !p-0 !rounded-xl !bg-transparent shadow;
+  @apply !p-0 !rounded-xl !bg-transparent;
 }
 
 
@@ -33,7 +33,7 @@ mark {
 }
 
 .code-header {
-  @apply bg-fedora-200 dark:bg-fedora-800 text-fedora-900 dark:text-fedora-100 select-none items-center justify-between flex pl-4 p-2 rounded-t shadow-inner;
+  @apply bg-fedora-200 dark:bg-fedora-800 text-fedora-900 dark:text-fedora-100 select-none items-center justify-between flex pl-4 p-2 rounded-t;
 }
 
 .code-copy {

@@ -11,8 +11,8 @@ const GithubProjectCard: FC<GithubProject> = (
 ) => {
   return <li
     key={props.id}
-    className="bg-white dark:bg-fedora-800 p-4 rounded-xl
-    shadow-md flex flex-col gap-1 relative overflow-clip"
+    className="bg-fedora-50 dark:bg-fedora-800 p-4 rounded-xl
+    flex flex-col gap-1 relative overflow-clip"
   >
     {props.archived &&
       <IconArchive
