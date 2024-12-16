@@ -1,7 +1,4 @@
-import {
-  IconAddressBook, IconBook2, IconCode,
-  IconWritingSign
-} from "@tabler/icons-react"
+import { IconBook2, IconCode, IconWritingSign } from "@tabler/icons-react"
 import { FC } from "react"
 import NavBarLink from "./NavBarLink"
 
@@ -30,10 +27,6 @@ const menuItems = [{
   title: "My Book",
   href: "/book",
   icon: <IconBook2 />
-}, {
-  title: "Contact",
-  href: "/contact",
-  icon: <IconAddressBook />
 }]
 
 

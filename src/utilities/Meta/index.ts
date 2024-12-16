@@ -149,10 +149,6 @@ class Meta {
       title: dictionary.pages.blogs.metadata.title,
       description: dictionary.pages.blogs.metadata.description
     },
-    "/contact": {
-      title: dictionary.pages.contact.metadata.title,
-      description: dictionary.pages.contact.metadata.description
-    },
     "/book": {
       title: dictionary.pages.myBook.metadata.title,
       description: dictionary.pages.myBook.metadata.description

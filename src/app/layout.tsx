@@ -6,6 +6,7 @@ import { Metadata, Viewport } from "next"
 import Environment from "@/utilities/Environment"
 import Dictate from "@/utilities/Dictionary"
 import Header from "@/components/layout/Header"
+import Footer from "@/components/layout/Footer"
 
 const RootLayout: FC<ParentComponent> = ({
   children
@@ -22,6 +23,8 @@ const RootLayout: FC<ParentComponent> = ({
       <Header />
 
       {children}
+
+      <Footer />
     </body>
   </html>
 }

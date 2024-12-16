@@ -9,12 +9,12 @@ type ContactLinksProps = {
 const ContactLinks: FC<ContactLinksProps> = ({
   title, items
 }) => {
-  return <section className="my-8">
-    <h2 className="text-2xl font-semibold mt-12">
+  return <section>
+    <h2 className="text-xl font-semibold mb-4 text-fedora-700 dark:text-fedora-300">
       {title}
     </h2>
 
-    <ul className="flex flex-col items-start gap-4 my-4">
+    <ul className="flex flex-col items-start gap-4">
       {items.map((item, index) =>
         <ContactLink
           key={index}

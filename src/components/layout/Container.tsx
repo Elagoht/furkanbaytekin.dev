@@ -1,9 +1,18 @@
-import { FC } from "react"
+import classNames from "classnames"
+import { FC, HTMLProps } from "react"
 
-const Container: FC<ParentComponent> = ({
-  children
+type ContainerProps = HTMLProps<HTMLDivElement>
+
+const Container: FC<ContainerProps> = ({
+  children, ...props
 }) => {
-  return <div className="max-w-screen-lg mx-auto p-4">
+  return <div
+    {...props}
+    className={classNames(
+      "max-w-screen-lg mx-auto p-4",
+      props.className
+    )}
+  >
     {children}
   </div>
 }

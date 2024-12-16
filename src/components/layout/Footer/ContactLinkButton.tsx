@@ -15,17 +15,16 @@ const ContactLink: FC<ContactLinkProps> = ({
   <li>
     <Link
       href={href}
-      className="flex items-center gap-4 hover:brightness-110"
+      className="flex items-center gap-4 hover:brightness-110
+      text-fedora-500 dark:text-fedora-400"
     >
       <figure className={classNames(
-        className,
-        "border-2 p-2 rounded-full",
-        "border-neutral-800 dark:border-neutral-200"
+        className
       )}>
         {icon}
       </figure>
 
-      <span className="text-lg font-semibold">
+      <span className="font-medium">
         {title}
       </span>
     </Link>
