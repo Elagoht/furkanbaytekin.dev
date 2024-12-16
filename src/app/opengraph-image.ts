@@ -11,7 +11,6 @@ export const size = {
 }
 
 const generator = () => Studio.coverImage(
-  dictionary,
-  dictionary.pages.main.metadata.title
+  dictionary, dictionary.pages.main.metadata.openGraph.title
 )
 export default generator
