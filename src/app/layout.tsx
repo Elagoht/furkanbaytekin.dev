@@ -34,7 +34,10 @@ const font = Poppins({
 export const generateMetadata = (): Metadata => {
   const dictionary = Dictate.en
   return {
-    title: dictionary.metadata.title,
+    title: {
+      template: `%s | ${dictionary.metadata.author}`,
+      default: dictionary.metadata.title
+    },
     description: dictionary.metadata.description,
     abstract: dictionary.metadata.description,
     keywords: dictionary.metadata.keywords,
