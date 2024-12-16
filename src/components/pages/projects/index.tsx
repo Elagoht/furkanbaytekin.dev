@@ -12,8 +12,8 @@ const GithubProjects: FC<GithubProjectsProps> = ({
   const dictionary = Dictate.en
 
   return <section className="my-8">
-    <h2 className="mb-4 text-xl font-bold">
-      {dictionary.pages.common.blogs}
+    <h2 className="mb-4 text-2xl font-bold">
+      {dictionary.pages.projects.title}
     </h2>
 
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

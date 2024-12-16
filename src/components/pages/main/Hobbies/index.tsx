@@ -6,7 +6,7 @@ import { IconBook2, IconGuitarPick, IconVinyl } from "@tabler/icons-react"
 const Hobbies: FC = () => {
   const dictionary = Dictate.en
 
-  return <section className="my-8">
+  return <section className="my-12">
     <h2 className="text-2xl font-semibold mb-4">
       {dictionary.pages.main.hobbies.title}
     </h2>
