@@ -38,7 +38,7 @@ class Meta {
       abstract: blog.spot,
       category: blog.category,
       alternates: {
-        canonical: `${Environment.HOST_URL}/blogs/${blog.slug}`
+        canonical: `${Environment.HOST_URL}/blogs/${blog.category}/${blog.slug}`
       },
       openGraph: {
         title,
@@ -88,7 +88,7 @@ class Meta {
         site: "@abonesepeti",
         creator: "@abonesepeti",
         images: [{
-          url: `${Environment.HOST_URL}/twitter-image`,
+          url: `${Environment.HOST_URL}/opengraph-image`,
           width: 1200,
           height: 630
         }]
@@ -107,18 +107,18 @@ class Meta {
       ...Meta.pathMetadataMaps(dictionary)[path],
       alternates: {
         // Self-referencing canonical URL is a good practice
-        canonical: `${Environment.HOST_URL}/${path}`
+        canonical: `${Environment.HOST_URL}${path}`
       },
       openGraph: {
         title: Meta.pathMetadataMaps(dictionary)[path].title!,
         description: Meta.pathMetadataMaps(dictionary)[path].description!,
         type: "website",
         images: [{
-          url: `${Environment.HOST_URL}/${path}/opengraph-image`,
+          url: `${Environment.HOST_URL}${path}/opengraph-image`,
           width: 1200,
           height: 630
         }]
-      },
+      }
     }
   }
 
@@ -127,23 +127,23 @@ class Meta {
   ): Record<SitePaths, Metadata> => ({
     "/": {
       title: dictionary.pages.main.metadata.title,
-      description: dictionary.pages.main.metadata.description,
+      description: dictionary.pages.main.metadata.description
     },
     "/blogs": {
       title: dictionary.pages.blogs.metadata.title,
-      description: dictionary.pages.blogs.metadata.description,
+      description: dictionary.pages.blogs.metadata.description
     },
     "/contact": {
       title: dictionary.pages.contact.metadata.title,
-      description: dictionary.pages.contact.metadata.description,
+      description: dictionary.pages.contact.metadata.description
     },
     "/book": {
       title: dictionary.pages.myBook.metadata.title,
-      description: dictionary.pages.myBook.metadata.description,
+      description: dictionary.pages.myBook.metadata.description
     },
     "/projects": {
       title: dictionary.pages.projects.metadata.title,
-      description: dictionary.pages.projects.metadata.description,
+      description: dictionary.pages.projects.metadata.description
     },
   })
 }

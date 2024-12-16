@@ -10,5 +10,8 @@ export const size = {
   height: 630
 }
 
-const generator = () => Studio.coverImage(dictionary)
+const generator = () => Studio.coverImage(
+  dictionary,
+  dictionary.pages.main.metadata.title
+)
 export default generator

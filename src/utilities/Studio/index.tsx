@@ -1,12 +1,15 @@
 import { ImageResponse } from "next/og"
+import { readFile } from "fs/promises"
+import { join } from "path"
 
 class Studio {
-  public static coverImage = (
+  public static coverImage = async (
     dictionary: Dictionary,
-    title?: string,
+    title?: string
   ) => {
-    const avatarURL = `${process.env.HOST_URL}/assets/images/me.png`
-    const backgroundImage = `${process.env.HOST_URL}/assets/images/opengraph-bg.svg`
+    const avatarSrc = Uint8Array.from(await readFile(join(
+      process.cwd(), "public/assets/images/me.png"
+    ))).buffer
 
     return new ImageResponse(<div
       style={{
@@ -19,18 +22,25 @@ class Studio {
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
-        backgroundColor: "#0A0A0A",
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundColor: "#2d2a32",
+        backgroundImage: "linear-gradient(180deg," +
+          "#161417 0%," +
+          "#161417 34%," +
+          "#232127 34%," +
+          "#232127 100%" +
+          ")",
         backgroundSize: "1200px 630px"
       }}
     >
       <img // eslint-disable-line @next/next/no-img-element
-        src={avatarURL}
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore - Officially supported by Next.js
+        src={avatarSrc}
         alt={dictionary.metadata.identity}
         width="256"
         height="256"
         style={{
-          border: "4px solid #A0AEC0",
+          border: "4px solid #a9a5ab",
           borderRadius: "50%",
           objectFit: "cover",
           objectPosition: "center"
@@ -38,13 +48,14 @@ class Studio {
       />
 
       <span style={{
-        fontSize: "4rem"
+        fontSize: "4rem",
+        color: "#d2cfd3"
       }}>
         Furkan Baytekin
       </span>
 
       <span style={{
-        color: "#A0AEC0",
+        color: "#a9a5ab",
         fontSize: "2.5rem"
       }}>
         The Open Sourcerer
@@ -61,13 +72,18 @@ class Studio {
             lineHeight: "1",
             textAlign: "center",
             fontWeight: 400,
-            color: "#428E97"
+            color: "#ebdef0"
           }
         }>
           {title}
         </span>
       }
-    </div>)
+    </div>, {
+      headers: {
+        "Content-Type": "image/png",
+        "Cache-Control": "public, max-age=3600"
+      }
+    })
   }
 }
 
