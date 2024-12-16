@@ -54,7 +54,7 @@ const BlogPostsPage: FC<PageComponent> = async ({
     </Hero>
 
     {(total === 0 && search)
-      ? <Container className="grow flex flex-col  gap-4
+      ? <Container className="grow flex flex-col gap-4
         justify-center items-center"
       >
         <h2>
@@ -72,7 +72,6 @@ const BlogPostsPage: FC<PageComponent> = async ({
           {dictionary.pages.blogs.search.back}
         </Link>
       </Container>
-
       : <Content blueprint={new BluePrint(dictionary).blogPosts()}>
         <BlogPosts
           blogs={blogs}
