@@ -1,9 +1,17 @@
 import Script from 'next/script'
 import { FC } from 'react'
-import { BlogPosting, Person, WithContext } from 'schema-dts'
+import {
+  BlogPosting, Book, CreativeWorkSeries, Person,
+  WithContext
+} from 'schema-dts'
 
 export type SchemaProps = {
-  blueprint: WithContext<Person | BlogPosting>
+  blueprint: WithContext<
+    | Person
+    | BlogPosting
+    | CreativeWorkSeries
+    | Book
+  >
 }
 
 const Schema: FC<SchemaProps> = ({

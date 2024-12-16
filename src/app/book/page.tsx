@@ -1,11 +1,14 @@
 import Content from "@/components/layout/Content"
 import Hero from "@/components/layout/Hero"
+import BluePrint from "@/utilities/BluePrint"
 import Dictate from "@/utilities/Dictionary"
 import { IconAlarm } from "@tabler/icons-react"
 import { FC } from "react"
 
 const MyBookPage: FC = () => {
   const dictionary = Dictate.en
+
+  const blueprint = new BluePrint(dictionary).myBook()
 
   return <>
     <Hero>
@@ -18,12 +21,7 @@ const MyBookPage: FC = () => {
       </p>
     </Hero>
 
-    <Content blueprint={{
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "name": dictionary.pages.myBook.title,
-      "description": dictionary.pages.myBook.description
-    }}>
+    <Content blueprint={blueprint}>
       <section className="my-8">
         <h2 className="text-2xl font-bold mb-4">
           {dictionary.pages.myBook.comingSoon.title} <IconAlarm

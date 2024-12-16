@@ -2,6 +2,7 @@ import BlogPosts from "@/components/common/BlogPosts"
 import SearchBox from "@/components/common/SearchBox"
 import Content from "@/components/layout/Content"
 import Hero from "@/components/layout/Hero"
+import BluePrint from "@/utilities/BluePrint"
 import Collection from "@/utilities/Collection"
 import Dictate from "@/utilities/Dictionary"
 import Drawer from "@/utilities/Drawer"
@@ -37,6 +38,8 @@ const BlogCategoryPage: FC<BlogCategoryPageProps> = async ({
   if (page < 1) redirect(`/blogs/${category}`)
   if (page > totalPages) redirect(`/blogs/${category}?page=${totalPages}`)
 
+  const blueprint = new BluePrint(dictionary).blogPosts()
+
   return <>
     <Hero>
       <h1>
@@ -59,18 +62,7 @@ const BlogCategoryPage: FC<BlogCategoryPageProps> = async ({
       />
     </Hero>
 
-    <Content blueprint={{
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": Message.format(
-        dictionary.pages.blogCategories.title, {
-        category
-      }),
-      "description": Message.format(
-        dictionary.pages.blogCategories.description, {
-        category: categoryData.name
-      })
-    }}>
+    <Content blueprint={blueprint}>
       <BlogPosts
         blogs={blogs}
         category={category}

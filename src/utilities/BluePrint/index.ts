@@ -1,4 +1,4 @@
-import { BlogPosting, Person, WithContext } from "schema-dts"
+import { BlogPosting, Book, CreativeWorkSeries, Person, WithContext } from "schema-dts"
 import Environment from "../Environment"
 
 class BluePrint {
@@ -84,6 +84,50 @@ class BluePrint {
       birthDate: this.dictionary.metadata.birthday,
       description: this.dictionary.metadata.description,
       gender: this.dictionary.metadata.gender
+    }
+  }
+
+  public projects(): WithContext<CreativeWorkSeries> {
+    return {
+      "@context": "https://schema.org",
+      "@type": "CreativeWorkSeries",
+      name: this.dictionary.pages.projects.title,
+      description: this.dictionary.pages.projects.description,
+      url: new URL("/projects", Environment.HOST_URL).toString(),
+      image: new URL(
+        "/projects/opengraph-image",
+        Environment.HOST_URL
+      ).toString(),
+      inLanguage: this.dictionary.metadata.lang
+    }
+  }
+
+  public blogPosts(): WithContext<CreativeWorkSeries> {
+    return {
+      "@context": "https://schema.org",
+      "@type": "CreativeWorkSeries",
+      name: this.dictionary.pages.blogs.title,
+      description: this.dictionary.pages.blogs.description,
+      url: new URL("/blogs", Environment.HOST_URL).toString(),
+      image: new URL(
+        "/blogs/opengraph-image",
+        Environment.HOST_URL
+      ).toString(),
+      inLanguage: this.dictionary.metadata.lang
+    }
+  }
+
+  public myBook(): WithContext<Book> {
+    return {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      name: this.dictionary.pages.myBook.title,
+      url: new URL("/my-book", Environment.HOST_URL).toString(),
+      image: new URL(
+        "/my-book/opengraph-image",
+        Environment.HOST_URL
+      ).toString(),
+      inLanguage: "Turkish"
     }
   }
 }

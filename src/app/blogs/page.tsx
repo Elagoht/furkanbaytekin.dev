@@ -3,6 +3,7 @@ import BlogPosts from "@/components/common/BlogPosts"
 import SearchBox from "@/components/common/SearchBox"
 import Content from "@/components/layout/Content"
 import Hero from "@/components/layout/Hero"
+import BluePrint from "@/utilities/BluePrint"
 import Collection from "@/utilities/Collection"
 import Dictate from "@/utilities/Dictionary"
 import Drawer from "@/utilities/Drawer"
@@ -31,6 +32,8 @@ const BlogPostsPage: FC<PageComponent> = async ({
 
   const categories = await Collection.getCategories()
 
+  const blueprint = new BluePrint(dictionary).blogPosts()
+
   return <>
     <Hero>
       <h1>
@@ -47,12 +50,7 @@ const BlogPostsPage: FC<PageComponent> = async ({
       />
     </Hero>
 
-    <Content blueprint={{
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": dictionary.pages.blogCategories.title,
-      "description": dictionary.pages.blogCategories.description
-    }}>
+    <Content blueprint={blueprint}>
       <BlogPosts
         blogs={blogs}
         searchParams={magnifier.toObject()}

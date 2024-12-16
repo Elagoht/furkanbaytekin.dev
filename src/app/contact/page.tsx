@@ -1,6 +1,7 @@
 import Content from "@/components/layout/Content"
 import Hero from "@/components/layout/Hero"
 import ContactLinks from "@/components/pages/contact/ContactLinks"
+import BluePrint from "@/utilities/BluePrint"
 import Collection from "@/utilities/Collection"
 import Dictate from "@/utilities/Dictionary"
 import {
@@ -10,6 +11,8 @@ import {
 
 const ContactPage = () => {
   const dictionary = Dictate.en
+
+  const blueprint = new BluePrint(dictionary).owner()
 
   return <>
     <Hero>
@@ -22,12 +25,7 @@ const ContactPage = () => {
       </p>
     </Hero>
 
-    <Content blueprint={{
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: dictionary.pages.contact.title,
-      description: dictionary.pages.contact.metadata.description
-    }}>
+    <Content blueprint={blueprint}>
       <ContactLinks
         title={dictionary.pages.contact.directMessage}
         items={[{
