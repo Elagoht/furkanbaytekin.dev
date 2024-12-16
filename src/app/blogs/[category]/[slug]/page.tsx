@@ -77,7 +77,8 @@ const BlogDocumentPage: FC<BlogDocumentPageProps> = async ({
         id="article"
         dangerouslySetInnerHTML={{
           __html: TypeWriter.markdownToHtml(blog.content)
-        }} />
+        }}
+      />
     </Content>
   </>
 }
