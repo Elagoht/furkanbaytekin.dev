@@ -15,6 +15,14 @@
     "gender": "Male",
     "github": "Elagoht"
   },
+  "footer": {
+    "title": "Furkan Baytekin",
+    "copyleft": "Copyleft 🄯 {{ year }} All Wrongs Reserved 🧙🏻‍♂️",
+    "directMessage": "Direct Message",
+    "socialMedia": "Social Media",
+    "email": "Send Email",
+    "productive": "My Productive Hours"
+  },
   "pages": {
     "common": {
       "blogCategories": "Blog Categories",
@@ -81,18 +89,6 @@
       "visit": "Visit Website",
       "sourceCode": "Source Code",
       "noProjects": "There are no projects to show or there is a problem with the connection."
-    },
-    "contact": {
-      "metadata": {
-        "title": "Contact Me - I'm Always Open",
-        "description": "Furkan Baytekin's contact information. You can contact him via the following methods."
-      },
-      "title": "Contact Me",
-      "description": "Feel free to contact me. I'm always open to new people and ideas, or just a chat.",
-      "directMessage": "Direct Message",
-      "socialMedia": "Social Media",
-      "email": "Send Email",
-      "productive": "My Productive Hours"
     },
     "myBook": {
       "metadata": {
