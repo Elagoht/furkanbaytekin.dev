@@ -1,16 +1,13 @@
 import Dictate from "@/utilities/Dictionary"
 import { FC } from "react"
 import GithubProjectCard from "./GithubProjectCard"
-import Pagination from "@/components/common/Pagination"
 
 type GithubProjectsProps = {
   projects: GithubProject[]
-  totalPages: number
-  searchParams: Record<string, string | undefined>
 }
 
 const GithubProjects: FC<GithubProjectsProps> = ({
-  projects, totalPages, searchParams
+  projects
 }) => {
   const dictionary = Dictate.en
 
@@ -20,19 +17,13 @@ const GithubProjects: FC<GithubProjectsProps> = ({
     </h2>
 
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {projects.map(blog =>
+      {projects?.map?.(blog =>
         <GithubProjectCard
           key={blog.id}
           {...blog}
         />
-      )}
+      ) ?? <p>{dictionary.pages.projects.noProjects}</p>}
     </div>
-
-    <Pagination
-      pathname={"/projects"}
-      totalPages={totalPages}
-      searchParams={searchParams}
-    />
   </section>
 }
 

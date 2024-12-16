@@ -1,30 +1,21 @@
+import QueryString from "qs"
 import ApiCall from "../ApiCall"
 import Dictate from "../Dictionary"
-import Environment from "../Environment"
+import { cache } from "react"
 
 class Github {
-  public static readonly username = Dictate.en.metadata.github
+  private static readonly username = Dictate.en.metadata.github
 
-  public static getTotalProjectCount = async (): Promise<number> => {
-    const profile = await ApiCall.get<GithubProfile>(
-      `${Environment.HOST_URL}/api/github/user`
-    ).then(response => response.json())
-
-    return profile.public_repos
-  }
-
-  public static getProjects = async (
-    page: number = 1
-  ): Promise<GithubProject[]> => {
-    const projects = await ApiCall.get<GithubProject[]>(
-      `${Environment.HOST_URL}/api/github/projects`
-    ).then(response => response.json())
-
-    return projects?.slice?.(
-      (page - 1) * Environment.PAGINATE_BY,
-      page * Environment.PAGINATE_BY
-    ) ?? []
-  }
+  public static getAllProjects = cache(async (): Promise<GithubProject[]> => {
+    return ApiCall.get<GithubProject[]>(
+      `https://api.github.com/users/${Github.username
+      }/repos?${QueryString.stringify({
+        sort: "pushed",
+        direction: "desc",
+        // please don't have more than 1000 repos :)
+        per_page: 1000
+      })}`).then(response => response.json())
+  })
 }
 
 export default Github

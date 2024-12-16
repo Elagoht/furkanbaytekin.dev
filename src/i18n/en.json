@@ -71,7 +71,8 @@
       "title": "Projects",
       "description": "The projects I've developed for you. Some of them may be useful.",
       "visit": "Visit Website",
-      "sourceCode": "Source Code"
+      "sourceCode": "Source Code",
+      "noProjects": "There are no projects to show or there is a problem with the connection."
     },
     "contact": {
       "metadata": {
