@@ -30,9 +30,12 @@ class Picture {
   private static remotePaths: [
     RemotePattern["protocol"],
     RemotePattern["hostname"]
-  ][] = [
-      ["http", "localhost"]
-    ]
+  ][] = [[
+    new URL(
+      Environment.CMS_API_URL
+    ).protocol.replace(/[^\w]/g, "") as RemotePattern["protocol"],
+    new URL(Environment.CMS_API_URL).hostname
+  ]]
 }
 
 export default Picture
