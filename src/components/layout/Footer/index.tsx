@@ -2,7 +2,8 @@ import Dictate from "@/utilities/Dictionary"
 import {
   IconBrandGithub, IconBrandLinkedin, IconBrandReddit,
   IconBrandSpotify, IconBrandTelegram, IconBrandX,
-  IconBrandYoutube, IconMail
+  IconBrandYoutube, IconMail,
+  IconRss
 } from "@tabler/icons-react"
 import { FC } from "react"
 import ContactLinks from "./ContactLinks"
@@ -84,6 +85,11 @@ const getLinks = (dictionary: Dictionary) => [{
     href: "https://github.com/Elagoht",
     icon: <IconBrandGithub />,
     className: "text-black dark:text-white"
+  }, {
+    title: "RSS",
+    href: "/rss.xml",
+    icon: <IconRss />,
+    className: "text-orange-500"
   }]
 }]
 
