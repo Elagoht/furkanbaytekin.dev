@@ -31,7 +31,7 @@ const SearchBox: FC<SearchBoxProps> = ({
       className="grow border bg-fedora-200 dark:bg-fedora-800
       text-fedora-800 dark:text-fedora-200 border-fedora-300
       dark:border-fedora-700 rounded-full px-4 py-2 focus:outline-none
-      focus:border-pinky-500 dark:focus:border-pinky-500"
+      focus:border-pinky-500 dark:focus:border-pinky-500 min-w-0"
     />
 
     <button
