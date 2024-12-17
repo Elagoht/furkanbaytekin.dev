@@ -1,7 +1,6 @@
 import { Metadata } from "next"
 import Environment from "../Environment"
 import Message from "../Message"
-import Picture from "../Picture"
 
 class Meta {
   public static readonly MAX_TITLE_LENGTH = 66
@@ -38,14 +37,20 @@ class Meta {
       abstract: blog.spot,
       category: blog.category,
       alternates: {
-        canonical: `${Environment.HOST_URL}/blogs/${blog.category}/${blog.slug}`
+        canonical: new URL(
+          `/blogs/${blog.category}/${blog.slug}`,
+          Environment.HOST_URL
+        ).toString()
       },
       openGraph: {
         title,
         description,
         type: "article",
         images: [{
-          url: Picture.resolve(blog.cover),
+          url: new URL(
+            `/blogs/${blog.category}/${blog.slug}/opengraph-image`,
+            Environment.HOST_URL
+          ).toString(),
           width: 1280,
           height: 720
         }]
@@ -57,7 +62,10 @@ class Meta {
         site: "@abonesepeti",
         creator: "@abonesepeti",
         images: [{
-          url: Picture.resolve(blog.cover),
+          url: new URL(
+            `/blogs/${blog.category}/${blog.slug}/opengraph-image`,
+            Environment.HOST_URL
+          ).toString(),
           width: 1280,
           height: 720
         }]

@@ -15,7 +15,10 @@ class BluePrint {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       headline: blogPost.title,
-      url: new URL(`/blogs/${blogPost.slug}`, Environment.HOST_URL).toString(),
+      url: new URL(
+        `/blogs/${blogPost.category}/${blogPost.slug}`,
+        Environment.HOST_URL
+      ).toString(),
       dateCreated: blogPost.createdAt,
       datePublished: blogPost.createdAt,
       dateModified: blogPost.updatedAt,
@@ -39,7 +42,10 @@ class BluePrint {
       },
       mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": `${Environment.HOST_URL}/blogs/${blogPost.slug}`
+        "@id": new URL(
+          `/blogs/${blogPost.category}/${blogPost.slug}`,
+          Environment.HOST_URL
+        ).toString()
       },
       contentRating: "7+",
       contributor: {

@@ -1,6 +1,5 @@
 import { Feed } from "feed"
 import Environment from "../Environment"
-import Picture from "../Picture"
 
 class Spoon {
   public data: Feed
@@ -29,7 +28,10 @@ class Spoon {
     blogs.forEach(blog => {
       this.data.addItem({
         title: blog.title,
-        link: new URL(`/blogs/${blog.slug}`, Environment.HOST_URL).toString(),
+        link: new URL(
+          `/blogs/${blog.slug}`,
+          Environment.HOST_URL
+        ).toString(),
         date: new Date(blog.createdAt),
         published: new Date(blog.createdAt),
         description: blog.spot,
@@ -39,7 +41,10 @@ class Spoon {
           link: Environment.HOST_URL
         }],
         copyright: "GNU Free Documentation License",
-        image: Picture.resolve(blog.cover),
+        image: new URL(
+          `/blogs/${blog.slug}/opengraph-image`,
+          Environment.HOST_URL
+        ).toString(),
         category: [{ name: blog.category }]
       })
     })
