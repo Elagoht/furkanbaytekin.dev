@@ -68,7 +68,7 @@ const getLinks = (dictionary: Dictionary) => [{
     className: "text-orange-500"
   }, {
     title: "Spotify",
-    href: "https://open.spotify.com/user/Elagoht",
+    href: "https://open.spotify.com/user/djfurkan17",
     icon: <IconBrandSpotify />,
     className: "text-green-500"
   }]
