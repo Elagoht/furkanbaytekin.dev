@@ -2,8 +2,7 @@ import Dictate from "@/utilities/Dictionary"
 import {
   IconBrandGithub, IconBrandLinkedin, IconBrandReddit,
   IconBrandSpotify, IconBrandTelegram, IconBrandX,
-  IconBrandYoutube, IconMail,
-  IconRss
+  IconBrandYoutube, IconMail, IconRss
 } from "@tabler/icons-react"
 import { FC } from "react"
 import ContactLinks from "./ContactLinks"
