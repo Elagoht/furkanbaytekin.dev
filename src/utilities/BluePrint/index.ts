@@ -36,7 +36,10 @@ class BluePrint {
       articleBody: blogPost.content,
       associatedMedia: {
         "@type": "ImageObject",
-        url: `${Environment.HOST_URL}${blogPost.cover}`
+        url: new URL(
+          `/blogs/${blogPost.category}/${blogPost.slug}/opengraph-image`,
+          Environment.HOST_URL
+        ).toString()
       },
       author: this.owner(),
       publisher: {
