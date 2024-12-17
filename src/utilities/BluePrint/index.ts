@@ -24,7 +24,10 @@ class BluePrint {
       dateModified: blogPost.updatedAt,
       abstract: blogPost.spot,
       description: blogPost.description,
-      image: new URL(blogPost.cover, Environment.CMS_API_URL).toString(),
+      image: new URL(
+        `/blogs/${blogPost.category}/${blogPost.slug}/opengraph-image`,
+        Environment.CMS_API_URL
+      ).toString(),
       inLanguage: this.dictionary.metadata.lang,
       about: blogPost.category,
       keywords: blogPost.keywords.split(","),
