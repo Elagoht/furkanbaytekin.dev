@@ -1,6 +1,7 @@
 import {
   IconArchive, IconCopyleft, IconGitFork,
-  IconStarFilled
+  IconStarFilled,
+  IconWorld
 } from "@tabler/icons-react"
 import Link from "next/link"
 import { FC } from "react"
@@ -21,15 +22,26 @@ const GithubProjectCard: FC<GithubProject> = (
       />
     }
 
-    <div className="flex items-start justify-between gap-2">
+    <div className="flex items-start justify-between gap-2 relative">
       <Link
         target="_blank"
         href={props.html_url}
         rel="noopener noreferrer"
         className="text-fedora-600 dark:text-fedora-400
-      text-xl font-semibold truncate self-start"
+        text-xl font-semibold line-clamp-2 self-start break-words
+        hyphens-auto hover:underline underline-offset-4 decoration-2"
       >
         {props.name}
+      </Link>
+
+      <Link
+        target="_blank"
+        href={props.html_url}
+        rel="noopener noreferrer"
+        className="bg-fedora-600 dark:bg-fedora-400 p-1
+        text-pinky-800 dark:text-pinky-200 rounded-md"
+      >
+        <IconWorld size={24} />
       </Link>
     </div>
 
