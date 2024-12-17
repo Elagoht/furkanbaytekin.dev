@@ -1,7 +1,6 @@
 import {
   IconArchive, IconCopyleft, IconGitFork,
-  IconStarFilled,
-  IconWorld
+  IconHome, IconStarFilled
 } from "@tabler/icons-react"
 import Link from "next/link"
 import { FC } from "react"
@@ -34,15 +33,18 @@ const GithubProjectCard: FC<GithubProject> = (
         {props.name}
       </Link>
 
-      <Link
-        target="_blank"
-        href={props.html_url}
-        rel="noopener noreferrer"
-        className="bg-fedora-600 dark:bg-fedora-400 p-1
-        text-pinky-800 dark:text-pinky-200 rounded-md"
-      >
-        <IconWorld size={24} />
-      </Link>
+      {props.homepage &&
+        <Link
+          target="_blank"
+          href={props.homepage}
+          rel="noopener noreferrer"
+          className="bg-pinky-600 dark:bg-pinky-400 p-1 rounded-md
+        text-pinky-50 dark:text-pinky-950 hover:bg-pinky-700
+        dark:hover:bg-pinky-300"
+        >
+          <IconHome />
+        </Link>
+      }
     </div>
 
     {props.license &&
