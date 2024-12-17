@@ -12,7 +12,7 @@ const BlogCategories: FC<BlogCategoriesProps> = ({
   const dictionary = Dictate.en
 
   return <section className="my-12">
-    <h2 className="mb-4 text-xl font-bold">
+    <h2 className="mb-4 text-2xl font-bold">
       {dictionary.pages.common.blogCategories}
     </h2>
 
