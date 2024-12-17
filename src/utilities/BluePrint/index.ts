@@ -26,7 +26,7 @@ class BluePrint {
       description: blogPost.description,
       image: new URL(
         `/blogs/${blogPost.category}/${blogPost.slug}/opengraph-image`,
-        Environment.CMS_API_URL
+        Environment.HOST_URL
       ).toString(),
       inLanguage: this.dictionary.metadata.lang,
       about: blogPost.category,
@@ -36,7 +36,7 @@ class BluePrint {
       articleBody: blogPost.content,
       associatedMedia: {
         "@type": "ImageObject",
-        url: `${Environment.CMS_API_URL}${blogPost.cover}`
+        url: `${Environment.HOST_URL}${blogPost.cover}`
       },
       author: this.owner(),
       publisher: {
