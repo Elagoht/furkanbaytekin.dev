@@ -25,12 +25,14 @@ const Footer: FC = () => {
     </Container>
 
     <Container className="text-center text-sm
-      text-fedora-400 dark:text-fedora-600"
+      text-fedora-500"
     >
       <p>
-        {Message.format(dictionary.footer.copyleft, {
-          year: new Date().getFullYear()
-        })}
+        Copyleft <sup className="inline-block -scale-x-100">&copy;</sup> {
+          Message.format(dictionary.footer.copyleft, {
+            year: new Date().getFullYear()
+          })
+        }
       </p>
     </Container>
   </footer>
