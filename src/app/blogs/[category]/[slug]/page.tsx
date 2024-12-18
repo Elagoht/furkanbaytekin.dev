@@ -13,6 +13,7 @@ import { IconCalendarFilled, IconClock } from "@tabler/icons-react"
 import Image from "next/image"
 import { notFound } from "next/navigation"
 import { FC } from "react"
+import BlogSuggestions from "@/components/pages/main/BlogSuggestions"
 
 type BlogDocumentPageProps = PageComponent<{
   slug: string
@@ -26,6 +27,8 @@ const BlogDocumentPage: FC<BlogDocumentPageProps> = async ({
   const blog = await Drawer.getBlogPost(slug)
 
   if (!blog.published) return notFound()
+
+  const suggestions = await Drawer.getBlogSuggestionsExceptSlug(slug)
 
   const blueprint = new BluePrint(Dictate.en).ofBlogPost(blog)
 
@@ -78,6 +81,8 @@ const BlogDocumentPage: FC<BlogDocumentPageProps> = async ({
           __html: TypeWriter.markdownToHtml(blog.content)
         }}
       />
+
+      <BlogSuggestions blogs={suggestions} />
     </Content>
   </>
 }

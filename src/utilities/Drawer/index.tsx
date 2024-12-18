@@ -47,6 +47,21 @@ class Drawer {
     })
   }
 
+  public static getBlogSuggestionsExceptSlug = async (
+    slug: BlogCardData["slug"]
+  ) => {
+    const { data: blogs } = await Drawer.getBlogsResponse<BlogListData>({
+      page: "1",
+      take: "4",
+      sort: "newest",
+      type: "list",
+      except: slug
+    })
+
+    const filtered = blogs.filter(blog => blog.slug !== slug)
+    return filtered.slice(0, 3)
+  }
+
   /**
    * Will be used to statically generate
    * the blog pages during build time
