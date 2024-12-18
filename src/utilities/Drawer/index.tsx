@@ -97,6 +97,10 @@ class Drawer {
     }
   }
 
+  public static increseBlogView = async (slug: BlogCardData["slug"]) => {
+    return ApiCall.patch(`/api/blogs/${slug}/read`)
+  }
+
   private static getBlogsResponse = async <Type = BlogCardData>(
     query: Record<string, string>
   ) => {
