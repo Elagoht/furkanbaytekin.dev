@@ -21,7 +21,7 @@ import { FC } from "react"
  * Make cache invalid after 10 minutes
  * to get read count updated near real-time
  */
-export const revalidate = 60 * 10
+export const revalidate = 600
 
 type BlogDocumentPageProps = PageComponent<{
   slug: string
