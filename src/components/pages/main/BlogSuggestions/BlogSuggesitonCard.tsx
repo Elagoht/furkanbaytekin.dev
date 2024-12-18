@@ -16,7 +16,7 @@ const BlogSuggestionCard: FC<BlogListData> = (blog) => {
       width={360}
       height={240}
       className="rounded-md text-transparent m-0 object-cover aspect-video
-      shrink-0"
+      shrink-0 w-full"
     />
 
     <h3 className="line-clamp-2 font-medium text-pinky-500">
