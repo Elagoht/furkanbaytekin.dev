@@ -1,5 +1,6 @@
 import Content from "@/components/layout/Content"
 import Hero from "@/components/layout/Hero"
+import BlogSuggestions from "@/components/pages/main/BlogSuggestions"
 import "@/design/article.css"
 import "@/design/highlight.css"
 import BluePrint from "@/utilities/BluePrint"
@@ -9,11 +10,18 @@ import Meta from "@/utilities/Meta"
 import Picture from "@/utilities/Picture"
 import Printer from "@/utilities/Printer"
 import TypeWriter from "@/utilities/Typewriter"
-import { IconCalendarFilled, IconClock } from "@tabler/icons-react"
+import {
+  IconCalendarFilled, IconClock, IconEyeSpark
+} from "@tabler/icons-react"
 import Image from "next/image"
 import { notFound } from "next/navigation"
 import { FC } from "react"
-import BlogSuggestions from "@/components/pages/main/BlogSuggestions"
+
+/**
+ * Make cache invalid after 10 minutes
+ * to get read count updated near real-time
+ */
+export const revalidate = 60 * 10
 
 type BlogDocumentPageProps = PageComponent<{
   slug: string
@@ -53,18 +61,24 @@ const BlogDocumentPage: FC<BlogDocumentPageProps> = async ({
       />
 
       <div className="flex flex-wrap justify-between items-center gap-2 mt-2">
-        <time
-          dateTime={blog.createdAt}
-          className="text-fedora-500 text-sm flex gap-1 items-center"
-        >
-          <IconCalendarFilled size={16} />
+        <div className="flex flex-col text-fedora-500 text-sm">
+          <time
+            dateTime={blog.createdAt}
+            className="flex gap-1 items-center"
+          >
+            <IconCalendarFilled size={16} />
 
-          {new Date(blog.createdAt).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric"
-          })}
-        </time>
+            {new Date(blog.createdAt).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric"
+            })}
+          </time>
+
+          <span className="flex gap-1 items-center">
+            <IconEyeSpark size={16} /> {blog.readCount}
+          </span>
+        </div>
 
         <span className="text-fedora-500 text-sm flex gap-1 items-center">
           <IconClock size={16} /> {
