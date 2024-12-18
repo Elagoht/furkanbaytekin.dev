@@ -28,7 +28,7 @@ const SearchBox: FC<SearchBoxProps> = ({
       name={queryParameterName}
       defaultValue={currentSearch}
       placeholder={dictionary.pages.common.search}
-      className="grow border bg-fedora-200 dark:bg-fedora-800
+      className="grow border bg-fedora-100 dark:bg-fedora-800
       text-fedora-800 dark:text-fedora-200 border-fedora-300
       dark:border-fedora-700 rounded-full px-4 py-2 focus:outline-none
       focus:border-pinky-500 dark:focus:border-pinky-500 min-w-0"
@@ -37,7 +37,8 @@ const SearchBox: FC<SearchBoxProps> = ({
     <button
       type="submit"
       className="bg-pinky-500 dark:bg-pinky-700 text-white dark:text-fedora-200
-      hover:bg-pinky-400 dark:hover:bg-pinky-800 rounded-full px-4 py-2"
+      hover:bg-pinky-400 dark:hover:bg-pinky-800 rounded-full px-4 py-2 border
+      border-pinky-700 dark:border-pinky-500 focus:outline-none"
     >
       <IconZoom size={24} />
     </button>
