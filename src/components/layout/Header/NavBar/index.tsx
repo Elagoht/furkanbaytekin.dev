@@ -4,29 +4,27 @@ import NavBarLink from "./NavBarLink"
 
 const NavBar: FC = () => {
   return <nav className="flex items-center justify-between">
-    <ul className="flex items-center">
-      {menuItems.map((item, index) =>
-        <NavBarLink
-          key={index}
-          {...item}
-        />
-      )}
-    </ul>
+    {menuItems.map((item, index) =>
+      <NavBarLink
+        key={index}
+        {...item}
+      />
+    )}
   </nav>
 }
 
 const menuItems = [{
   title: "Blogs",
   href: "/blogs",
-  icon: <IconWritingSign />
+  icon: <IconWritingSign title="Blogs" />
 }, {
   title: "Projects",
   href: "/projects",
-  icon: <IconCode />
+  icon: <IconCode title="Projects" />
 }, {
   title: "My Book",
   href: "/book",
-  icon: <IconBook2 />
+  icon: <IconBook2 title="My Book" />
 }]
 
 
