@@ -1,9 +1,12 @@
+import Dictate from "@/utilities/Dictionary"
 import Picture from "@/utilities/Picture"
 import Image from "next/image"
 import Link from "next/link"
 import { FC } from "react"
 
 const BlogSuggestionCard: FC<BlogListData> = (blog) => {
+  const dictionary = Dictate.en
+
   return <Link
     href={`/blogs/${blog.category}/${blog.slug}`}
     className="bg-fedora-50 dark:bg-fedora-950 rounded-lg p-2 gap-2
@@ -12,7 +15,7 @@ const BlogSuggestionCard: FC<BlogListData> = (blog) => {
   >
     <Image
       src={Picture.resolve(blog.cover)}
-      alt={blog.title}
+      alt={dictionary.pages.main.coverOfSuggestion}
       width={360}
       height={240}
       className="rounded-md text-transparent m-0 object-cover aspect-video
