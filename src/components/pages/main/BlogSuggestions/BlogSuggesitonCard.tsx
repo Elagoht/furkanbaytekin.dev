@@ -8,6 +8,7 @@ const BlogSuggestionCard: FC<BlogListData> = (blog) => {
   const dictionary = Dictate.en
 
   return <Link
+    prefetch={false}
     href={`/blogs/${blog.category}/${blog.slug}`}
     className="bg-fedora-50 dark:bg-fedora-950 rounded-lg p-2 gap-2
     no-underline text-fedora-950 dark:text-fedora-50 flex flex-col
