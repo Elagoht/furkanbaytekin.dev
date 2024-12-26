@@ -29,7 +29,7 @@ class Spoon {
       this.data.addItem({
         title: blog.title,
         link: new URL(
-          `/blogs/${blog.category}/${blog.slug}`,
+          `/blogs/${blog.category.toLowerCase()}/${blog.slug}`,
           Environment.HOST_URL
         ).toString(),
         date: new Date(blog.createdAt),
@@ -42,10 +42,10 @@ class Spoon {
         }],
         copyright: "GNU Free Documentation License",
         image: new URL(
-          `/blogs/${blog.category}/${blog.slug}/opengraph-image`,
+          `/blogs/${blog.category.toLowerCase()}/${blog.slug}/opengraph-image`,
           Environment.HOST_URL
         ).toString(),
-        category: [{ name: blog.category }]
+        category: [{ name: blog.category.toLowerCase() }]
       })
     })
 

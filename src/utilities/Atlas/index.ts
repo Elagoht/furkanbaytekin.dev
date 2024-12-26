@@ -17,11 +17,11 @@ class Atlas {
     const { data } = await Drawer.getBlogPosts()
     const staticUrls: string[] = [
       "", // Home page
-      "/blog"
+      "/blogs"
     ]
 
     const blogs: MetadataRoute.Sitemap = data.map((item: BlogCardData) => ({
-      url: `${Environment.HOST_URL}/blogs/${item.slug}`,
+      url: `${Environment.HOST_URL}/blogs/${item.category.toLowerCase()}/${item.slug}`,
       lastModified: new Date(item.updatedAt).toISOString(),
       changeFrequency: "weekly",
       priority: 1,
