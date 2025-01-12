@@ -7,6 +7,8 @@ class Environment {
     Number(process.env.PAGINATE_BY!)
   public static readonly TRUSTED_SOFTWARE_TOKEN =
     process.env.TRUSTED_SOFTWARE_TOKEN!
+  public static readonly WEBHOOK_SECRET =
+    process.env.WEBHOOK_SECRET!
 }
 
 export default Environment

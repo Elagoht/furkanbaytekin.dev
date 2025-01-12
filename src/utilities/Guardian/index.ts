@@ -15,16 +15,16 @@ class Guardian {
   }
 
   public checkTrust(): void {
-    const token = this.get("Trusted-Software-Token")
+    const token = this.get("X-Webhook-Secret")
 
-    if (token !== Environment.TRUSTED_SOFTWARE_TOKEN)
+    if (token !== Environment.WEBHOOK_SECRET)
       throw new GuardianError("Unauthorized")
   }
 
   public askIntention(): WebhookActionType {
     this.checkTrust()
 
-    const action = this.get("Action")
+    const action = this.get("X-Webhook-Action")
     if (!action) throw new GuardianError("No action provided")
 
     if (!Guardian.ACTIONS.includes(action as WebhookActionType))
