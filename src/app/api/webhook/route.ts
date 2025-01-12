@@ -13,6 +13,7 @@ export const PATCH = (
     revalidatePath("/sitemap.xml")
     revalidatePath("/rss.xml")
     revalidatePath("/rss.json")
+    revalidatePath("/blogs/[category]/[slug]", "page")
 
     return Response.json({
       message: `Webhook received, revalidation for ${action} tag fired`
