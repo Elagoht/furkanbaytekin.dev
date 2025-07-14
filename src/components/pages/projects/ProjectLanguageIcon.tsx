@@ -26,6 +26,8 @@ const iconMap = {
   c: "c.svg",
   "c#": "csharp.svg",
   css: "css.svg",
+  go: "go.svg",
+  gdscript: "godot.svg",
   html: "html.svg",
   javascript: "javascript.svg",
   lua: "lua.svg",
