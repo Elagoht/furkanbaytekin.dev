@@ -42,6 +42,16 @@
         <p class="blog-post-excerpt">{{.BlogPost.Excerpt}}</p>
       </header>
 
+      {{if .BlogPost.AudioFile}}
+      <section class="blog-post-audio">
+        <h2 class="blog-post-audio-title">Listen to this post</h2>
+        <audio controls preload="metadata" class="blog-post-audio-player">
+          <source src="{{.BlogPost.AudioFile}}" />
+          Your browser does not support the audio element.
+        </audio>
+      </section>
+      {{end}}
+
       <!-- Post Content -->
       <div class="blog-post-content">
         {{.BlogPost.Content}}

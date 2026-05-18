@@ -85,6 +85,28 @@
   font-weight: 300;
 }
 
+.blog-post-audio {
+  margin: 2rem 0 1.5rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+
+.blog-post-audio-title {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--fg);
+}
+
+.blog-post-audio-player {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0.75rem;
+  background: var(--bg);
+}
+
 /* ---- POST CONTENT ---- */
 .blog-post-content {
   font-size: 1.1rem;

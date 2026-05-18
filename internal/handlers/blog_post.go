@@ -37,6 +37,7 @@ type BlogPostData struct {
 	ReadTime  string
 	Excerpt   string
 	Content   template.HTML
+	AudioFile *string
 	Tags      []string
 	Canonical string
 	TOCItems  []TOCItem
@@ -115,6 +116,12 @@ func (h *BlogPostHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
+	var audioFile *string
+	if post.AudioFile != nil {
+		href := h.apiBase + *post.AudioFile
+		audioFile = &href
+	}
+
 	blogPost := BlogPostData{
 		Slug:      slug,
 		Cover:     cover,
@@ -125,6 +132,7 @@ func (h *BlogPostHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		ReadTime:  strconv.Itoa(post.ReadTime),
 		Excerpt:   excerpt,
 		Content:   content,
+		AudioFile: audioFile,
 		Tags:      tags,
 		Canonical: fwctx.GetCanonicalPath(r.Context()),
 		TOCItems:  tocItems,

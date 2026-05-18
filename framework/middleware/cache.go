@@ -41,6 +41,13 @@ func CacheMiddleware(cacheManager *cache.Manager, logger *slog.Logger) func(http
 
 				// Check If-None-Match for 304 Not Modified
 				if etagMatch(r.Header.Get("If-None-Match"), etag) {
+					if entry.Headers != nil {
+						for k, vv := range entry.Headers {
+							for _, v := range vv {
+								w.Header().Add(k, v)
+							}
+						}
+					}
 					w.Header().Set("ETag", etag)
 					w.Header().Set("Cache-Control", "no-cache")
 					w.Header().Set("X-Cache", "HIT")
@@ -59,10 +66,18 @@ func CacheMiddleware(cacheManager *cache.Manager, logger *slog.Logger) func(http
 					return
 				}
 
-				w.Header().Set("Content-Type", "text/html; charset=utf-8")
+				if entry.Headers != nil {
+					for k, vv := range entry.Headers {
+						for _, v := range vv {
+							w.Header().Add(k, v)
+						}
+					}
+				}
+
 				w.Header().Set("X-Cache", "HIT")
 				w.Header().Set("ETag", etag)
 				w.Header().Set("Cache-Control", "no-cache")
+				w.WriteHeader(entry.StatusCode)
 				w.Write(content)
 				return
 			}
@@ -79,18 +94,26 @@ func CacheMiddleware(cacheManager *cache.Manager, logger *slog.Logger) func(http
 			rec := &responseRecorder{
 				ResponseWriter: w,
 				body:           &bytes.Buffer{},
+				headers:        make(http.Header),
 				statusCode:     http.StatusOK,
 			}
 
 			// Serve the request (response is buffered in the recorder)
 			next.ServeHTTP(rec, r)
 
+			// Write cached response headers and body
+			for k, vv := range rec.headers {
+				for _, v := range vv {
+					w.Header().Add(k, v)
+				}
+			}
+
 			// Only cache successful responses
 			if rec.statusCode == http.StatusOK {
 				content := rec.body.Bytes()
 
 				// Store in cache
-				if err := cacheManager.Set(cacheKey, content, strategy, r.URL.Path); err != nil {
+				if err := cacheManager.Set(cacheKey, content, strategy, r.URL.Path, rec.headers, rec.statusCode); err != nil {
 					logger.Warn("Failed to cache response",
 						slog.String("key", cacheKey),
 						slog.String("error", err.Error()),
@@ -109,7 +132,6 @@ func CacheMiddleware(cacheManager *cache.Manager, logger *slog.Logger) func(http
 				}
 			}
 
-			// Write the buffered response to the underlying writer
 			w.WriteHeader(rec.statusCode)
 			w.Write(rec.body.Bytes())
 		})
@@ -137,8 +159,14 @@ func etagMatch(ifNoneMatch, etag string) bool {
 type responseRecorder struct {
 	http.ResponseWriter
 	body        *bytes.Buffer
+	headers     http.Header
 	statusCode  int
 	wroteHeader bool
+}
+
+// Header returns the response header map that will be written to the underlying writer.
+func (r *responseRecorder) Header() http.Header {
+	return r.headers
 }
 
 // WriteHeader captures the status code without writing to the underlying writer.
@@ -152,6 +180,7 @@ func (r *responseRecorder) WriteHeader(statusCode int) {
 // Write captures the response body without writing to the underlying writer.
 func (r *responseRecorder) Write(b []byte) (int, error) {
 	if !r.wroteHeader {
+		r.statusCode = http.StatusOK
 		r.wroteHeader = true
 	}
 	return r.body.Write(b)

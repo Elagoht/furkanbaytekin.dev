@@ -9,8 +9,7 @@ statigo
 .env
 
 # cache files
-cache
-!internal/cache
+./data/cache
 
 # data files (ban lists, etc.)
 data

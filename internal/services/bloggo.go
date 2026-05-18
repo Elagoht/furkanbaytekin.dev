@@ -77,6 +77,7 @@ type PostDetail struct {
 	Description *string    `json:"description"`
 	Spot        *string    `json:"spot"`
 	CoverImage  *string    `json:"coverImage"`
+	AudioFile   *string    `json:"audioFile"`
 	ReadCount   int        `json:"readCount"`
 	ReadTime    int        `json:"readTime"`
 	PublishedAt BloggoTime `json:"publishedAt"`
